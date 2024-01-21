@@ -1,3 +1,20 @@
 body{
     background: #eee;
+    /* background-image: url("imaggini/background.png"); */
+
+
+}
+
+header{
+    background: #019d26;
+    border: 2px solid #00841f;
+}
+
+h1{
+    color: black;
+    border: #00841f;
+}
+
+p{
+    color: black;
 }
