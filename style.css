@@ -1,20 +1,57 @@
+@font-face {
+    font-family: 'MinecraftBold';
+    src: url('font/MinecraftBold.otf') format('truetype');;
+}
+
+@font-face {
+    font-family: 'MinecraftBoldItalic';
+    src: url('font/MinecraftBoldItalic.otf') format('truetype');;
+}
+
+@font-face {
+    font-family: 'MinecraftRegularItalic';
+    src: url('font/MinecraftRegularItalic.otf') format('truetype');;
+}
+
+@font-face {
+    font-family: 'MinecraftRegular';
+    src: url('font/MinecraftRegular.otf') format('truetype');;
+}
+
+@font-face {
+    font-family: 'MinecraftCaps';
+    src: url('font/MinecraftCaps.otf') format('truetype');;
+}
+
+*{box-sizing: border-box;}
+
+.img_res{width: 100%;height: auto;}
+
+body, html{padding: 0;margin: 0;}
+
 body{
     background: #eee;
-    /* background-image: url("imaggini/background.png"); */
-
+    /* background-image: url("immagini/background.png"); */
 
 }
 
-header{
-    background: #019d26;
-    border: 2px solid #00841f;
-}
+a{text-decoration: none;}
+
+#Grande_Titolo{font-size: 40px;}
+.container{padding: 15px;}
+
+header{background: #019d26;border: 2px solid #00841f;width: 100%;}
+header a{border: 1px solid #019d26;margin: 10px;font-size: 20px;font-family: "MinecraftRegular";}
 
 h1{
     color: black;
     border: #00841f;
+    font-family: "MinecraftCaps";font-size: 75px;text-align: center;
 }
 
 p{
     color: black;
 }
+
+footer{background: #01ca30;border: 1px solid #00841f;width: 100%;}
+footer p{color: #000;}
