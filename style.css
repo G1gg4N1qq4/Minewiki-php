@@ -25,33 +25,49 @@
 
 *{box-sizing: border-box;}
 
-.img_res{width: 100%;height: auto;}
 
 body, html{padding: 0;margin: 0;}
 
 body{
-    background: #eee;
+    background: #eeeeee;
     /* background-image: url("immagini/background.png"); */
 
 }
 
 a{text-decoration: none;}
 
-#Grande_Titolo{font-size: 40px;}
-.container{padding: 15px;}
-
-header{background: #019d26;border: 2px solid #00841f;width: 100%;}
-header a{border: 1px solid #019d26;margin: 10px;font-size: 20px;font-family: "MinecraftRegular";}
 
 h1{
-    color: black;
-    border: #00841f;
-    font-family: "MinecraftCaps";font-size: 75px;text-align: center;
+    color: #000000;
+    margin: 0%;
+    height: auto;
+    width: 100%;
+    font-family: "MinecraftCaps";
+    font-size: 45px;
+    /* border: 1px solid black; */
 }
 
-p{
-    color: black;
-}
 
-footer{background: #01ca30;border: 1px solid #00841f;width: 100%;}
+footer{background: #01ca30;border: 1px solid #00841f;width: 100%; text-align: center;}
 footer p{color: #000;}
+
+#Grande_Titolo{font-size: 40px;}
+.img_res{width: 100%;height: auto;}
+.container{padding: 15px;}
+
+.header_footer{background: #019d26;border: 2px solid #00841f;width: 100%;}
+.header_footer a{color: rgb(209, 209, 209);margin: 10px;font-size: 25px;font-family: "MinecraftRegular"; height: 5px;align-items: start;}
+
+.griglia{
+    /* border: 1px solid black; */
+    align-items: center ;display: flex; flex-wrap: wrap;
+}
+
+.colonna{
+    /* border: 1px solid black; */
+    width: 100/6;
+    padding: 5px;
+    margin: 0%;
+    
+}
+.immagine-descrizione{width: 50%; height: auto; align-items: center; text-align: center;}
