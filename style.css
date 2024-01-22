@@ -51,11 +51,11 @@ h1{
 footer{background: #01ca30;border: 1px solid #00841f;width: 100%; text-align: center;}
 footer p{color: #000;}
 
-#Grande_Titolo{font-size: 40px;}
+#Grande_Titolo{font-size: 40px;padding: 45px 0px 0px 0px;}
 .img_res{width: 100%;height: auto;}
 .container{padding: 15px;}
 
-.header_footer{background: #019d26;border: 2px solid #00841f;width: 100%;}
+.header_footer{background: #019d26;border: 2px solid #00841f;width: 100%;position: fixed;}
 .header_footer a{color: rgb(209, 209, 209);margin: 10px;font-size: 25px;font-family: "MinecraftRegular"; height: 5px;align-items: start;}
 
 .griglia{
