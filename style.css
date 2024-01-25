@@ -23,7 +23,6 @@
     src: url('font/MinecraftCaps.otf') format('truetype');;
 }
 
-*{box-sizing: border-box;}
 
 
 body, html{padding: 0;margin: 0;}
@@ -31,7 +30,7 @@ body, html{padding: 0;margin: 0;}
 body{
     background: #eeeeee;
     /* background-image: url("immagini/background.png"); */
-
+    
 }
 
 a{text-decoration: none;}
@@ -63,19 +62,37 @@ footer p{color: #000;}
     align-items: center ;
     display: flex; 
     flex-wrap: wrap;
+    width: 100%;
+}
+
+@media(max-width: 768px){
+
+    .colonna{
+        /* border: 1px solid black; */
+        width: 100%;
+        /* padding: 5px;
+        margin: 0%; */
+        
+    }
 }
 
 .colonna{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: auto;
     padding: 5px;
-    margin: 0%;
+    /* margin: 0%; */
     
 }
+*{box-sizing: border-box;}
 
-#titolo{
+/* #titolo{
     width: 12%;
     text-align: center;
-}
+} */
 
+.colonnatitolo{
+    margin:  0px 0px 0.90% 11.93%;
+    /* border: 1px solid white; */
+    
+}
 .immagine-descrizione{width: 50%; height: auto; align-items: center; text-align: center;}
