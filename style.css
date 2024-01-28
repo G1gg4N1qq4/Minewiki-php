@@ -69,10 +69,16 @@ footer p{color: #000;}
 .colonna{
     /* border: 1px solid black; */
     width: 7.142857143%;
-    padding: 5px;
+    /* padding: 5px; */
     /* margin: 0%; */
+    text-align: center;
     
 }
+
+/* .colonna a :hover{
+    background-color: #005714;
+} */
+
 *{box-sizing: border-box;}
 
 /* #titolo{
@@ -87,14 +93,15 @@ footer p{color: #000;}
 }
 .immagine-descrizione{    
     width: 50%;
-    padding: 5px;
+    /* padding: 5px; */
     /* border: 1px solid black; */
 }
 
 .immagine{
     width: 50%;
     margin: 0%;
-    /* border: 1px solid black; */
+    display: inline-block; 
+    border: 1px solid black;
 }
 
 /* .cover1{
@@ -137,14 +144,15 @@ footer p{color: #000;}
     /* border: 2px solid red; */
     position: relative;
     /* background-image: url("immagini/minecraft-mod.png"); */
-    background: #00841f;
+    background: #00841fc1;
     /* background-image: url("immagini/sfondo_bloccoditerra.jpg"); background-size: 50%; */
     margin: 50px;
     padding: 15px;
     box-shadow: 10px 10px 10px #000;
     border-radius: 10px;
 }
-@media (min-width: 768px) and (max-width: 1023px) {
+
+@media (min-width: 768px) and (max-width: 1024px) {
     /* footer{background-image: url("immagini/sfondo_bloccoditerra.jpg");border: 1px solid #00841f;width: 100%; text-align: center;} */
     /* .header_footer{background-image: url("immagini/sfondo_bloccoditerra.jpg"); background-size: 50% ;border: 2px solid #00841f;width: 100%;position: fixed;} */
     .header_footer{background: #019d26;border: 2px solid #00841f;width: 100%;position:static;}
@@ -161,6 +169,12 @@ footer p{color: #000;}
         /* border: 1px solid white; 
         
     } */
+    #back-ground{
+        width: 1122px;
+        height: 2112px;
+        position: fixed;
+        
+    }
     .immagine-descrizione{    
         width: 100%;
         padding: 5px;
@@ -172,9 +186,10 @@ footer p{color: #000;}
         margin: 0%;
         /* border: 1px solid black; */
     }
+
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     
     .header_footer{background: #019d26;border: 2px solid #00841f;width: 100%;}
     .colonna{
@@ -184,7 +199,18 @@ footer p{color: #000;}
         margin: 0%; */
         
     }
+    #back-ground{
+        width: 843px;
+        height: 1127px;
+        position: fixed;
+        
+    }
     
+    .immagine-descrizione{    
+        width: 100%;
+        padding: 5px;
+        /* border: 1px solid black; */
+    }
     /* .colonnatitolo{
         margin:  0px 0px 0.90% 7.142857143%;
         /* border: 1px solid white; 
