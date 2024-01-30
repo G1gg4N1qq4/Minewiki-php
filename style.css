@@ -50,12 +50,30 @@ h1{
 footer{background: #01ca30;border: 1px solid #00841f;width: 100%; text-align: center;}
 footer p{color: #000;}
 
-#Grande_Titolo{font-size: 40px;padding: 45px 0px 0px 0px;}
+#Grande_Titolo{font-size: 40px;padding: 0px 0px 0px 0px;}
 .img_res{width: 100%;height: auto;}
 .container{padding: 15px;}
 
-.header_footer{background: #019d26;border: 2px solid #00841f;width: 100%;}
-.header_footer a{color: rgb(209, 209, 209);margin: 10px;font-size: 25px;font-family: "MinecraftRegular"; height: 5px;}
+.header_footer{
+    background: #019d26;
+    border: 2px solid #00841f;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+.header_footer a{
+    color: rgb(209, 209, 209);
+    margin: 10px;
+    font-size: 25px;
+    font-family: "MinecraftRegular"; 
+    height: 5px;
+}
+
+.small_header{
+    background: #00841f;
+    padding: 30px 30px 30px 30px;
+    /* top: 0; */
+}
 
 .griglia{
     /* border: 1px solid black; */
