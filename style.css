@@ -173,7 +173,7 @@ footer p{color: #000;}
 @media (min-width: 768px) and (max-width: 1024px) {
     /* footer{background-image: url("immagini/sfondo_bloccoditerra.jpg");border: 1px solid #00841f;width: 100%; text-align: center;} */
     /* .header_footer{background-image: url("immagini/sfondo_bloccoditerra.jpg"); background-size: 50% ;border: 2px solid #00841f;width: 100%;position: fixed;} */
-    .header_footer{background: #019d26;border: 2px solid #00841f;width: 100%;position:static;}
+    .header_footer{background: #019d26;border: 2px solid #00841f;width: 100%}
     .colonna{
         /* border: 1px solid black; */
         width: 50%;
@@ -234,11 +234,6 @@ footer p{color: #000;}
         /* border: 1px solid white; 
         
     } */
-    .immagine-descrizione{    
-        width: 100%;
-        padding: 5px;
-        /* border: 1px solid black; */
-    }
 
     .immagine{
         width: 100%;
