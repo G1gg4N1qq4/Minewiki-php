@@ -76,7 +76,8 @@ p{
     font-weight: bold;
 }
 footer{background:#004e12;border: 1px solid #00841f;width: 100%; text-align: center;}
-footer p{color: #ffffff;}
+footer p{color: #ffffff;font-family: 'Inter', sans-serif;font-size: 14px;color:#fff}
+footer h3{ font-family: 'Inter', sans-serif;font-size: 20px;color:#fff; font-weight: 500;}
 header{
     position: absolute;
     top: 0;
@@ -492,7 +493,7 @@ main{z-index: 0;}
         display: none;
     }
     .button{
-        font-size: 10px;
+        font-size: 20px;
     }
     .cover{
         margin: 0;
@@ -645,6 +646,14 @@ main{z-index: 0;}
         width: 100%;
         display: block;
         margin-bottom: 5px;
+    }
+
+    footer h3{
+        font-size: 24px;
+    }
+
+    footer p{
+        font-size: 18px;
     }
 }
 
