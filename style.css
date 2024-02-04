@@ -481,7 +481,7 @@ main{z-index: 0;}
     .small_text{    font-family: 'Inter', sans-serif;font-size: 8px;color:#fff}
     header{background: #019d26;border: 2px solid #00841f;width: 100%;position: absolute; top: 0;right: 0;left: 0;}
     .Global_header{
-        position: absolute;
+        position: relative;
         top: 0;
         left: 0;
         right: 0;
@@ -490,7 +490,7 @@ main{z-index: 0;}
         display: none;
     }
     .small_header{
-        display: none;
+        padding: 20px;
     }
     .button{
         font-size: 20px;
@@ -614,11 +614,17 @@ main{z-index: 0;}
         height: 1280px;
         align-items: center;
     }
-    .bg-cover__text{width: 200px;position: absolute;right: 0px; left: 200px; padding: 20px 10px; text-align: end;}
+    .bg-cover__text{width: 400px;position: absolute;right: 0px; left: 400px; padding: 20px 10px; text-align: end;}
     .bg-cover__text p{
-        font-size: 15px
+        font-size: 30px
     } 
-    .bg-cover__title{width: 200px;position: absolute;;padding: 24px 24px;}
+    .bg-cover__text h4{
+        font-size: 40px;
+    }
+    .bg-cover__title{width: 400px;position: absolute;left: 20px;padding: 24px 24px;}
+    .bg-cover__title h3{
+        font-size: 60px;
+    }
     .contenitore{
         object-fit: cover;
         width: 100%;
