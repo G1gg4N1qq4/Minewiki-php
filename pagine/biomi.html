@@ -20,35 +20,83 @@
         <div class="cover">
             <div class="cover__content">
                 <header>
-                    <div class="header_footer">
-                        <div class="griglia">
-                            <div class="colonna">
-        
+                    
+                    <div class="small_header">
+                        <p>
+                            ㅤ
+                        </p>
+                    </div>
+                    <div class="Global_header">
+                        <ul class="menu">
+                            <li>
                                 <a href="../index_minecraft.html"> Home </a> 
-                            </div>
-                            <div class="colonna">
-        
-                                <a href="biomi.html"> Biomi </a>
-                            </div>
-                            <div class="colonna">
-        
-                                <a href="crafting.html"> Craft </a>
-                            </div>
-                            <div class="colonna">
-        
-                                <a href="mobs"> Mobs </a>
-                            </div>
-                            <div class="colonna">
-        
-                                <a href="mods"> Mods </a>
-                            </div>
+                            </li>
+                            <li>
+                                <a href="../pagine/biomi.html"> 
+                                    Biomi» 
+                                </a>
+                                <div id="menubiomi">
+                                    <ul>
+                                        <li>Foreste</li>
+                                        <li>Oceani</li>
+                                        <li>Montagna</li>
+                                    </ul>
+                                </div>
+                            </li>
                             
-                            <div class="colonnatitolo">
-                                <h1 id="titolo">
+                            <li>
+                                <a href="../pagine/crafting.html"> Craft </a>
+                            </li>
+                            <li>
+                                <a href="../pagine/mobs"> Mobs» </a>
+                            </li>
+                            <li>
+                                <a href="../pagine/mods"> Mods </a>
+                            </li>
+                        </ul>
+                        <!-- <div class="griglia"> -->
+                            <!-- <div class="cover">
+                                <div class="cover__content"> -->
+                            <!-- <div class="colonna"> -->
+
+                                
+                            <!-- </div> -->
+                            <!-- <div class="colonna"> -->
+                                
+                                
+                            <!-- </div> -->
+                            <!-- <div class="colonna"> -->
+                                
+
+                            <!-- </div> -->
+                            <!-- <div class="colonna"> -->
+                                
+
+                            <!-- </div> -->
+                            <!-- <div class="colonna"> -->
+                                
+
+                            <!-- </div> -->
+                            
+                            <!-- <div class="colonnatitolo"> -->
+                                <h1 id="logo">
                                     MINEWIKI
-                                </h1>  
+                                </h1>
+                            <!-- </div> -->
+                        <!-- </div> -->
+                        <div class="cta">
+                            <div class="small_text">
+                                <a href="" class="button">
+                                    Contatti
+                                </a>
                             </div>
                         </div>
+                    </div>    
+                    
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                 </header>
                 
@@ -74,16 +122,72 @@
                         </a>
                     </div>
                 </main>
-
                 <footer>
-                    <p class="p_footer">
-                        Chi siamo: Tel 367283781 - Via Vattelapescà 69 
-                    </p>
-                    <p class="p_footer">
-                        Email 1 rickygerma@gmail.com - Email 2 abrahamlarosa90@gmail.com
-                    </p>
+                    <div class="griglia">
+                        <div class="colonna">
+                            <h3 class="normal_text">Chi siamo</h3>
+                            <div class="small_text">
+
+                                <p class="small_text">rickygerma@gmail.com </p>
+                                <p class="small_text">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad accusantium eligendi sed architecto sequi quia atque perferendis ex maiores. Placeat aliquid dolor sit odio sed similique, omnis vel corporis libero.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="colonna">
+                            <h3 class="normal_text">Email 1</h3>
+                            <div class="small_text">
+
+                                <p class="small_text">rickygerma@gmail.com </p>
+                                <p class="small_text">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad accusantium eligendi sed architecto sequi quia atque perferendis ex maiores. Placeat aliquid dolor sit odio sed similique, omnis vel corporis libero.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="colonna">
+                            
+                            <h3 class="normal_text">
+                                Email 2
+                            </h3>
+                            <div class="small_text">
+
+                                <p class="small_text">rickygerma@gmail.com </p>
+                                <p class="small_text">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad accusantium eligendi sed architecto sequi quia atque perferendis ex maiores. Placeat aliquid dolor sit odio sed similique, omnis vel corporis libero.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
                 </footer>
             </div>
         </div>
     </body>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js" integrity="sha512-achKCfKcYJg0u0J7UDJZbtrffUwtTLQMFSn28bDJ1Xl9DWkl/6VDT3LMfVTo09V51hmnjrrOTbtg4rEgg0QArA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.min.css" integrity="sha512-fJcFDOQo2+/Ke365m0NMCZt5uGYEWSxth3wg2i0dXu7A1jQfz9T4hdzz6nkzwmJdOdkcS8jmy2lWGaRXl+nFMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        $(document).ready(function(){
+            $(".hamburger").on("click", function() {
+                $(".menu").toggleClass("menu--open");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function() {
+
+                if ($(window).scrollTop() >($(".Global_header").offset().top)){
+                    $(".Global_header").toggleClass("Global_header--fixed");
+                };
+
+                if($(window).scrollTop() < 20){
+                    $(".Global_header").removeClass("Global_header--fixed");
+                }
+            })
+            
+        });
+    </script>
 </html>

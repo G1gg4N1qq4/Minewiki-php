@@ -87,7 +87,7 @@ header{
 main{z-index: 0;}
 #Grande_Titolo{font-size: 40px;padding: 0px 0px 0px 0px;}
 .img_res{object-fit:cover; width: 100%;height: 100%;}
-.container{padding: 15px; padding-top: 0;}
+.container{padding: 15px; padding-top: 0; margin-top: 200px;}
 
 .Global_header{
     background: #019d26;
@@ -133,7 +133,7 @@ main{z-index: 0;}
     /* border: 1px solid black; */
     /* align-items: center ; */
     display: flex; 
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     width: 100%;
     max-width: 1350px;
     /* padding: 0 30px; */
