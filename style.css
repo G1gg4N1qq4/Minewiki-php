@@ -564,7 +564,7 @@ main{z-index: 0;}
     .menu{
         position: absolute;
         top: 0;
-        right: 600px;
+        left: -600px;
         background: 1px solid red;
     }
     /* .menu{
