@@ -245,7 +245,7 @@
                         </div>
 
                         <div class="boxsu">
-                            <a href=#cover>
+                            <a href=#boxsu>
                                 <img src="immagini/frecciasu.png" alt="immagine non disponibile" class="img_res">
                             </a>
                         </div>
@@ -306,10 +306,13 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.min.css" integrity="sha512-fJcFDOQo2+/Ke365m0NMCZt5uGYEWSxth3wg2i0dXu7A1jQfz9T4hdzz6nkzwmJdOdkcS8jmy2lWGaRXl+nFMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script>
             $(document).ready(function(){
+                $(".boxsu").hide(400);
                 $(".hamburger").on("click", function() {
                     $(".menu").toggleClass("menu--open");
                     console.log("ciao")
                 });
+                
+                
                 $(window).scroll(function() {
                     
                     if ($(window).scrollTop() >($(".Global_header").offset().top)){
@@ -321,7 +324,27 @@
                         $(".Global_header").removeClass("Global_header--fixed");
                         console.log("ciao")
                     }
+                    
+                    if($(window).scrollTop() <= 1980){
+                        $(".boxsu").hide(600);
+                        console.log("ciao")
+                    }
+
+                    if($(window).scrollTop() > 1980){
+                        $(".boxsu").show(600);
+                        console.log("ciao")
+                    }
+
+                    
                 })
+
+                $(".boxsu").on("click", function() {
+                    $("html, body").animate({
+                        scrollTop: 0
+                    }, 1500)
+
+                });
+                
             });
         </script>
     </body>
