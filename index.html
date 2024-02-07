@@ -308,22 +308,20 @@
             $(document).ready(function(){
                 $(".hamburger").on("click", function() {
                     $(".menu").toggleClass("menu--open");
+                    console.log("ciao")
                 });
-            });
-        </script>
-        <script>
-            $(document).ready(function(){
                 $(window).scroll(function() {
-
+                    
                     if ($(window).scrollTop() >($(".Global_header").offset().top)){
-                        $(".Global_header").toggleClass("Global_header--fixed");
+                        $(".Global_header").addClass("Global_header--fixed");
+                        console.log("ciao")
                     };
-
+                    
                     if($(window).scrollTop() < 20){
                         $(".Global_header").removeClass("Global_header--fixed");
+                        console.log("ciao")
                     }
                 })
-                
             });
         </script>
     </body>
