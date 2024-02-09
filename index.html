@@ -11,6 +11,7 @@
             GigaNigga
         </title>
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,23 +27,23 @@
     <body>
         <img src="immagini/background_image5.jpg" alt="immagine non disponibile" class="img_res" id="back-ground">
         
-        <div class="cover" id="cover">
+        <div class="cover">
             <div class="cover__content">
 
 
-                <header>
+                <header class="group">
                     
                     <div class="small_header">
                         <p>
                             ㅤ
                         </p>
                     </div>
-                    <div class="Global_header">
-                        <ul class="menu">
-                            <li>
+                    <div class="Global__header">
+                        <ul class="Global__header__menu">
+                            <li class="Global__header__menu__item">
                                 <a href="index.html"> Home </a> 
                             </li>
-                            <li>
+                            <li class="Global__header__menu__item">
                                 <a href="pagine/biomi.html"> 
                                     Biomi» 
                                 </a>
@@ -55,13 +56,13 @@
                                 </div>
                             </li>
                             
-                            <li>
+                            <li class="Global__header__menu__item">
                                 <a href="pagine/crafting.html"> Craft </a>
                             </li>
-                            <li>
+                            <li class="Global__header__menu__item">
                                 <a href="pagine/mobs"> Mobs» </a>
                             </li>
-                            <li>
+                            <li class="Global__header__menu__item">
                                 <a href="pagine/mods"> Mods </a>
                             </li>
                         </ul>
@@ -90,7 +91,7 @@
                             <!-- </div> -->
                             
                             <!-- <div class="colonnatitolo"> -->
-                                <h1 id="logo">
+                                <h1 id="Global__header__logo">
                                     MINEWIKI
                                 </h1>
                             <!-- </div> -->
@@ -104,7 +105,7 @@
                         </div>
                     </div>    
                     
-                    <div class="hamburger">
+                    <div class="Global__header__icon-bar animate">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -113,7 +114,7 @@
 
                 <main>
                     <div class="hero">
-                        <video autoplay muted loop class="myVideo">
+                        <video autoplay controls muted loop class="myVideo">
                             <source src="video/video-background(1080p).mp4" type="video/mp4">
                         </video>
                         <div class="hero__content">
@@ -138,7 +139,7 @@
                     </div>
 
                     <div class="bg-cover">
-                        <video autoplay muted loop class="myVideo">
+                        <video autoplay controls muted loop class="myVideo">
                             <source src="video/video_bs(1080p).mp4" type="video/mp4">
                         </video>
                         <div class="contenitore">
@@ -307,21 +308,21 @@
         <script>
             $(document).ready(function(){
                 $(".boxsu").hide(400);
-                $(".hamburger").on("click", function() {
-                    $(".menu").toggleClass("menu--open");
+                $(".Global__header__icon-bar").on("click", function() {
+                    $(".Global__header__menu").toggleClass("Global__header__menu--open");
                     console.log("ciao")
                 });
                 
                 
                 $(window).scroll(function() {
                     
-                    if ($(window).scrollTop() >($(".Global_header").offset().top)){
-                        $(".Global_header").addClass("Global_header--fixed");
+                    if ($(window).scrollTop() >($(".Global__header").offset().top)){
+                        $(".Global__header").addClass("Global__header--fixed");
                         console.log("ciao")
                     };
                     
                     if($(window).scrollTop() < 20){
-                        $(".Global_header").removeClass("Global_header--fixed");
+                        $(".Global__header").removeClass("Global__header--fixed");
                         console.log("ciao")
                     }
                     
