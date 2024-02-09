@@ -590,6 +590,18 @@ Smartphone
         z-index: 0;
     }
         /* Global Header Menu */
+        .Global__header__menu{
+            overflow: hidden;
+            /* position: absolute; */
+            /* top: 0; */
+            /* right: -400px; */
+            width: 0;
+            height: 0;
+            margin: 0;
+            padding: 0;
+            background: 1px solid red;
+
+        }
         .Global__header__menu--open{
             display:grid;
             width: 20%;
@@ -617,18 +629,6 @@ Smartphone
             transition-timing-function: ease-in;
             background-color: #000000;
             /* background: #005508; */
-        }
-        .Global__header__menu{
-            overflow: hidden;
-            /* position: absolute; */
-            /* top: 0; */
-            /* right: -400px; */
-            width: 0;
-            height: 0;
-            margin: 0;
-            padding: 0;
-            background: 1px solid red;
-
         }
         /* Global HEader Icon Bar */
         .Global__header__icon-bar{
