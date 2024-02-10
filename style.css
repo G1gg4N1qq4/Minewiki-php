@@ -150,7 +150,6 @@ main{z-index: 0;}
 }
     /* Global Header Menu */
     .Global__header__menu{
-        
         width: 44%;
         list-style: none;
     }
@@ -303,11 +302,6 @@ main{z-index: 0;}
     height: 800px;
     height: auto;
     position: fixed;
-}
-
-
-.menubiomi{
-    display: none;
 }
 
 /* Bottoni Azione */
@@ -494,18 +488,40 @@ main{z-index: 0;}
         text-align: center;
     }
 
-#Biomi:hover .menubiomi{
+.menubiomi{
+    display: none;
+}
+.menubiomi--open{
     /* margin: 50px 0px 0px 0px; */
+    display: grid;
+    transition: 0.3s;
+    transition-timing-function: ease;
     position: fixed;
     border: 1px solid black;
-    display: block;
-    width: 100px;
+    max-width: 1350px;
     background:#00841f;
-    padding: 0;
+    padding: 0; 
+    
 }
-.menubiomi ul{
+.menubiomi li{
     padding: 0;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    
+}
+.menubiomi li{
+    font-family: 'MinecraftRegular';
+    color: rgb(209, 209, 209);
+    padding: 5px 10px;
+    font-size: 24px;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.menubiomi li:hover{
+    color: #000;
+    background:rgba(36,255,255,1);
+    
 }
 
 
@@ -639,7 +655,7 @@ Smartphone
             background-color: #000000;
             /* background: #005508; */
         }
-        /* Global HEader Icon Bar */
+        /* Global Header Icon Bar */
         .Global__header__icon-bar{
             display: block;
             width: 30px;

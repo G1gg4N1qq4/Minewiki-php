@@ -47,13 +47,14 @@
                                 <a href="pagine/biomi.html"> 
                                     Biomi» 
                                 </a>
-                                <div class="menubiomi">
-                                    <ul>
-                                        <li>Foreste</li>
-                                        <li>Oceani</li>
-                                        <li>Montagna</li>
-                                    </ul>
-                                </div>
+                                <ul class="menubiomi">
+                                    <li class="animate">Foreste</li>
+                                    <li class="animate">Montagne</li>
+                                    <li class="animate">Pianure</li>
+                                    <li class="animate">Paludi</li>
+                                    <li class="animate">Deserti</li>
+                                    <li class="animate">Oceani</li>
+                                </ul>
                             </li>
                             
                             <li class="Global__header__menu__item">
@@ -287,6 +288,10 @@
                     console.log("ciao")
                 });
                 
+                $("#Biomi").hover(function() {
+                    $(".menubiomi").toggleClass("menubiomi--open");
+                    console.log("ciao")
+                });
                 
                 $(window).scroll(function() {
                     
