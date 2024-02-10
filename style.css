@@ -306,7 +306,7 @@ main{z-index: 0;}
 }
 
 
-#menubiomi{
+.menubiomi{
     display: none;
 }
 
@@ -475,28 +475,37 @@ main{z-index: 0;}
 
 /* Slider */
 .main-carousel{
-    /* border: 1px solid red; */
+    border: 1px solid red;
+    /* padding: 0px 100px; */
     padding-bottom: 40px;
     margin-bottom: 40px;
+    background:#019d26;
+    align-items: center;
     z-index: 0;
 }
     .carousel-cell{
-        width: 350px;
+        border: 1px solid red;
+        width: 60%;
         height: 350px;
-        /* border: 1px solid red; */
         background-color: #00841f;
-        border-radius: 100%;
+        /* border-radius: 100%; */
         margin: 0 40px;
         line-height: 350px;
         text-align: center;
     }
 
-.colonna:hover #menubiomi{
+#Biomi:hover .menubiomi{
     /* margin: 50px 0px 0px 0px; */
+    position: fixed;
     border: 1px solid black;
     display: block;
     width: 100px;
     background:#00841f;
+    padding: 0;
+}
+.menubiomi ul{
+    padding: 0;
+    border: 1px solid red;
 }
 
 
