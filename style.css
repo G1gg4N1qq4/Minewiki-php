@@ -192,6 +192,7 @@ main{z-index: 0;}
     background: #00841ff1;
     /* background-image: url("immagini/sfondo_bloccoditerra.jpg"); background-size: 50%; */
     margin: 50px 20px;
+    margin-bottom: 0px;
     padding: 15px;
     box-shadow: 10px 10px 10px #000;
     border-radius: 10px;
@@ -469,26 +470,74 @@ main{z-index: 0;}
 
 /* Slider */
 .main-carousel{
-    border: 1px solid red;
-    /* padding: 0px 100px; */
-    padding-bottom: 40px;
-    margin-bottom: 40px;
+    /* border: 1px solid red; */
+    /* padding: 40px 0px; */
+    height: auto;
+    margin: 0 0px;
+    /* padding: 0 80px; */
+    margin-top:0 ;
+    padding: 150px 0px;
+    /* border-radius: 20px; */
+    margin-right: 0px;
     background:#019d26;
+    /* align-content: center; */
     align-items: center;
     z-index: 0;
 }
     .carousel-cell{
-        border: 1px solid red;
-        width: 60%;
-        height: 350px;
-        background-color: #00841f;
-        /* border-radius: 100%; */
-        margin: 0 40px;
+        /* position: absolute;
+        left: 20%; */
+        flex-wrap: wrap;
+        /* border: 1px solid red; */
+        width: 65%;
+        height: 400px;
+        border-radius: 15px;
+        padding: 40px 100px;
+        margin: 0 10px;
         line-height: 350px;
         text-align: center;
+
     }
 
-.menubiomi{
+    .c1{
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(60,60,60,0) 100%), url("immagini/background_image.jpg");
+        background-size: 100%;
+    }
+    .c2{
+        background-size: 100%;
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(60,60,60,0) 100%), url("immagini/background_image2.jpg");
+    }
+    .c3{
+        background-size: 100%;
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(60,60,60,0) 100%), url("immagini/background_image3.jpg");
+    }
+    
+    .c4{
+        background-size: 100%;
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(60,60,60,0) 100%), url("immagini/background_image4.jpg");
+    }
+    .c5{
+        background-size: 100%;
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(60,60,60,0) 100%), url("immagini/background_image5.jpg");
+    }
+    .c6{
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(60,60,60,0) 100%), url("immagini/background_smartphone.jpg");
+    }
+   
+    .c7{
+        background-size: 100%;
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(60,60,60,0) 100%), url("immagini/carbone.webp");
+    }
+    .c8{
+        background-size: 100%;
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(60,60,60,0) 100%), url("immagini/diamante.jpg");
+    }
+    .c9{
+        background-size: 100%;  
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(60,60,60,0) 100%), url("immagini/H2x1_NSwitch_Minecraft.jpg");
+    }
+
+    .menubiomi{
     display: none;
 }
 .menubiomi--open{
