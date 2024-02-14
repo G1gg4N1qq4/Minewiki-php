@@ -19,71 +19,45 @@
         <img src="../immagini/background_image5.jpg" alt="immagine non disponibile" class="img_res" id="back-ground">
         <div class="cover">
             <div class="cover__content">
-                <header>
+                <header class="group">
                     
                     <div class="small_header">
                         <p>
                             ㅤ
                         </p>
                     </div>
-                    <div class="Global_header">
-                        <ul class="menu">
-                            <li>
+                    <div class="Global__header">
+                        <ul class="Global__header__menu">
+                            <li class="Global__header__menu__item">
                                 <a href="../index.html"> Home </a> 
                             </li>
-                            <li>
-                                <a href="../pagine/biomi.html"> 
+                            <li class="Global__header__menu__item" id="Biomi">
+                                <a href="pagine/biomi.html"> 
                                     Biomi» 
                                 </a>
-                                <div id="menubiomi">
-                                    <ul>
-                                        <li>Foreste</li>
-                                        <li>Oceani</li>
-                                        <li>Montagna</li>
-                                    </ul>
-                                </div>
+                                <ul class="menubiomi">
+                                    <li class="animate">Foreste</li>
+                                    <li class="animate">Montagne</li>
+                                    <li class="animate">Pianure</li>
+                                    <li class="animate">Paludi</li>
+                                    <li class="animate">Deserti</li>
+                                    <li class="animate">Oceani</li>
+                                </ul>
                             </li>
                             
-                            <li>
-                                <a href="../pagine/crafting.html"> Craft </a>
+                            <li class="Global__header__menu__item">
+                                <a href="pagine/crafting.html"> Craft </a>
                             </li>
-                            <li>
-                                <a href="../pagine/mobs"> Mobs» </a>
+                            <li class="Global__header__menu__item">
+                                <a href="pagine/mobs"> Mobs» </a>
                             </li>
-                            <li>
-                                <a href="../pagine/mods"> Mods </a>
+                            <li class="Global__header__menu__item">
+                                <a href="pagine/mods"> Mods </a>
                             </li>
                         </ul>
-                        <!-- <div class="griglia"> -->
-                            <!-- <div class="cover">
-                                <div class="cover__content"> -->
-                            <!-- <div class="colonna"> -->
-
-                                
-                            <!-- </div> -->
-                            <!-- <div class="colonna"> -->
-                                
-                                
-                            <!-- </div> -->
-                            <!-- <div class="colonna"> -->
-                                
-
-                            <!-- </div> -->
-                            <!-- <div class="colonna"> -->
-                                
-
-                            <!-- </div> -->
-                            <!-- <div class="colonna"> -->
-                                
-
-                            <!-- </div> -->
-                            
-                            <!-- <div class="colonnatitolo"> -->
-                                <h1 id="logo">
-                                    MINEWIKI
-                                </h1>
-                            <!-- </div> -->
-                        <!-- </div> -->
+                            <h1 id="Global__header__logo">
+                                MINEWIKI
+                            </h1>
                         <div class="cta">
                             <div class="small_text">
                                 <a href="" class="button">
@@ -93,7 +67,7 @@
                         </div>
                     </div>    
                     
-                    <div class="hamburger">
+                    <div class="Global__header__icon-bar animate">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -166,28 +140,53 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js" integrity="sha512-achKCfKcYJg0u0J7UDJZbtrffUwtTLQMFSn28bDJ1Xl9DWkl/6VDT3LMfVTo09V51hmnjrrOTbtg4rEgg0QArA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.min.css" integrity="sha512-fJcFDOQo2+/Ke365m0NMCZt5uGYEWSxth3wg2i0dXu7A1jQfz9T4hdzz6nkzwmJdOdkcS8jmy2lWGaRXl+nFMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script>
-        $(document).ready(function(){
-            $(".hamburger").on("click", function() {
-                $(".menu").toggleClass("menu--open");
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js" integrity="sha512-achKCfKcYJg0u0J7UDJZbtrffUwtTLQMFSn28bDJ1Xl9DWkl/6VDT3LMfVTo09V51hmnjrrOTbtg4rEgg0QArA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.min.css" integrity="sha512-fJcFDOQo2+/Ke365m0NMCZt5uGYEWSxth3wg2i0dXu7A1jQfz9T4hdzz6nkzwmJdOdkcS8jmy2lWGaRXl+nFMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script>
+            $(document).ready(function(){
+                $(".boxsu").hide(400);
+                $(".Global__header__icon-bar").on("click", function() {
+                    $(".Global__header__menu").toggleClass("Global__header__menu--open");
+                    console.log("ciao")
+                });
+                
+                $("#Biomi").hover(function() {
+                    $(".menubiomi").toggleClass("menubiomi--open");
+                    console.log("ciao")
+                });
+                
+                $(window).scroll(function() {
+                    
+                    if ($(window).scrollTop() >($(".Global__header").offset().top)){
+                        $(".Global__header").addClass("Global__header--fixed");
+                        console.log("edge+cum")
+                    };
+                    
+                    if($(window).scrollTop() < 20){
+                        $(".Global__header").removeClass("Global__header--fixed");
+                        console.log("edge+cum")
+                    }
+                    
+                    if($(window).scrollTop() <= 1980){
+                        $(".boxsu").hide(600);
+                        console.log("edge+cum")
+                    }
+
+                    if($(window).scrollTop() > 1980){
+                        $(".boxsu").show(600);
+                        console.log("edge+cum")
+                    }
+
+                    
+                })
+
+                $(".boxsu").on("click", function() {
+                    $("html, body").animate({
+                        scrollTop: 0
+                    }, 1500)
+
+                });
+                
             });
-        });
-    </script>
-    <script>
-        $(document).ready(function(){
-            $(window).scroll(function() {
-
-                if ($(window).scrollTop() >($(".Global_header").offset().top)){
-                    $(".Global_header").toggleClass("Global_header--fixed");
-                };
-
-                if($(window).scrollTop() < 20){
-                    $(".Global_header").removeClass("Global_header--fixed");
-                }
-            })
-            
-        });
-    </script>
+        </script>
 </html>
