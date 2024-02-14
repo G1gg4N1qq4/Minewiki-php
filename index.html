@@ -306,21 +306,22 @@
                         console.log("edge+cum")
                     }
 
-                if($(window).scrollTop() > 1980){
-                    $(".boxsu").show(600);
-                    console.log("edge+cum")
-                }
+                    if($(window).scrollTop() > 1980){
+                        $(".boxsu").show(600);
+                        console.log("edge+cum")
+                    }
 
+                    
+                })
+
+                $(".boxsu").on("click", function() {
+                    $("html, body").animate({
+                        scrollTop: 0
+                    }, 1500)
+
+                });
                 
-            })
-
-            $(".boxsu").on("click", function() {
-                $("html, body").animate({
-                    scrollTop: 0
-                }, 1500)
-
             });
-            
-        });
-    </script>
+        </script>
+    </body>
 </html>
