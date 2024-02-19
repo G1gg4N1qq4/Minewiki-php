@@ -68,7 +68,9 @@ h1{
 }
 h2{
     color: rgb(209, 209, 209);
+    border-bottom: 1px solid rgb(209, 209, 209);
     margin: 0% 1% 1% 0%;
+    text-align: center;
     height: auto;
     width: 100%;
     font-family: "MinecraftBold";
@@ -150,17 +152,20 @@ main{z-index: 0;}
 }
     /* Global Header Menu */
     .Global__header__menu{
-        width: 44%;
+        width: 33.33333333333333333333333%;
         list-style: none;
     }
 
     .Global__header__menu li{
         display: inline-block;
-        padding: 0% 1.5% 0% 1.5%;
+        padding: 0% 1.5%;
+        /* border-right: 0px solid rgb(209, 209, 209); */
+        /* transition: 0.5s; */
     }
     /* Global Header Logo */
     #Global__header__logo{
-        width: 56%;
+        width: 33.33333333333333333333333%;
+        text-align: center;
     }
 
 
@@ -308,7 +313,8 @@ main{z-index: 0;}
 /* Bottoni Azione */
 .cta{
     /* border: 1px solid red; */
-    width: auto;
+    width: 33.33333333333333333333333333333%;
+    text-align: end;
 }
     .button{
         padding: 17px 18px 17px 18px; background-color: #004e12;display: inline-block; border-radius: 4px;
@@ -539,9 +545,26 @@ main{z-index: 0;}
         background-size: 100%;  
     }
 
-.menubiomi{
+/* .menubiomi{
     display: none;
+} */
+.span_left, .span_right{
+    position: absolute;
+    display: inline-block;
+    width: 1%;
+    height: 3%;
+    border-radius: 2%;
+    background-color: rgb(209, 209, 209);
 }
+.span_left{
+    transform: rotate(45deg);
+
+}
+.span_right{
+    transform: rotate(-45deg);
+    transform: translateX(50%)
+}
+
 .menubiomi{
     /* margin: 50px 0px 0px 0px; */
     display:grid;
@@ -554,7 +577,7 @@ main{z-index: 0;}
     overflow: hidden;
     transition: 1s;
     transition-timing-function: ease;
-    transition-delay:calc(60ms * var(--i));
+    /* transition-delay:calc(60ms * var(--i)); */
 }
 #Biomi:hover .menubiomi{
     max-height: 100%;
@@ -587,24 +610,24 @@ main{z-index: 0;}
     /* border:1px solid #000; */
     border-radius: inherit;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -97%;
+    right: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(36,255,255,1);
-    transform: rotate(160deg);
+    background-color: rgb(209, 209, 209);
+    /* transform: rotate(160deg); */
     transform-origin: right;
     z-index: -1;
     transition: 0.5s;
     transition-timing-function: ease;
 }
 .menubiomi a:hover{
-    color: #000;
+    color: #00841f;
     transition: 1.0s;
     transition-timing-function: ease;
 }
 .menubiomi a:hover span{ 
-    transform: rotate(0deg);
+    top: 0%;
 
     /* background:rgba(36,255,255,1); */
     
