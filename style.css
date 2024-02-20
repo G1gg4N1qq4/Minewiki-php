@@ -548,22 +548,15 @@ main{z-index: 0;}
 /* .menubiomi{
     display: none;
 } */
-.span_left, .span_right{
-    position: relative;
-    display: inline-block;
-    width: 3%;
-    height: 3%;
-    border-radius: 2%;
-    border: 1px solid red;
-    background-color: rgb(209, 209, 209);
+.freccia_tendina{
+    width: 30px;
+    height: auto;
 }
-.span_left{
-    transform: rotate(45deg);
-
+#Biomi:hover .freccia_tendina{
+    transform: rotate(180deg);
 }
-.span_right{
-    transform: rotate(-45deg);
-    transform: translateX(50%)
+.freccia_tendina::after{
+    transition-delay:calc(120ms * var(--i));
 }
 
 .menubiomi{

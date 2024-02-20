@@ -45,9 +45,7 @@
                             </li>
                             <li class="Global__header__menu__item" id="Biomi">
                                 <a href="pagine/biomi.html"> 
-                                    Biomi
-                                    <span class="span_left"></span>
-                                    <span class="span_right"></span>
+                                    Biomi<img src="immagini/freccia sborbus.png" alt="" class="freccia_tendina" style="--i:6;">
                                 </a>
                                 <div class="menubiomi">
                                     <a class="animate" href="pagine/biomi.html#container" style="--i:1;"><span></span>Foreste</a>
@@ -246,7 +244,7 @@
                 </main>
                 
                 <footer>
-                    <div class="griglia">
+                    <div class="griglia" id="contatti">
                         <div class="colonna__footer">
                             <h3>Chi siamo</h3>
 
@@ -312,15 +310,22 @@
                         $(".boxsu").show(600);
                         console.log("edge+cum")
                     }
-
-                    
+                   
                 })
 
                 $(".boxsu").on("click", function() {
                     $("html, body").animate({
                         scrollTop: 0
-                    }, 1500)
+                    }, 1000)
 
+                });
+
+                $('.cta').click(function(event) {
+                    // Preventing default action of the event
+                    event.preventDefault();
+                    // Getting the height of the document
+                    var n = $(document).height();
+                    $('html, body').animate({ scrollTop: n }, 1000);
                 });
                 
             });
