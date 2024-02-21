@@ -34,7 +34,7 @@ body{
 body{ margin-top: -5%;}
 
 /* Container */
-.container{padding: 0px; padding-top: 100px; margin-top: 45px;background: #000;}
+.container{padding: 0px; padding-top: 100px;background: #000;}
 
 .animate{
     -webkit-transition: all 0.3s ease-out;
@@ -340,12 +340,13 @@ main{z-index: 0;}
 
 /* Hero */
 .hero{
+    position: relative;
     height: 660px;
     width: 100%;
     display: flex; width: 100%; align-items: end;
     /* background:  linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3)); */
     background-size: cover;
-    margin-top: 216px;
+    margin-top: 188px;
     /* position: relative; */
     /* border: 5px solid red; */
 }
@@ -512,14 +513,13 @@ main{z-index: 0;}
 .myVideo{
     object-fit: cover;
     width: 100%;
-    height: 105%;
+    height: 100%;
     display: block;
     margin: 0;
 }
 
 /* bg */
 .bg-cover{
-    /* border: 10px solid red; */
     display: flex;width: 100%; align-items: end;
     flex-wrap: wrap;
     background-size: cover;
@@ -528,6 +528,7 @@ main{z-index: 0;}
     text-align: center;
     align-items: center;
     height: 800px;
+    position: relative;
 }
 .bg-cover__text{    
     /* border: 10px solid red; */
@@ -547,12 +548,15 @@ main{z-index: 0;}
 }
 
 .contenitore{
-    object-fit: cover;
+    position: absolute;
+    /* object-fit: cover; */
+    /* border: 1px solid red; */
     width: 100%;
+    height: 100%;
     /* height: 650px; */
     /* position: absolute; */
-    padding-bottom: 100px;
-    transform: translateY(-473px);
+    /* padding-bottom: 100px; */
+    /* transform: translateY(-473px); */
     display: flex;
     flex-wrap: wrap;
     background:  linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(60,60,60,0) 100%);
