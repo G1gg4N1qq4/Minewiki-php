@@ -43,25 +43,46 @@
                             <li class="Global__header__menu__item">
                                 <a href="index.html"> Home </a> 
                             </li>
-                            <li class="Global__header__menu__item" id="Biomi">
+                            <li class="Global__header__menu__item Tendina">
                                 <a href="pagine/biomi.html"> 
                                     Biomi<img src="immagini/freccia sborbus.png" alt="" class="freccia_tendina" style="--i:6;">
                                 </a>
                                 <div class="menubiomi">
-                                    <a class="animate" href="pagine/biomi.html#container" style="--i:1;"><span></span>Foreste</a>
-                                    <a class="animate" href="#" style="--i:2;"><span></span>Pianure</a>
-                                    <a class="animate" href="#" style="--i:3;"><span></span>Montagne</a>
-                                    <a class="animate" href="#" style="--i:4;"><span></span>Paludi</a>
-                                    <a class="animate" href="#" style="--i:5;"><span></span>Deserti</a>
-                                    <a class="animate" href="#" style="--i:6;"><span></span>Oceani</a>
+                                    <a href="pagine/biomi.html#container" style="--i:1;"><span></span><img src="immagini/foresta.webp" alt="" class="img_res img__lista" style="--i:6;">Foreste</a>
+                                    <a href="#" style="--i:2;"><span></span><img src="immagini/pianura.png" alt="" class="img_res img__lista" style="--i:6;">Pianure</a>
+                                    <a href="#" style="--i:3;"><span></span><img src="immagini/mountain.png" alt="" class="img_res img__lista" style="--i:6;">Montagne</a>
+                                    <a href="#" style="--i:4;"><span></span><img src="immagini/palude.webp" alt="" class="img_res img__lista" style="--i:6;">Paludi</a>
+                                    <a href="#" style="--i:5;"><span></span><img src="immagini/deserto.png" alt="" class="img_res img__lista" style="--i:6;">Deserti</a>
+                                    <a href="#" style="--i:6;"><span></span><img src="immagini/oceani.jpg" alt="" class="img_res img__lista" style="--i:6;">Oceani</a>
                                 </div>
                             </li>
                             
                             <li class="Global__header__menu__item">
                                 <a href="pagine/crafting.html"> Craft </a>
                             </li>
-                            <li class="Global__header__menu__item">
-                                <a href="pagine/mobs"> Mobs» </a>
+                            <li class="Global__header__menu__item Tendina" >
+                                <a href="pagine/mobs">Mobs<img src="immagini/freccia sborbus.png" alt="" class="freccia_tendina" style="--i:6;">
+                                </a>
+                                <div class="menubiomi">
+                                    <a href="pagine/biomi.html#container" style="--i:1;"><span></span><img src="immagini/golem.png" alt="" class="img_res img__lista" style="--i:6;">Golem</a>
+                                    <a href="#" style="--i:2;"><span></span>
+                                        <img src="immagini/scheletro.jpg" alt="" class="img_res img__lista" style="--i:6;">
+                                        Scheletro
+                                        <!-- <ul>
+                                            <a href="pagine/biomi.html#container" style="--i:1;"><span></span><img src="immagini/foresta.webp" alt="" class="img_res img__lista" style="--i:6;">Foreste</a>
+                                            <a href="#" style="--i:2;"><span></span><img src="immagini/pianura.png" alt="" class="img_res img__lista" style="--i:6;">Pianure</a>
+                                            <a href="#" style="--i:3;"><span></span><img src="immagini/mountain.png" alt="" class="img_res img__lista" style="--i:6;">Montagne</a>
+                                            <a href="#" style="--i:4;"><span></span><img src="immagini/palude.webp" alt="" class="img_res img__lista" style="--i:6;">Paludi</a>
+                                            <a href="#" style="--i:5;"><span></span><img src="immagini/deserto.png" alt="" class="img_res img__lista" style="--i:6;">Deserti</a>
+                                            <a href="#" style="--i:6;"><span></span><img src="immagini/oceani.jpg" alt="" class="img_res img__lista" style="--i:6;">Oceani</a>
+                                        </ul> -->
+                                    </a> 
+                                    <a href="#" style="--i:3;"><span></span> <img src="immagini/Cave_Spider_JE2_BE2.webp" alt="" class="img_res img__lista" style="--i:6;">Ragno</a>
+                                   
+                                    <a href="#" style="--i:4;"><span></span><img src="immagini/zombie.jpg" alt="" class="img_res img__lista" style="--i:6;">Zombie</a>
+                                    <a href="#" style="--i:5;"><span></span><img src="immagini/enderman.png" alt="" class="img_res img__lista" style="--i:6;">Enderman</a>
+                                    <a href="#" style="--i:6;"><span></span><img src="immagini/creeper.png" alt="" class="img_res img__lista" style="--i:6;">Creeper</a>
+                                </div>
                             </li>
                             <li class="Global__header__menu__item">
                                 <a href="pagine/mods"> Mods </a>
@@ -335,13 +356,16 @@
                         console.log("edge+cum")
                     }
 
-
-                    if($(window).scrollTop() > 1980){
-                        $(".poster2").addClass("translate");
+                    var n = $(".cover2").height()
+                    if($(window).scrollTop() > (n + 1000)){
+                        $(".cover2").removeClass("untranslate");
+                        $(".cover2").addClass("translate");
                         console.log("edge+cum")
                     }
-                    if($(window).scrollTop() <= 1980){
-                        $(".poster2").removeClass("translate")
+                    if($(window).scrollTop() <= (n+1000)){
+                        $(".cover2").removeClass("translate")
+                        $(".cover2").addClass("untranslate")
+                        
                         console.log("edge+cum")
                     }
 
