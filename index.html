@@ -334,9 +334,20 @@
                         $(".boxsu").show(600);
                         console.log("edge+cum")
                     }
-                   
-                })
 
+
+                    if($(window).scrollTop() > 1980){
+                        $(".poster2").addClass("translate");
+                        console.log("edge+cum")
+                    }
+                    if($(window).scrollTop() <= 1980){
+                        $(".poster2").removeClass("translate")
+                        console.log("edge+cum")
+                    }
+
+                   
+                
+                });
                 $(".boxsu").on("click", function() {
                     $("html, body").animate({
                         scrollTop: 0

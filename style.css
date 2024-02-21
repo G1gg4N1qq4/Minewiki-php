@@ -422,6 +422,11 @@ main{z-index: 0;}
 }
 
 /* Poster 2 */
+.translate{
+    transform: translateY(-100px);
+    transition: 20s;
+    transition-timing-function: linear;
+}
 .poster2{
     display: flex;
     height: 600px;
@@ -431,6 +436,8 @@ main{z-index: 0;}
     /* transform: translateY(616px); */
     align-items: center;
     background: #000;
+    transition: 3s;
+    transition-timing-function: linear;
 }
 .poster2__img{
     width: 45%;
