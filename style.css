@@ -88,13 +88,31 @@ p{
 .Grande_Titolo{
     font-size: 40px;padding: 0px 0px 0px 0px;
 }
-#Titolo-pagina{
+
+#Titolo1{
     margin-top: 195px;
+    background: url(immagini/background_forest.png);  
 }
+#Titolo2{
+    background: url(immagini/background_plains.png);
+}
+#Titolo3{
+    background: url(immagini/background_mountain.png);
+}
+#Titolo4{
+    background: url(immagini/background_swamp.png);
+}
+#Titolo5{
+    background: url(immagini/background_desert.png);
+}
+#Titolo6{
+    background: url(immagini/background_ocean.png);
+}
+
 #final-text{
     padding: 0px 0px 20px 0px;
 }
-#I_Biomi{
+#Foreste, #Pianure, #Montagne, #Paludi, #Deserti, #Oceani{
     transform: translateY(-80px);
 }
 
@@ -200,7 +218,7 @@ main{z-index: 0;}
     /* border: 2px solid red; */
     position: relative;
     /* background-image: url("immagini/minecraft-mod.png"); */
-    background: #000;
+    /* background: #000; */
     /* background-image: url("immagini/sfondo_bloccoditerra.jpg"); background-size: 50%; */
     margin-bottom: 0px;
     padding: 15px;
@@ -308,10 +326,13 @@ main{z-index: 0;}
 
 #back-ground{
     /* width: 100%; */
-    height: 800px;
     height: auto;
     position: fixed;
 }
+/* #background-foreste{
+    height: auto;
+    position: absolute;
+} */
 
 /* Bottoni Azione */
 .cta{
@@ -526,6 +547,133 @@ main{z-index: 0;}
     display: block;
     margin: 0;
 }
+
+/* Poster 3 */
+.poster3{
+    display: flex;
+    height: 600px;
+    /* border: 1px solid red; */
+    width: 100%;
+    /* padding-top: 616px; */
+    /* transform: translateY(616px); */
+    align-items: center;
+    background: #019d26;
+}
+.poster3__img{
+    width: 60%;
+    height: 100%;
+}
+.poster3__img img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.poster3__content{
+    width: 40%;
+    padding: 50px;
+}
+.poster3__content a{
+    margin-top: 30px;
+}
+
+.poster3:hover{
+    transition: 1s;
+    transition-timing-function: ease;
+    /* background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(36,255,255,1) 0%, rgba(162,255,254,1) 54%) */
+    background-color: rgba(36,255,255,1);
+    
+}
+.poster3:hover p, .poster3:hover a{
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+}
+.poster3:hover p{
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+    transform: translateY(10px);
+}
+.poster3:hover a{
+    transition: 2s;
+    transition-timing-function: ease-in-out;
+    background-color: rgb(157, 252, 252);
+    border-radius: 25px;
+    transform: translateY(10px);
+}
+.poster3, .poster3 a, .poster3 p{
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+/* Biomi */
+#oak_forest{
+    background: rgba(86, 125, 34, 0.815);
+}
+#birch_forest{
+    background: rgba(50, 73, 20, 0.815);
+}
+#taiga{
+    background: rgba(35, 54, 35, 0.815);
+}
+#darkoak-forest{
+    background: rgba(31, 43, 12, 0.815);
+}
+#giungla{
+    background: rgba(61, 77, 10, 0.815);
+}
+#savana{
+    background: rgba(155, 75, 0, 0.815);
+}
+#flower_forest{
+    background: rgba(185, 28, 1, 0.815);
+}
+#cherry_blossom{
+    background: rgba(173, 64, 112, 0.815);
+}
+
+#plains{
+    background: rgba(110, 143, 67, 0.815);
+}
+#sunflower_plains{
+    background: rgba(180, 192, 18, 0.815);
+}
+
+#mountains{
+    background: rgba(228, 228, 228, 0.815);
+}
+#mountains p{
+    color: black;
+}
+
+#swamp{
+    background: rgba(37, 53, 15, 0.815);
+}
+#mangrove{
+    background: rgba(30, 42, 11, 0.815);
+}
+
+#desert{
+    background: rgba(192, 194, 69, 0.815);
+}
+#badlands{
+    background: rgba(194, 144, 69, 0.815);
+}
+
+#frozen_ocean{
+    background: rgba(169, 224, 222, 0.815);
+}
+#cold_ocean{
+    background: rgba(100, 136, 189, 0.815);
+}
+#lukewarm_ocean{
+    background: rgba(86, 209, 182, 0.815);
+}
+#warm_ocean{
+    background: rgba(52, 248, 206, 0.815);
+}
+#frozen_ocean p, #cold_ocean p, #lukewarm_ocean p, #warm_ocean p{
+    color: black;
+}
+
 
 /* bg */
 .bg-cover{
