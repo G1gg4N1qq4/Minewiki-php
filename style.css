@@ -95,29 +95,37 @@ p{
     position: relative;
     background: url(immagini/background_forest.png);
     /* object-fit: cover; */
-    background-size: cover;
 }
 #Titolo2{
     background: url(immagini/background_plains.png);
-    background-size: cover;
 }
 #Titolo3{
     background: url(immagini/background_mountain.png);
-    background-size: cover;
 }
 #Titolo4{
     background: url(immagini/background_swamp.png);
-    background-size: cover;
 }
 #Titolo5{
     background: url(immagini/background_desert.png);
-    background-size: cover;
 }
 #Titolo6{
     background: url(immagini/background_ocean.png);
-    background-size: cover;
 }
 
+#Titolo1_mobs{
+    margin-top: 96px;
+    position: relative;
+    background: url(immagini/background_overworld.png);
+}
+#Titolo2_mobs{
+    background: url(immagini/background_plains.png);
+}
+#Titolo3_mobs{
+    background: url(immagini/background_mountain.png);
+}
+#Titolo4_mobs{
+    background: url(immagini/background_swamp.png);
+}
 
 
 .container__container{
@@ -129,6 +137,10 @@ p{
 }
 #Foreste, #Pianure, #Montagne, #Paludi, #Deserti, #Oceani{
     /* transform: translateY(-80px); */
+    margin-bottom: 90px;
+}
+
+#Overworld, #Nether, #End, #Boss{
     margin-bottom: 90px;
 }
 
@@ -701,6 +713,63 @@ main{z-index: 0;}
 }
 
 
+
+#cow{
+    background: rgba(63, 48, 36, 0.815);
+}
+#pig{
+    background: rgba(227, 133, 133, 0.815);
+}
+#sheep{
+    background: rgba(214, 214, 214, 0.815);
+}
+#sheep p{
+    color: black;
+}
+#chicken{
+    background: rgba(255, 255, 255, 0.815);
+}
+#chicken p{
+    color: black;
+}
+#turtle{
+    background: rgba(63, 164, 66, 0.815);
+}
+#cat{
+    background: rgba(26, 24, 37, 0.815);
+}
+#fox{
+    background: rgba(203, 105, 32, 0.815);
+}
+#axolotl{
+    background: rgba(252, 55, 157, 0.815);
+}
+#panda{
+    background: rgba(143, 147, 146, 0.815);
+}
+#polar_bear{
+    background: rgba(242, 242, 242, 0.815);
+}
+#polar_bear p{
+    color: black;
+}
+#spider{
+    background: rgba(70, 63, 53, 0.815);
+}
+#zombie{
+    background: rgba(112, 148, 90, 0.815);
+}
+#creeper{
+    background: rgba(27, 215, 69, 0.815);
+}
+#skeleton{
+    background: rgba(175, 175, 175, 0.815);
+}
+#slime{
+    background: rgba(89, 146, 75, 0.815);
+}
+
+
 /* bg */
 .bg-cover{
     display: flex;width: 100%; align-items: end;
@@ -837,7 +906,7 @@ main{z-index: 0;}
     align-items: center;
     /* height: auto; */
 }
-.Tendina:hover:hover .freccia_tendina{
+.Tendina:hover .freccia_tendina{
     transform: rotate(180deg);
 }
 .freccia_tendina::after{
@@ -861,7 +930,7 @@ main{z-index: 0;}
     transform: translate(-10px, 18px);
     
     align-items: center;
-    transition: 1s;
+    transition: 0.5s;
     transition-timing-function: ease;
     /* transition-delay:calc(60ms * var(--i)); */
 }
@@ -869,7 +938,7 @@ main{z-index: 0;}
 .Tendina:hover .menubiomi{
     max-height: 300px;
     border-bottom: 1px solid rgb(209, 209, 209);
-    transition: 1.5s;
+    transition: 0.5s;
     transition-timing-function: ease;
     transition-delay:calc(120ms * var(--i));
 }
