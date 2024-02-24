@@ -42,8 +42,8 @@
                     </div>
                     <div class="Global__header">
                         <ul class="Global__header__menu">
-                            <li class="Global__header__menu__item">
-                                <a > Home </a> 
+                            <li class="Global__header__menu__item active">
+                                <a href="index.html"> Home </a> 
                             </li>
                             <li class="Global__header__menu__item Tendina">
                                 <a href="pagine/biomi.html"> 
@@ -161,11 +161,11 @@
                     <div class="container">
                         <div class="cover2 reveal">
                             <h2 class="Grande_Titolo">Home</h2>
-                            <div class="poster2">
-                                <div class="poster2__img">
+                            <div class="card">
+                                <div class="card__img">
                                     <img src="immagini/H2x1_NSwitch_Minecraft.jpg" alt="L'immagine non è disponibile :/" class="img_res">
                                 </div>
-                                <div class="poster2__content">  
+                                <div class="card__copy">  
                                     <p>
                                         Hai sentito parlare di Minecraft oppure sei un fan talmente incallito da essere arrivato fino a qui?
 
@@ -186,8 +186,8 @@
                                 <h2>
                                     Il Gioco
                                 </h2>
-                                <div class="poster2">
-                                    <div class="poster2__content">
+                                <div class="card">
+                                    <div class="card__copy">
                                         <p>
                                             Minecraft e' un gioco di avventura e creatività, dove puoi esplorare, 
                                             costruire e sopravvivere in un mondo generato casualmente. Puoi giocare in 
@@ -200,7 +200,7 @@
                                         </p>
                                     </div>
 
-                                    <div class="poster2__img" id="poster2__img-border_left">
+                                    <div class="card__img" id="card__img-border_left">
                                         <img src="immagini/minecraft-mod.png" alt="L'immagine non è disponibile :(" class="img_res">
                                     </div>
                                 </div>
@@ -210,11 +210,11 @@
                             <h2>
                                 La Storia
                             </h2>
-                            <div class="poster2">
-                                <div class="poster2__img">
+                            <div class="card">
+                                <div class="card__img">
                                     <img src="immagini/wallpaper_storia.jpg" alt="L'immagine non è disponibile :(" class="img_res">
                                 </div>
-                                <div class="poster2__content">   
+                                <div class="card__copy">   
                                     <p>
                                         Minecraft e' nato nel 2009, dalla mente geniale di un programmatore svedese chiamato Markus "Notch" Persson. 
                                         Inizialmente, era solo un semplice progetto personale, ma presto divenne un fenomeno globale, 
@@ -236,8 +236,8 @@
                             <h2>
                                 L'obiettivo
                             </h2>
-                            <div class="poster2">
-                                <div class="poster2__content">
+                            <div class="card">
+                                <div class="card__copy">
                                     <p>
                                         Minecraft e' un gioco di creatività e sopravvivenza, in cui il giocatore può esplorare, costruire e combattere in un mondo generato casualmente. 
                                         L'obbiettivo di minecraft è lasciato alla libera interpretazione del giocatore, che può scegliere tra diverse modalità di gioco e impostazioni di difficoltà. Tuttavia, esistono alcuni obiettivi comuni che molti giocatori si prefiggono, come:
@@ -245,15 +245,15 @@
                                         il giocatore deve trovare e attivare un portale nascosto in una fortezza sotterranea, usando delle perle dell'End e degli occhi dell'End.
                                     </p>
                                 </div>
-                                <div class="poster2__img" id="poster2__img-border_left">
+                                <div class="card__img" id="card__img-border_left">
                                     <img src="immagini/end poster.png" alt="L'immagine non è disponibile :(" class="img_res">
                                 </div>
                             </div>
-                            <div class="poster2">
-                                <div class="poster2__img">
+                            <div class="card">
+                                <div class="card__img">
                                     <img src="immagini/Achivement.png" alt="L'immagine non è disponibile :(" class="img_res">
                                 </div>    
-                                <div class="poster2__content">
+                                <div class="card__copy">
                                     <p>Completare tutti i progressi, delle sfide che guidano il giocatore attraverso le varie fasi del gioco, come ottenere i primi strumenti, 
                                         fabbricare una torta, allevare degli animali, distillare delle pozioni, incantare degli oggetti e così via. I progressi sono visibili in una 
                                         schermata che mostra un albero di obiettivi collegati tra loro.
@@ -328,9 +328,9 @@
                     </div>
                 </main>
                 
-                <footer>
-                    <div class="griglia" id="contatti">
-                        <div class="colonna__footer reveal">
+                <footer class="footer">
+                    <div class="grid" id="contatti">
+                        <div class="footer__column reveal">
                             <h3>Chi siamo</h3>
 
                             <p >rickygerma@gmail.com </p>
@@ -338,14 +338,14 @@
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad accusantium eligendi sed architecto sequi quia atque perferendis ex maiores. Placeat aliquid dolor sit odio sed similique, omnis vel corporis libero.
                             </p>
                         </div>
-                        <div class="colonna__footer reveal">
+                        <div class="footer__column reveal">
                             <h3 >Email 1</h3>
                             <p >rickygerma@gmail.com </p>
                             <p >
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad accusantium eligendi sed architecto sequi quia atque perferendis ex maiores. Placeat aliquid dolor sit odio sed similique, omnis vel corporis libero.
                             </p>
                         </div>
-                        <div class="colonna__footer reveal">
+                        <div class="footer__column reveal">
                             
                             <h3 >
                                 Email 2
@@ -368,6 +368,10 @@
         <script>
             $(document).ready(function(){
                 $(".boxsu").hide(400);
+
+                $(".Global__header__line-menu").width = 100
+                $(".Global__header__line-menu").position().left=100
+
                 $(".Global__header__icon-bar").on("click", function() {
                     $(".Global__header__menu").toggleClass("Global__header__menu--open");
                     console.log("ciao")
@@ -403,14 +407,17 @@
                 var pos = 0
                 var wid = ""
                 var line = $(".Global__header__line-menu")
+                
+                
                 nav.find(".Global__header__menu__item").hover( function(){
-
+                    
                     var this_nav = $(this)
                     line.animate({
                         left: this_nav.position().left,
                         width: this_nav.width() + 10
                     }, 50)
                 });
+                
                 $(".boxsu").on("click", function() {
                     $("html, body").animate({
                         scrollTop: 0
