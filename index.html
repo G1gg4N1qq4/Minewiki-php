@@ -17,6 +17,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
         <!-- <script>
             document.
             function changeClass(x){
@@ -42,7 +43,7 @@
                     <div class="Global__header">
                         <ul class="Global__header__menu">
                             <li class="Global__header__menu__item">
-                                <a href="index.html"> Home </a> 
+                                <a > Home </a> 
                             </li>
                             <li class="Global__header__menu__item Tendina">
                                 <a href="pagine/biomi.html"> 
@@ -89,6 +90,8 @@
                                 <a href="pagine/mods.html"> Mods </a>
                             </li>
                         </ul>
+
+                        <div class="Global__header__line-menu"></div>
                         <h1 id="Global__header__logo">
                             MINEWIKI
                         </h1>
@@ -113,21 +116,23 @@
                         <video autoplay muted loop class="myVideo">
                             <source src="video/video-background(1080p).mp4" type="video/mp4">
                         </video>
-                        <div class="hero__content">
-                            <p class="intro_text">Eccoti qui!</p>
-                            <p class="big_text"> Tutte le informazioni</p>
-                            <p class="big_text"> su minecraft</p>
-                            <p class="normal_text" id="final-text"> Nei limiti delle nostre possibilità...</p>
-                            <div class="small_text"><a href="https://www.minecraft.net/it-it" class="button" id="discover_button">Discover More</a></div>
-                            
+                        <div class="hero__container">
+                            <div class="hero__content reveal">
+                                <p class="intro_text">Eccoti qui!</p>
+                                <p class="big_text"> Tutte le informazioni</p>
+                                <p class="big_text"> su minecraft</p>
+                                <p class="normal_text" id="final-text"> Nei limiti delle nostre possibilità...</p>
+                                <div class="small_text"><a href="https://www.minecraft.net/it-it" class="button" id="discover_button">Discover More</a></div>
+                                
+                            </div>
                         </div>
                     </div>
 
                     <div class="poster">
-                        <div class="poster__img">
+                        <div class="poster__img reveal">
                             <img src="immagini/diamante.jpg" alt="" class="img_res">
                         </div>
-                        <div class="poster__content">
+                        <div class="poster__content reveal">
                             <h3 >Titolo del poster</h3>
                             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi vitae ab a illum, nam necessitatibus repudiandae atque placeat mollitia consequatur delectus voluptas, vel blanditiis dolore repellat minima aut! Dignissimos, quas.</p>
                             <a href="" class="button">Call to action</a>
@@ -140,12 +145,12 @@
                         </video>
                         <div class="contenitore">
 
-                            <div class="bg-cover__title">
+                            <div class="bg-cover__title reveal">
                                 <h3 class="big_text">
                                     Titolo del mio blocco cover
                                 </h3>
                             </div>
-                            <div class="bg-cover__text">
+                            <div class="bg-cover__text reveal">
                                 <h4 class="medium_text">Titolo del mio paragrafo</h4>
                                 <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil omnis et veritatis mollitia nisi? Quas enim, perferendis impedit facilis repellendus cumque accusantium placeat quisquam dignissimos minus fugiat vero consequuntur minima.</p>
                                 
@@ -154,7 +159,7 @@
                     </div>
 
                     <div class="container">
-                        <div class="cover2">
+                        <div class="cover2 reveal">
                             <h2 class="Grande_Titolo">Home</h2>
                             <div class="poster2">
                                 <div class="poster2__img">
@@ -176,7 +181,7 @@
                             </div>
                         </div>
                         
-                        <div class="cover2">
+                        <div class="cover2 reveal">
 
                                 <h2>
                                     Il Gioco
@@ -201,7 +206,7 @@
                                 </div>
                         </div>
 
-                        <div class="cover2">
+                        <div class="cover2 reveal">
                             <h2>
                                 La Storia
                             </h2>
@@ -227,7 +232,7 @@
                             </div>
                         </div>
 
-                        <div class="cover2">
+                        <div class="cover2 reveal">
                             <h2>
                                 L'obiettivo
                             </h2>
@@ -263,6 +268,7 @@
                                 </div>
                             </div>    
                         </div>
+                        <h1 class="big_text reveal"> Guarda i nostri contenuti!</h1>
 
                         <div class="boxsu">
                             <a href=#boxsu>
@@ -272,23 +278,59 @@
                     </div>
 
                     <div class="main-carousel medium_text" data-flickity='{ "cellAlign": "center", "contain": false, "wrapAround": true, "freeScroll": false, "autoPlay": 2000}'>
-                        Text
 
-                        <div class="carousel-cell c1 normal_text">Text</div>
-                        <div class="carousel-cell c2 normal_text">Text</div>
-                        <div class="carousel-cell c3 normal_text">Text</div>
-                        <div class="carousel-cell c4 normal_text">Text</div>
-                        <div class="carousel-cell c5 normal_text">Text</div>
-                        <div class="carousel-cell c6 normal_text">Text</div>
-                        <div class="carousel-cell c7 normal_text">Text</div>
-                        <div class="carousel-cell c8 normal_text">Text</div>
-                        <div class="carousel-cell c9 normal_text">Text</div>
+
+                        <div class="carousel-cell normal_text">
+                            <div class="carousel-cell__content c1 zoom">
+                                Text
+                            </div>
+                        </div>
+                        <div class="carousel-cell normal_text">
+                            <div class="carousel-cell__content c2 zoom">
+                                Text
+                            </div>
+                        </div>
+                        <div class="carousel-cell normal_text">
+                            <div class="carousel-cell__content c3 zoom">
+                                Text
+                            </div>
+                        </div>
+                        <div class="carousel-cell normal_text">
+                            <div class="carousel-cell__content c4 zoom">
+                                Text
+                            </div>
+                        </div>
+                        <div class="carousel-cell normal_text">
+                            <div class="carousel-cell__content c5 zoom">
+                                Text
+                            </div>
+                        </div>
+                        <div class="carousel-cell normal_text">
+                            <div class="carousel-cell__content c6 zoom">
+                                Text
+                            </div>
+                        </div>
+                        <div class="carousel-cell normal_text">
+                            <div class="carousel-cell__content c7 zoom">
+                                Text
+                            </div>
+                        </div>
+                        <div class="carousel-cell normal_text">
+                            <div class="carousel-cell__content c8 zoom">
+                                Text
+                            </div>
+                        </div>
+                        <div class="carousel-cell normal_text">
+                            <div class="carousel-cell__content c9 zoom">
+                                Text
+                            </div>
+                        </div>
                     </div>
                 </main>
                 
                 <footer>
                     <div class="griglia" id="contatti">
-                        <div class="colonna__footer">
+                        <div class="colonna__footer reveal">
                             <h3>Chi siamo</h3>
 
                             <p >rickygerma@gmail.com </p>
@@ -296,14 +338,14 @@
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad accusantium eligendi sed architecto sequi quia atque perferendis ex maiores. Placeat aliquid dolor sit odio sed similique, omnis vel corporis libero.
                             </p>
                         </div>
-                        <div class="colonna__footer">
+                        <div class="colonna__footer reveal">
                             <h3 >Email 1</h3>
                             <p >rickygerma@gmail.com </p>
                             <p >
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad accusantium eligendi sed architecto sequi quia atque perferendis ex maiores. Placeat aliquid dolor sit odio sed similique, omnis vel corporis libero.
                             </p>
                         </div>
-                        <div class="colonna__footer">
+                        <div class="colonna__footer reveal">
                             
                             <h3 >
                                 Email 2
@@ -354,21 +396,22 @@
                         console.log("edge+cum")
                     }
 
-                    var n = $(".cover2").height()
-                    if($(window).scrollTop() > (n + 1000)){
-                        $(".cover2").removeClass("untranslate");
-                        $(".cover2").addClass("translate");
-                        console.log("edge+cum")
-                    }
-                    if($(window).scrollTop() <= (n+1000)){
-                        $(".cover2").removeClass("translate")
-                        $(".cover2").addClass("untranslate")
-                        
-                        console.log("edge+cum")
-                    }
-
+              
                    
                 
+                });
+
+                var nav = $(".Global__header__menu")
+                var pos = 0
+                var wid = ""
+                var line = $(".Global__header__line-menu")
+                nav.find(".Global__header__menu__item").hover( function(){
+
+                    var this_nav = $(this)
+                    line.animate({
+                        left: this_nav.position().left,
+                        width: this_nav.width() + 10
+                    })
                 });
                 $(".boxsu").on("click", function() {
                     $("html, body").animate({
@@ -384,6 +427,9 @@
                     var n = $(document).height();
                     $('html, body').animate({ scrollTop: n }, 1000);
                 });
+
+                ScrollReveal().reveal('.reveal', {distance: '50px', duration: '1500', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '400'});
+                ScrollReveal().reveal('.zoom', {duration: '1500', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '200', scale: 0.65, mobile: false});
                 
             });
         </script>

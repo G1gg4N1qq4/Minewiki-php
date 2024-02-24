@@ -190,6 +190,7 @@ main{z-index: 0;}
     /* margin: 10px; */
     font-size: 25px;
     font-family: "MinecraftRegular"; 
+    text-align: center;
     /* height: 5px; */
     /* border: 1px solid black; */
 }
@@ -221,6 +222,15 @@ main{z-index: 0;}
     #Global__header__logo{
         width: 17.33333333333333333333333%;
         text-align: center;
+    }
+    .Global__header__line-menu{
+        position: absolute;
+        bottom:0;
+        left:0;
+        height: 8px;
+        width: 0px;
+        background: rgb(209, 209, 209);
+        /* border: 1px solid red; */
     }
 
 
@@ -412,7 +422,7 @@ main{z-index: 0;}
         text-decoration: none;
         color: #fff;
     }
-    .hero__content{
+    .hero__container{
         width: 100%; max-width: 2000px;
         /* border: 1px solid red; */
         background:  linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0,0,0,1) 0%, rgba(60,60,60,0) 100%);
@@ -420,6 +430,7 @@ main{z-index: 0;}
         position: absolute;
         /* bottom: 800; */
         padding: 30px;
+        padding-bottom: 200px;
         padding-right: 0px;
         padding-left: 130px;
     }
@@ -824,7 +835,7 @@ main{z-index: 0;}
     margin: 0 0px;
     /* padding: 0 80px; */
     margin-top:0 ;
-    padding: 150px 0px;
+    padding: 100px 0px;
     /* border-radius: 20px; */
     margin-right: 0px;
     /* background:#019d26; */
@@ -840,15 +851,17 @@ main{z-index: 0;}
         /* border: 1px solid red; */
         width: 65%;
         height: 400px;
-        border-radius: 15px;
-        border: 2px solid rgb(209, 209, 209);
-        padding: 40px 100px;
+        padding: 40px 40px;
         margin: 0 10px;
-        line-height: 350px;
-        text-align: center;
         /* z-index: 0; */
     }
-
+    .carousel-cell__content{
+        border-radius: 15px;
+        border: 2px solid rgb(209, 209, 209);
+        line-height: 350px;
+        text-align: center;
+        z-index: -1;
+    }
     .c1{
         background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(60,60,60,0) 100%), url("immagini/background_image.jpg");
         background-size: 100%;
