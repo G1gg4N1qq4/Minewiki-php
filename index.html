@@ -396,8 +396,6 @@
                         console.log("edge+cum")
                     }
 
-              
-                   
                 
                 });
 
@@ -411,7 +409,7 @@
                     line.animate({
                         left: this_nav.position().left,
                         width: this_nav.width() + 10
-                    })
+                    }, 50)
                 });
                 $(".boxsu").on("click", function() {
                     $("html, body").animate({
@@ -428,7 +426,7 @@
                     $('html, body').animate({ scrollTop: n }, 1000);
                 });
 
-                ScrollReveal().reveal('.reveal', {distance: '50px', duration: '1500', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '400'});
+                ScrollReveal().reveal('.reveal', {distance: '50px', duration: '1500', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '50'});
                 ScrollReveal().reveal('.zoom', {duration: '1500', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '200', scale: 0.65, mobile: false});
                 
             });

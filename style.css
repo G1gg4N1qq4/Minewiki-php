@@ -118,13 +118,13 @@ p{
     background: url(immagini/background_overworld.png);
 }
 #Titolo2_mobs{
-    background: url(immagini/background_plains.png);
+    background: url(immagini/background_nether.png);
 }
 #Titolo3_mobs{
-    background: url(immagini/background_mountain.png);
+    background: url(immagini/background_end.png);
 }
 #Titolo4_mobs{
-    background: url(immagini/background_swamp.png);
+    background: url(immagini/background_boss.png);
 }
 
 
@@ -714,7 +714,7 @@ main{z-index: 0;}
     background: rgba(100, 136, 189, 0.815);
 }
 #lukewarm_ocean{
-    background: rgba(86, 209, 182, 0.815);
+    background: rgba(92, 231, 231, 0.815);
 }
 #warm_ocean{
     background: rgba(52, 248, 206, 0.815);
@@ -779,6 +779,43 @@ main{z-index: 0;}
 #slime{
     background: rgba(89, 146, 75, 0.815);
 }
+
+#pigman{
+    background: rgba(210, 146, 120, 0.815);
+}
+#piglin{
+    background: rgba(241, 186, 132, 0.815);
+}
+#blaze{
+    background: rgba(233, 169, 33, 0.815);
+}
+#wither_skeleton{
+    background: rgba(66, 66, 66, 0.815);
+}
+#magma_cube{
+    background: rgba(52, 0, 0, 0.815);
+}
+
+#enderman{
+    background: rgba(22, 22, 22, 0.815);
+}
+#endermite{
+    background: rgba(61, 36, 75, 0.815);
+}
+#shulker{
+    background: rgba(136, 76, 125, 0.815);
+}
+
+#ender_dragon{
+    background: rgba(131, 0, 160, 0.815);
+}
+#wither{
+    background: rgba(51, 51, 51, 0.815);
+}
+#warden{
+    background: rgba(10, 45, 53, 0.815);
+}
+
 
 
 /* bg */
