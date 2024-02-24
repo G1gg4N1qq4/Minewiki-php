@@ -702,6 +702,12 @@ main{z-index: 0;}
 .crafting__card__content{
     padding: 0 5%;
 }
+.crafting__card__content ul li{
+    font-family: 'MinecraftRegular';
+    font-size: 22px;
+    color: rgb(209, 209, 209);
+}
+
 /* Biomi */
 #oak_forest{
     background: rgba(86, 125, 34, 0.815);
@@ -757,16 +763,16 @@ main{z-index: 0;}
 }
 
 #frozen_ocean{
-    background: rgba(169, 224, 222, 0.815);
-}
-#cold_ocean{
     background: rgba(100, 136, 189, 0.815);
 }
+#cold_ocean{
+    background: rgba(54, 107, 185, 0.815);
+}
 #lukewarm_ocean{
-    background: rgba(86, 209, 182, 0.815);
+    background: rgba(92, 167, 228, 0.815);
 }
 #warm_ocean{
-    background: rgba(52, 248, 206, 0.815);
+    background: rgba(86, 209, 209, 0.815);
 }
 #frozen_ocean p, #cold_ocean p, #lukewarm_ocean p, #warm_ocean p{
     color: black;
