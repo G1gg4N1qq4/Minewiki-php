@@ -477,7 +477,7 @@
                     $('html, body').animate({ scrollTop: n }, 1000);
                 });
                 
-                if($(window).width() > 767){
+                if($(window).width() > 0){
                     ScrollReveal().reveal('.reveal', {distance: '50px', duration: '1500', origin: 'bottom', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '50'});
                 };
                 ScrollReveal().reveal('.zoom', {duration: '1500', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '200', scale: 0.65, mobile: false})
