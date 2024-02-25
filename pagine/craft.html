@@ -440,10 +440,32 @@
                 ScrollReveal().reveal('.reveal', {distance: '50px', duration: '1500', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '50'});
                 ScrollReveal().reveal('.zoom', {duration: '1500', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '200', scale: 0.65, mobile: false});
 
-                if($(window).width() < 1366){
+                if($(window).width() > 1366){
+                    $('.Tendina').hover(function(){
+                        $(this).toggleClass('menubiomi--open')
+                    });
+                    $('.menubiomi a').hover(function(){
+                        $(this).toggleClass('menubiomi__a--open')
+                    });
+                    
+                };
+
+                if($(window).width() <= 1366){
+                    
                     $('.main_page_link').click(function (e) {
                         e.preventDefault();
                     });
+                    $('.Tendina').off('hover')
+                    $('.Tendina').on('click', function(){
+                        $('.Tendina').not(this).removeClass('menubiomi--open')
+                        $(this).toggleClass('menubiomi--open')
+                    });
+
+                    var width = $(window).width();
+                    var height = $(window).height() - $('.Global__header').height();
+                    $('.menubiomi').width(width);
+                    $('.menubiomi').height(height);
+
                 };
 
             });
