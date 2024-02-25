@@ -1321,8 +1321,8 @@ Smartphone
     
     /* Testi */
     .medium_text{    font-family: 'Inter', sans-serif;font-size: 30px;color:#fff}
-    .normal_text{    font-family: 'Inter', sans-serif;font-size: 22px;color:#fff; font-weight: 500;}
-    .small_text{    font-family: 'Inter', sans-serif;font-size: 12px;color:#fff}
+    .normal_text{    font-family: 'Inter', sans-serif;font-size: 15px;color:#fff; font-weight: 500;}
+    .small_text{    font-family: 'Inter', sans-serif;font-size: 6px;color:#fff}
     .big_text{     font-family: 'Inter', sans-serif, bold;font-size: 42px; color: #fff;font-weight: 900;}
     .intro_text{
         text-transform: uppercase;
@@ -1333,14 +1333,14 @@ Smartphone
     }
     
     p{
-        font-size: 21px;
+        font-size: 11px;
     }
     header{background: #019d26;border: 2px solid #00841f;width: 100%;position: absolute; top: 0;right: 0;left: 0;}
 
     /* Global Header */
     .Global__header{
         position: fixed;
-        padding-bottom: 20px;
+        padding-bottom: 8px;
     }
     .Global__header--fixed{
         position: relative;
@@ -1360,6 +1360,7 @@ Smartphone
             height: 0;
             margin: 0;
             padding: 0;
+            /* height: 20px; */
             /* background: 1px solid red; */
 
         }
@@ -1372,6 +1373,7 @@ Smartphone
             /* top: 42px; */
             background: #00841f;
             border-radius: 4px;
+            top: 54px;
             /* padding: 10px 0; */
             /* margin-top: 20px; */
             transition: 0.3s;
@@ -1380,18 +1382,25 @@ Smartphone
         .Global__header__menu--open li{
             /* border-left: 40px; */
             /* border-right: 40px; */
-            border: 2px solid #005508;
+            border-bottom: 2px solid #005508;
+            border-left: 2px solid #005508;
             width: 100%;
             height: auto;
             padding-left: 5px;
+        }
+        .Global__header__line-menu{
+            height: 0;
+            width: 0;
         }
         .menubiomi{
             list-style: none;
             max-height: 3000px;
             position: relative;
             width: 100% ;
-            max-height: 3000 ;
-            /* transform: translateY(-3px); */
+            max-height: 3000px ;
+            transform: translate(0px,0px);
+            align-items: normal;
+            
         }
         
         .menubiomi--open .menubiomi{
@@ -1404,7 +1413,7 @@ Smartphone
         }
         .menubiomi a{
             border-bottom: 1px solid rgb(209, 209, 209);
-            height: 100%;
+            height: 5.97vh;
             width: 3000px;
             background: none;
             font-size: 20px;
@@ -1429,7 +1438,7 @@ Smartphone
             height: 30px;
             /* border: 1px solid red; */
             position: fixed;
-            top: 25px;
+            top: 10.25px;
             right: 40px;
             z-index: 1;
         }
@@ -1439,6 +1448,10 @@ Smartphone
             width: 100%;
             display: block;
             margin-bottom: 5px;
+        }
+        #Global__header__logo{
+            font-size: 30px;
+            padding-left: 10px;
         }
 
     /* Small Header */
@@ -1458,7 +1471,7 @@ Smartphone
     }
     
     .hero{
-        margin-top: 83px;
+        margin-top: 43px;
         height: 700px;
     }
     .hero__container{
@@ -1532,7 +1545,7 @@ Smartphone
     
     /* Poster */
     .poster{
-        height: 900px;
+        height: 450px;
         /* transform: translateY(80%); */
     }
     .poster__content{
@@ -1544,7 +1557,9 @@ Smartphone
     }
 
     /* bg */
-
+    .bg-cover{
+        height: 450px;
+    }
     .contenitore{
         position: absolute;
         /* border: 10px solid blue; */
@@ -1583,13 +1598,14 @@ Smartphone
     }
 
     .footer p{
-        font-size: 18px;
+        font-size: 8px;
     }
 
 
     .container{
         display: flex;
         flex-wrap: wrap;
+        padding-top: 10px;
     }
     /* Card */
     .card{
@@ -1602,6 +1618,7 @@ Smartphone
     .card__copy{
         width: auto;
         z-index: 1;
+        padding: 25px;
     }
     .card__img{
         padding: 0px 10px 39px 10px;
@@ -1633,6 +1650,7 @@ Smartphone
     .card2__copy{
         width: auto;
         z-index: 1;
+        padding: 10px;
     }
     .card2__img{
         /* padding: 0px 10px 39px 10px; */
@@ -1650,9 +1668,16 @@ Smartphone
     .grid{
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
     }
     .footer__column{
-        width: 100%;
+        width: auto;
+    }
+    .footer__column h3{
+        font-size: 14px;
+    }
+    .footer__column p{
+        padding-top: 5px;
     }
 
     .carousel-cell{
