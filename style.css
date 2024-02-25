@@ -292,12 +292,12 @@ main{z-index: 0;}
     }
     .footer__column{
         /* border: 1px solid black; */
-        width: 33.3333333333333333333333%;
+        width: 33.3334%;
         /* padding: 5px; */
         /* margin: 0%; */
         text-align: start;
-        padding: 40px;
-        
+        padding: 10px;
+        border: 1px solid red;
         
     }
 
@@ -989,7 +989,7 @@ main{z-index: 0;}
     }
     .carousel-cell__content__text{
         width: auto; max-width: 2000px;
-        height: 10%;
+        max-height: 100px;
         /* border-radius: inherit; */
         color: #000;
         /* border: 1px solid red; */
@@ -998,7 +998,7 @@ main{z-index: 0;}
         /* width: 100%; */
         position: absolute;
         bottom: -15px;
-        left: 200px;
+        left: 20px;
         justify-content: center;
         align-items: center;
         transition: 0.3s;
@@ -1176,6 +1176,14 @@ main{z-index: 0;}
     
 }
 
+.portale{
+    align-items: center;
+    justify-content: center;
+    box-shadow: -200px -300px 20px 300px #005508;
+    /* margin-top: 200px; */
+    border:1px solid red
+}
+
 
 /*-------------------------------
 Tablet
@@ -1312,10 +1320,10 @@ Smartphone
 @media (max-width: 767px) {
     
     /* Testi */
-    .medium_text{    font-family: 'Inter', sans-serif;font-size: 50px;color:#fff}
+    .medium_text{    font-family: 'Inter', sans-serif;font-size: 30px;color:#fff}
     .normal_text{    font-family: 'Inter', sans-serif;font-size: 22px;color:#fff; font-weight: 500;}
     .small_text{    font-family: 'Inter', sans-serif;font-size: 12px;color:#fff}
-    .big_text{     font-family: 'Inter', sans-serif, bold;font-size: 70px; color: #fff;font-weight: 900;}
+    .big_text{     font-family: 'Inter', sans-serif, bold;font-size: 42px; color: #fff;font-weight: 900;}
     .intro_text{
         text-transform: uppercase;
         font-family: 'Inter', sans-serif;
@@ -1325,7 +1333,7 @@ Smartphone
     }
     
     p{
-        font-size: 33px;
+        font-size: 21px;
     }
     header{background: #019d26;border: 2px solid #00841f;width: 100%;position: absolute; top: 0;right: 0;left: 0;}
 
@@ -1356,15 +1364,16 @@ Smartphone
 
         }
         .Global__header__menu--open{
-            display:grid;
+            display: block;
+            /* flex-wrap: wrap; */
             width: 100%;
             height: 100%;
             position: fixed;
-            top: 42px;
+            /* top: 42px; */
             background: #00841f;
             border-radius: 4px;
             /* padding: 10px 0; */
-            margin-top: 20px;
+            /* margin-top: 20px; */
             transition: 0.3s;
             transition-timing-function: ease;
         }
@@ -1380,10 +1389,11 @@ Smartphone
             list-style: none;
             max-height: 3000px;
             position: relative;
-            width: 100% !important;
-            height: 70% !important;
+            width: 100% ;
+            max-height: 3000 ;
             /* transform: translateY(-3px); */
         }
+        
         .menubiomi--open .menubiomi{
             transition: 0.5s;
             transition-timing-function: ease;
@@ -1397,17 +1407,20 @@ Smartphone
             height: 100%;
             width: 3000px;
             background: none;
-            font-size: 40px;
+            font-size: 20px;
             padding: 10px;
         }
         .img__lista{
-            width: 2.5%;
+            width: 1.75%;
         }
         .Tendina{
-            height: 25%;
+            height: 2.5%;
+        }
+        .Global__header__menu__item{
+            height: 10%;
         }
         .Global__header__menu__item a{
-            font-size: 40px;
+            font-size: 20px;
         }
         /* Global Header Icon Bar */
         .Global__header__icon-bar{
@@ -1446,9 +1459,18 @@ Smartphone
     
     .hero{
         margin-top: 83px;
-        height: 1400px;
+        height: 700px;
     }
-
+    .hero__container{
+        padding: 0;
+        padding-left: 10px;
+        padding-bottom: 50%;
+    }
+    /* .hero__content{
+        position: absolute;
+        left: 0;
+        width: 1000px;
+    } */
     .myVideo{
         object-fit: cover;
         display: block;
@@ -1543,6 +1565,8 @@ Smartphone
         width: auto;
         top: 20px;
         padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
         /* border: 1px solid red; */
     }
     .bg-cover__text{
@@ -1622,6 +1646,23 @@ Smartphone
     }
     .crafting__card{
         width: 30%;
+    }
+    .grid{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .footer__column{
+        width: 100%;
+    }
+
+    .carousel-cell{
+        height: 200px;
+        margin: 0 0px;
+        margin-bottom: 30px;
+    }
+    
+    .carousel-cell__content__text p{
+        font-size: 10px;
     }
 }
 
