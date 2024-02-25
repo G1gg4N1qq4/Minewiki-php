@@ -488,7 +488,7 @@
                     
                 };
 
-                if($(window).width() <= 1366){
+                if(($(window).width() <= 1366) ($(window).width() > 767)){
 
                     $('.main_page_link').click(function (e) {
                         e.preventDefault();
@@ -506,6 +506,11 @@
 
                 };
                 
+                if($(window).width() <= 767){
+                    $('.main_page_link').click(function (e) {
+                        e.preventDefault();
+                    });
+                }
             });
         </script>
     </body>

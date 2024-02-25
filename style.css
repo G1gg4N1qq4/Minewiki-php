@@ -1374,7 +1374,7 @@ Smartphone
             top: 50px;
             background: #00841f;
             border-radius: 4px;
-            padding: 10px 0;
+            /* padding: 10px 0; */
             margin-top: 20px;
             transition: 0.3s;
             transition-timing-function: ease;
@@ -1389,13 +1389,13 @@ Smartphone
         }
         .menubiomi{
             list-style: none;
-            max-height: 500px;
+            max-height: 3000px;
             position: relative;
-            width: 200%;
-            height: 50%;
+            width: 100% !important;
+            height: 70% !important;
+            /* transform: translateY(-3px); */
         }
         .menubiomi--open .menubiomi{
-            border-bottom: 1px solid rgb(209, 209, 209);
             transition: 0.5s;
             transition-timing-function: ease;
             transition-delay:calc(120ms * var(--i));
@@ -1404,8 +1404,21 @@ Smartphone
             height: 0;
         }
         .menubiomi a{
+            border-bottom: 1px solid rgb(209, 209, 209);
             height: 100%;
             width: 3000px;
+            background: none;
+            font-size: 40px;
+            padding: 10px;
+        }
+        .img__lista{
+            width: 2.5%;
+        }
+        .Tendina{
+            height: 25%;
+        }
+        .Global__header__menu__item a{
+            font-size: 40px;
         }
         /* Global Header Icon Bar */
         .Global__header__icon-bar{
