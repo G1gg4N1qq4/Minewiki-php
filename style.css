@@ -454,7 +454,7 @@ main{z-index: 0;}
 /* Poster */
 .poster{
     display: flex;
-    height: 600px;
+    height: 700px;
     /* border: 1px solid red; */
     width: 100%;
     /* padding-top: 616px; */
@@ -1197,8 +1197,6 @@ Tablet
     /* .header_footer{background: #019d26;border: 2px solid #00841f;width: 100%} */
     /* Colonna */
 
-    
-
     .small_header, .small_header p{
         height: 0;
         padding: 0;
@@ -1252,6 +1250,29 @@ Tablet
     }
     .menubiomi--open .freccia_tendina{
         transform: rotate(180deg);
+    }
+
+    .Global__header__menu{
+        padding-left: 1%;
+    }
+    .Global__header__menu__item{
+        width: 23%;
+        text-align: center;
+    }
+    .Global__header__menu li > a{
+        font-size: 2vw;
+    }
+    .freccia_tendina{
+        width: 2.5vw;
+    }
+
+    .card2__copy{
+        width: 60%;
+        height: auto;
+    }
+    .card2__img{
+        width: 40%;
+        height: auto;
     }
 
     .colonna{
@@ -1319,13 +1340,15 @@ Smartphone
     }
     header{background: #019d26;border: 2px solid #00841f;width: 100%;position: absolute; top: 0;right: 0;left: 0;}
     
+    .hero{
+        margin-top: 83px;
+        height: 1200px;
+    }
+
     /* Global Header */
     .Global__header{
-        position: relative;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding-top: 10px;
+        position: fixed;
+        padding-bottom: 20px;
     }
     .Global__header--fixed{
         position: relative;
@@ -1397,8 +1420,9 @@ Smartphone
     
 
     /* Small Header */
-    .small_header{
-        padding: 20px;
+    .small_header, .small_header p{
+        height: 0;
+        padding: 0;
     }
     
     /* Cover */
