@@ -479,6 +479,10 @@
         <script>
             $(document).ready(function(){
                 $(".boxsu").hide(400);
+
+                $(".Global__header__line-menu").width = 100
+                $(".Global__header__line-menu").position().left=100
+
                 $(".Global__header__icon-bar").on("click", function() {
                     $(".Global__header__menu").toggleClass("Global__header__menu--open");
                     console.log("ciao")
@@ -506,7 +510,7 @@
                         $(".boxsu").show(600);
                         console.log("edge+cum")
                     }
-                   
+
                 
                 });
 
@@ -514,14 +518,17 @@
                 var pos = 0
                 var wid = ""
                 var line = $(".Global__header__line-menu")
+                
+                
                 nav.find(".Global__header__menu__item").hover( function(){
-
+                    
                     var this_nav = $(this)
                     line.animate({
                         left: this_nav.position().left,
                         width: this_nav.width() + 10
                     }, 50)
                 });
+                
                 $(".boxsu").on("click", function() {
                     $("html, body").animate({
                         scrollTop: 0
@@ -537,8 +544,10 @@
                     $('html, body').animate({ scrollTop: n }, 1000);
                 });
                 
-                ScrollReveal().reveal('.reveal', {distance: '50px', duration: '1500', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '50'});
-                ScrollReveal().reveal('.zoom', {duration: '1500', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '200', scale: 0.65, mobile: false});
+                if($(window).width() > 767){
+                    ScrollReveal().reveal('.reveal', {distance: '50px', duration: '1500', origin: 'bottom', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '50'});
+                };
+                ScrollReveal().reveal('.zoom', {duration: '1500', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '200', scale: 0.65, mobile: false})
 
                 if($(window).width() > 1366){
                     $('.Tendina').hover(function(){
@@ -550,8 +559,8 @@
                     
                 };
 
-                if($(window).width() <= 1366){
-                    
+                if(($(window).width() <= 1366) ($(window).width() > 767)){
+
                     $('.main_page_link').click(function (e) {
                         e.preventDefault();
                     });
@@ -567,7 +576,12 @@
                     $('.menubiomi').height(height);
 
                 };
-
+                
+                if($(window).width() <= 767){
+                    $('.main_page_link').click(function (e) {
+                        e.preventDefault();
+                    });
+                }
             });
         </script>
 </html>

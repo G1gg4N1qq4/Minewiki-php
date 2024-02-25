@@ -301,25 +301,13 @@ main{z-index: 0;}
         
     }
 
-    .footer__column:hover{
-        padding: 1% 1% 1% 1%;
-        /* border: 1px solid black; */
-        /* margin: 0; */
-        transition: 0.2s;
-        /* text-align: center; */
-        transition-timing-function: ease-in;
-        background-color: #00841f;
-        /* align-items: start; */
-    }
-    .footer__column:hover h3, .footer__column:hover p{
-        transition: 0.5s;
-        transition-timing-function: ease-in;
-        transform: translateY(-10px);
-    }
     /* .colonna a:hover */
     .footer__column{
         transition: 0.2s;
         transition-timing-function: ease-in;
+    }
+    .footer__column p{
+        padding-top: 10px;
     }
     .footer__column h3, .footer__column p{
         transition: 1s;
@@ -443,8 +431,9 @@ main{z-index: 0;}
         position: relative;
         height: 660px;
         width: 100%;
-        display: flex; width: 100%; align-items: end;
-        background: url("immagini/crafting.png");
+        display: flex; width: 100%; 
+        align-items: end;
+        background: url("immagini/crafting/crafting.png");
         /* background:  linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3)); */
         background-size: cover;
         margin-top: 188px;
@@ -1363,7 +1352,7 @@ Smartphone
             height: 0;
             margin: 0;
             padding: 0;
-            background: 1px solid red;
+            /* background: 1px solid red; */
 
         }
         .Global__header__menu--open{
@@ -1371,7 +1360,7 @@ Smartphone
             width: 100%;
             height: 100%;
             position: fixed;
-            top: 50px;
+            top: 42px;
             background: #00841f;
             border-radius: 4px;
             /* padding: 10px 0; */
@@ -1609,6 +1598,31 @@ Smartphone
         text-align: center;
     }
 
+    /* Card 2 */
+    .card2{
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+        z-index: 0;
+    }
+    .card2__copy{
+        width: auto;
+        z-index: 1;
+    }
+    .card2__img{
+        /* padding: 0px 10px 39px 10px; */
+        width: auto;
+        z-index: 1;
+    }
+
+    /* Craft */
+    .craft__hero{
+        margin-top: 0;
+    }
+    .crafting__card{
+        width: 30%;
+    }
 }
 
 
