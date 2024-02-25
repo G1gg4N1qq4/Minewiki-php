@@ -225,12 +225,12 @@
                                         Inizialmente, era solo un semplice progetto personale, ma presto divenne un fenomeno globale, 
                                         grazie al passaparola e alla diffusione su internet. Il gioco si basava sul concetto di "sandbox", 
                                         ovvero un ambiente virtuale dove il giocatore ha la libertà di fare ciò che vuole, senza obiettivi o limiti prefissati. 
-                                        Notch aggiunse gradualmente nuove funzionalità, come i mostri, i biomi, i portali, i villaggi e i boss. Nel 2011, 
+                                    </p> 
+                                    <p>Notch aggiunse gradualmente nuove funzionalità, come i mostri, i biomi, i portali, i villaggi e i boss. Nel 2011, 
                                         il gioco fu ufficialmente rilasciato, e nel 2014, fu acquistato da Microsoft per 2,5 miliardi di dollari. Da allora, 
                                         Minecraft ha continuato a crescere e a evolversi, con nuovi aggiornamenti, modalità, piattaforme e collaborazioni. 
                                         Oggi, Minecraft e' uno dei giochi più popolari e influenti di tutti i tempi, con oltre 200 milioni di copie vendute 
-                                        e 126 milioni di giocatori attivi al mese. Minecraft e' una storia di successo, di innovazione e di creatività. 
-                                        
+                                        e 126 milioni di giocatori attivi al mese. Minecraft e' una storia di successo, di innovazione e di creatività.
                                     </p>
                                     <p>E' una storia epica, pazza e leggendaria.</p>
                                 </div> 
@@ -472,8 +472,10 @@
                     var n = $(document).height();
                     $('html, body').animate({ scrollTop: n }, 1000);
                 });
-
-                ScrollReveal().reveal('.reveal', {distance: '50px', duration: '1500', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '50'});
+                
+                if($(window).width() > 767){
+                    ScrollReveal().reveal('.reveal', {distance: '50px', duration: '1500', origin: 'bottom', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '50'});
+                };
                 ScrollReveal().reveal('.zoom', {duration: '1500', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '200', scale: 0.65, mobile: false})
 
                 if($(window).width() > 1366){
@@ -487,7 +489,7 @@
                 };
 
                 if($(window).width() <= 1366){
-                    
+
                     $('.main_page_link').click(function (e) {
                         e.preventDefault();
                     });
