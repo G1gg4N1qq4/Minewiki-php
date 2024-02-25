@@ -33,7 +33,7 @@
                                 <a href="../index.html"> Home </a> 
                             </li>
                             <li class="Global__header__menu__item Tendina">
-                                <a href="../pagine/biomi.html"> 
+                                <a href="../pagine/biomi.html" class="main_page_link"> 
                                     Biomi<img src="../immagini/freccia sborbus.png" alt="" class="freccia_tendina" style="--i:6;">
                                 </a>
                                 <div class="menubiomi">
@@ -48,7 +48,7 @@
                             </li>
                             
                             <li class="Global__header__menu__item Tendina">
-                                <a href="../pagine/craft.html"> Craft<img src="../immagini/freccia sborbus.png" alt="" class="freccia_tendina" style="--i:6;">
+                                <a href="../pagine/craft.html" class="main_page_link"> Craft<img src="../immagini/freccia sborbus.png" alt="" class="freccia_tendina" style="--i:6;">
                                 </a>
                                 <div class="menubiomi">
                                     <a href="../pagine/craft.html#Strumenti" style="--i:1;"><span></span>
@@ -67,7 +67,7 @@
                             </li>
 
                             <li class="Global__header__menu__item Tendina" >
-                                <a href="../pagine/mobs.html">Mobs<img src="../immagini/freccia sborbus.png" alt="" class="freccia_tendina" style="--i:6;">
+                                <a href="../pagine/mobs.html" class="main_page_link">Mobs<img src="../immagini/freccia sborbus.png" alt="" class="freccia_tendina" style="--i:6;">
                                 </a>
                                 <div class="menubiomi">
                                     <a href="../pagine/mobs.html#Overworld" style="--i:1;"><span></span><img src="../immagini/sheep.png" alt="" class="img_res img__lista" style="--i:6;">Overworld</a>
@@ -539,6 +539,12 @@
                 
                 ScrollReveal().reveal('.reveal', {distance: '50px', duration: '1500', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '50'});
                 ScrollReveal().reveal('.zoom', {duration: '1500', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '200', scale: 0.65, mobile: false});
+
+                if($(window).width() < 1366){
+                    $('.main_page_link').click(function (e) {
+                        e.preventDefault();
+                    });
+                };
 
             });
         </script>

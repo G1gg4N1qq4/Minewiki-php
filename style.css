@@ -32,6 +32,10 @@ body{
     
 }
 body{ margin-top: -5%;}
+main{
+    padding-bottom: 100px;
+    background: #019d25;
+}
 
 /* Container */
 .container{padding: 0px; padding-top: 100px;background: #000;position: relative;}
@@ -522,10 +526,12 @@ main{z-index: 0;}
 .card{
     display: flex;
     max-height: 1280px;
+    height: auto;
     padding-top: 5%;
     padding-bottom: 3%;
     /* border: 1px solid red; */
     width: 100%;
+    border-radius: 10px;
     /* padding-top: 616px; */
     /* transform: translateY(616px); */
     align-items: center;
@@ -538,6 +544,7 @@ main{z-index: 0;}
     width: 45%;
     height: auto;
     align-items: center;
+    border-radius: inherit;
     padding-right: 30px;
     border-right: 3px solid rgb(209, 209, 209);
 }
@@ -545,6 +552,7 @@ main{z-index: 0;}
     object-fit: cover;
     width: 100%;
     height: auto;
+    border-radius: inherit;
 }
 .card__copy{
     width: 55%;
@@ -613,22 +621,25 @@ main{z-index: 0;}
 /* Poster 3 */
 .card2{
     display: flex;
-    height: 400px;
+    height: auto;
     /* border: 1px solid red; */
     width: 100%;
     /* padding-top: 616px; */
     /* transform: translateY(616px); */
     align-items: center;
     background: #019d26;
+    border-radius: 10px;
 }
 .card2__img{
     width: 60%;
     height: 100%;
+    border-radius: inherit;
 }
 .card2__img img{
     object-fit: cover;
+    width: 100%;
     height: 100%;
-    
+    border-radius: inherit;
 }
 .card2__copy{
     width: 40%;
@@ -921,6 +932,10 @@ main{z-index: 0;}
 }
 
 /* Slider */
+#text_before_carousel{
+    padding-bottom: 60px;
+}
+
 .main-carousel{
     /* border: 1px solid red; */
     /* padding: 40px 0px; */
@@ -928,8 +943,8 @@ main{z-index: 0;}
     margin: 0 0px;
     /* padding: 0 80px; */
     margin-top:0 ;
-    padding: 100px 0px;
-    padding-top: 20px;
+    /* padding: 0px 0px 0px 0px; */
+    /* padding-top: 20px; */
     /* border-radius: 20px; */
     margin-right: 0px;
     /* background:#019d26; */
@@ -945,7 +960,7 @@ main{z-index: 0;}
         /* border: 1px solid red; */
         width: 70%;
         height: 500px;
-        padding: 40px 20px;
+        padding: 0px 20px;
         margin: 0 10px;
         /* z-index: 0; */
     }
@@ -1070,7 +1085,7 @@ main{z-index: 0;}
     align-items: center;
     /* height: auto; */
 }
-.Tendina:hover .freccia_tendina{
+.menubiomi--open .freccia_tendina{
     transform: rotate(180deg);
 }
 .freccia_tendina::after{
@@ -1099,7 +1114,7 @@ main{z-index: 0;}
     /* transition-delay:calc(60ms * var(--i)); */
 }
 
-.Tendina:hover .menubiomi{
+.menubiomi--open .menubiomi{
     max-height: 300px;
     border-bottom: 1px solid rgb(209, 209, 209);
     transition: 0.5s;
@@ -1138,11 +1153,11 @@ main{z-index: 0;}
     height: 0px;
     overflow: hidden;
 }
-.menubiomi a:hover ul{
+.menubiomi__a--open ul{
     overflow: hidden;
     height: 300px;
 }
-.Tendina:hover .menubiomi a{
+.menubiomi--open .menubiomi a{
     overflow: hidden;
 }
 .menubiomi a span{
@@ -1160,12 +1175,12 @@ main{z-index: 0;}
     transition: 0.2s;
     transition-timing-function: ease;
 }
-.menubiomi a:hover{
+.menubiomi__a--open{
     color: #00841f;
     transition: 0.5s;
     transition-timing-function: ease;
 }
-.menubiomi a:hover span{ 
+.menubiomi__a--open span{ 
     top: 0%;
     
     /* background:rgba(36,255,255,1); */
@@ -1176,11 +1191,69 @@ main{z-index: 0;}
 /*-------------------------------
 Tablet
 -------------------------------*/
-@media (min-width: 768px) and (max-width: 998px) {
+@media (min-width: 768px) and (max-width: 1366px) {
     /* footer{background-image: url("immagini/sfondo_bloccoditerra.jpg");border: 1px solid #00841f;width: 100%; text-align: center;} */
     /* .header_footer{background-image: url("immagini/sfondo_bloccoditerra.jpg"); background-size: 50% ;border: 2px solid #00841f;width: 100%;position: fixed;} */
     /* .header_footer{background: #019d26;border: 2px solid #00841f;width: 100%} */
     /* Colonna */
+
+    
+
+    .small_header, .small_header p{
+        height: 0;
+        padding: 0;
+    }
+    .Global__header{
+        position: fixed;
+    }
+    .Global__header--fixed{
+        position: fixed;
+    }
+
+    .hero{
+        margin-top: 63px;
+    }
+
+    .menubiomi{
+        height: 0;
+        position: fixed;
+        left: 0;
+    }
+    .menubiomi a{
+        /* overflow: hidden; */
+        height: 100%;
+        width: auto;
+        font-size: 30px;
+    }
+    .menubiomi img{
+        /* overflow: hidden; */
+        width: 8%;
+        height: auto;
+        
+    }
+    .menubiomi--open .menubiomi a{
+        overflow: hidden;
+    }
+    .menubiomi__a--open a{
+        color: #00841f;
+        transition: 0.5s;
+        transition-timing-function: ease;
+    }
+    .menubiomi__a--open a span{ 
+        top: 0%;
+    }
+    .menubiomi--open .menubiomi{
+        /* border-bottom: 1px solid rgb(209, 209, 209); */
+        max-height: 3000px;
+        transition: 0.5s;
+        background: #019d25;
+        transition-timing-function: ease;
+        transition-delay:calc(120ms * var(--i));
+    }
+    .menubiomi--open .freccia_tendina{
+        transform: rotate(180deg);
+    }
+
     .colonna{
         /* border: 1px solid black; */
         width: 50%;
