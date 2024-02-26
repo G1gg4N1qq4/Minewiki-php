@@ -1643,7 +1643,7 @@ Smartphone
         padding-bottom: 0;
         padding-left: 0;
         padding-right: 0;
-        padding-top: 20vh;
+        padding-top: 0;
         /* border: 1px solid red; */
     }
     .bg-cover__text{
@@ -1781,6 +1781,9 @@ Smartphone
 }
 @media (max-width: 380px) {
     /* Global Header */
+    .big_text{
+        font-size: 10vw;
+    }
     .Global__header{
         position: fixed;
         padding-bottom: 8px;
@@ -1989,6 +1992,9 @@ Smartphone
     .poster__content{
         width: 70%;
         padding: 25px;
+    }
+    .poster__content p{
+        font-size: 18px;
     }
     .poster__img{
         width: 30%;
