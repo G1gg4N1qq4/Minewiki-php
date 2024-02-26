@@ -303,6 +303,7 @@ main{z-index: 0;}
     /* .colonna a:hover */
     .footer__column{
         position: relative;
+        height: auto;
         transition: 0.2s;
         transition-timing-function: ease-in;
     }
@@ -322,6 +323,15 @@ main{z-index: 0;}
         margin-bottom: 10px;
         margin-top: 10px;
         /* padding-bottom: 0; */
+    }
+    .footer__column img{
+        position: absolute;
+        object-fit: cover;
+        top: 1vh;
+        right: 6vh;
+        border-radius: 4px;
+        width: 6vw !important;
+        height: auto;
     }
     .colonnatitolo{
         margin:  0px 0px 0.90% 7.142857143%;
@@ -1342,6 +1352,16 @@ Tablet
         height: auto;
     }
 
+    .footer__column img{
+        position: static;
+        padding-top: 10px;
+        top: 6vh;
+        right: 6vh;
+        border-radius: 4px;
+        width: 10vw !important;
+        height: auto;
+    }
+
 }
 
 /*-------------------------------
@@ -2026,7 +2046,7 @@ Smartphone
         top: 6vh;
         right: 6vh;
         border-radius: 4px;
-        width: 80vw;
+        width: 30vw;
         height: auto;
     } */
     
