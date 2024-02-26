@@ -1225,9 +1225,12 @@ Tablet
     }
 
     .menubiomi{
+        transform: translate(0, 10px);
         height: 0;
         position: fixed;
         left: 0;
+        width: 100vw !important;
+        height: 94.5vh !important;
     }
     .menubiomi a{
         /* overflow: hidden; */
@@ -1762,7 +1765,7 @@ Smartphone
 @media (max-width: 380px) {
     /* Global Header */
     .big_text{
-        font-size: 12vw;
+        font-size: 10vw;
     }
     .Global__header{
         position: fixed;
