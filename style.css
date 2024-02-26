@@ -1363,7 +1363,7 @@ Smartphone
     }
     
     p{
-        font-size: 22px;
+        font-size: 15px;
     }
     header{background: #019d26;border: 2px solid #00841f;width: 100%;position: absolute; top: 0;right: 0;left: 0;}
 
@@ -1641,7 +1641,7 @@ Smartphone
     }
 
     .footer p{
-        font-size: 18px;
+        font-size: 15px;
     }
     .footer__column{
         position: relative;
@@ -1761,6 +1761,9 @@ Smartphone
 }
 @media (max-width: 380px) {
     /* Global Header */
+    .big_text{
+        font-size: 12vw;
+    }
     .Global__header{
         position: fixed;
         padding-bottom: 8px;
@@ -2096,11 +2099,6 @@ Smartphone
     } */
     
     
-    .carousel-cell{
-        height: 200px;
-        margin: 0 0px;
-        margin-bottom: 30px;
-    }
     
 }
 
