@@ -89,7 +89,7 @@ p{
     font-size: 22px;
 }
 .Grande_Titolo{
-    font-size: 40px;padding: 0px 0px 0px 0px;
+    font-size: 40px;padding: 20px 0px 0px 0px;
 }
 
 #Titolo1{
@@ -178,7 +178,7 @@ main{z-index: 0;}
 /* Global Header */
 .Global__header{
     background: #019d26;
-    /* border: 2px solid #00841f; */
+    /* border: 2px solid red; */
     width: 100%;
     display: none;
     position: relative; 
@@ -330,8 +330,8 @@ main{z-index: 0;}
     }
     .footer__column img{
         position: absolute;
-        top: 6vh;
-        right: 6vh;
+        top: 3vh;
+        right: 2vh;
         border-radius: 4px;
         width: 7vw;
         height: auto;
@@ -411,6 +411,7 @@ main{z-index: 0;}
     position: relative;
     height: 660px;
     width: 100%;
+    height: 100%;
     display: flex; width: 100%; align-items: end;
     /* background:  linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3)); */
     background-size: cover;
@@ -424,15 +425,18 @@ main{z-index: 0;}
     }
     .hero__container{
         width: 100%; max-width: 2000px;
+        height: 100%;
         /* border: 1px solid red; */
         background:  linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0,0,0,1) 0%, rgba(60,60,60,0) 100%);
         /* width: 100%; */
         position: absolute;
         /* bottom: 800; */
         padding: 30px;
-        padding-bottom: 200px;
+        display: inline-flex;
+        align-items: center;
+        padding-top: 30px;
         padding-right: 0px;
-        padding-left: 130px;
+        /* padding-left: 130px; */
     }
 
     .craft__hero{
@@ -1196,18 +1200,21 @@ main{z-index: 0;}
 /*-------------------------------
 Tablet
 -------------------------------*/
-@media (min-width: 768px) and (max-width: 1366px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     /* footer{background-image: url("immagini/sfondo_bloccoditerra.jpg");border: 1px solid #00841f;width: 100%; text-align: center;} */
     /* .header_footer{background-image: url("immagini/sfondo_bloccoditerra.jpg"); background-size: 50% ;border: 2px solid #00841f;width: 100%;position: fixed;} */
     /* .header_footer{background: #019d26;border: 2px solid #00841f;width: 100%} */
     /* Colonna */
 
-    .small_header, .small_header p{
+    /* .small_header, .small_header p{
         height: 0;
         padding: 0;
-    }
-    .Global__header{
+    } */
+    /* .Global__header{
         position: fixed;
+    } */
+    .big_text{
+        font-size: 6vw;
     }
     .Global__header--fixed{
         position: fixed;
@@ -1279,7 +1286,11 @@ Tablet
         width: 40%;
         height: auto;
     }
-
+    .crafting__card{
+        /* width: auto; */
+        width: 30%;
+        /* max-width: 80%; */
+    }
     .colonna{
         /* border: 1px solid black; */
         width: 50%;
@@ -1319,19 +1330,30 @@ Tablet
         margin: 0%;
         /* border: 1px solid black; */
     }
+    
+    
+    .footer__column img{
+        position: static;   
+        padding-top: 10px;
+        top: 6vh;
+        right: 6vh;
+        border-radius: 34px;
+        width: 25vw;
+        height: auto;
+    }
 
 }
 
 /*-------------------------------
 Smartphone
 -------------------------------*/
-@media (max-width: 767px) {
+@media (max-width: 767.9px) {
     
     /* Testi */
-    .medium_text{    font-family: 'Inter', sans-serif;font-size: 30px;color:#fff}
-    .normal_text{    font-family: 'Inter', sans-serif;font-size: 15px;color:#fff; font-weight: 500;}
-    .small_text{    font-family: 'Inter', sans-serif;font-size: 6px;color:#fff}
-    .big_text{     font-family: 'Inter', sans-serif, bold;font-size: 42px; color: #fff;font-weight: 900;}
+    .medium_text{    font-family: 'Inter', sans-serif;font-size: 38px;color:#fff}
+    .normal_text{    font-family: 'Inter', sans-serif;font-size: 22px;color:#fff; font-weight: 500;}
+    .small_text{    font-family: 'Inter', sans-serif;font-size: 12px;color:#fff}
+    .big_text{     font-family: 'Inter', sans-serif, bold;font-size: 56px; color: #fff;font-weight: 900;}
     .intro_text{
         text-transform: uppercase;
         font-family: 'Inter', sans-serif;
@@ -1341,7 +1363,7 @@ Smartphone
     }
     
     p{
-        font-size: 18px;
+        font-size: 22px;
     }
     header{background: #019d26;border: 2px solid #00841f;width: 100%;position: absolute; top: 0;right: 0;left: 0;}
 
@@ -1490,18 +1512,19 @@ Smartphone
     
     .hero{
         margin-top: 43px;
-        height: 700px;
+        height: 100vh;
     }
     .hero__container{
         padding: 0;
         padding-left: 10px;
-        padding-bottom: 50%;
+        padding-bottom: 0;
     }
     /* .hero__content{
         position: absolute;
         left: 0;
         width: 1000px;
     } */
+
     .myVideo{
         object-fit: cover;
         display: block;
@@ -1563,7 +1586,7 @@ Smartphone
     
     /* Poster */
     .poster{
-        height: 450px;
+        height: 58vh;
         /* transform: translateY(80%); */
     }
     .poster__content{
@@ -1576,7 +1599,7 @@ Smartphone
 
     /* bg */
     .bg-cover{
-        height: 450px;
+        height: 100vh;
     }
     .contenitore{
         position: absolute;
@@ -1600,6 +1623,7 @@ Smartphone
         padding-bottom: 0;
         padding-left: 0;
         padding-right: 0;
+        padding-top: 20vh;
         /* border: 1px solid red; */
     }
     .bg-cover__text{
@@ -1607,6 +1631,7 @@ Smartphone
         text-align: center;
         padding-top: 0;
         top: 10px;
+        padding-bottom: 40vh;
         /* border: 1px solid blue; */
     }
 
@@ -1616,20 +1641,21 @@ Smartphone
     }
 
     .footer p{
-        font-size: 8px;
+        font-size: 18px;
     }
     .footer__column{
         position: relative;
         transition: 0.2s;
         transition-timing-function: ease-in;
+        /* width: 100vw; */
     }
     .footer__column img{
-        position: static;
+        position: static;   
         padding-top: 10px;
         top: 6vh;
         right: 6vh;
-        border-radius: 4px;
-        width: 80vw;
+        border-radius: 34px;
+        width: 25vw;
         height: auto;
     }
 
@@ -1692,6 +1718,7 @@ Smartphone
     /* Craft */
     .craft__hero{
         margin-top: 0;
+        height: 106vh;
     }
     .craft__hero p{
         font-size: 60px;
@@ -1709,8 +1736,10 @@ Smartphone
         flex-wrap: wrap;
         justify-content: center;
     }
+    
     .footer__column{
-        width: auto;
+        border-top: 1px solid #019d25;
+        width: 100vw;
     }
     .footer__column h3{
         font-size: 14px;
@@ -1720,7 +1749,8 @@ Smartphone
     }
 
     .carousel-cell{
-        height: 200px;
+        height: 40vh;
+        width: 100vw;
         margin: 0 0px;
         margin-bottom: 30px;
     }
@@ -1730,24 +1760,6 @@ Smartphone
     }
 }
 @media (max-width: 380px) {
-    /* Testi */
-    .medium_text{    font-family: 'Inter', sans-serif;font-size: 30px;color:#fff}
-    .normal_text{    font-family: 'Inter', sans-serif;font-size: 15px;color:#fff; font-weight: 500;}
-    .small_text{    font-family: 'Inter', sans-serif;font-size: 6px;color:#fff}
-    .big_text{     font-family: 'Inter', sans-serif, bold;font-size: 42px; color: #fff;font-weight: 900;}
-    .intro_text{
-        text-transform: uppercase;
-        font-family: 'Inter', sans-serif;
-        font-size: 30px;
-        color: #fff;
-        font-weight: bold;
-    }
-    
-    p{
-        font-size: 11px;
-    }
-    header{background: #019d26;border: 2px solid #00841f;width: 100%;position: absolute; top: 0;right: 0;left: 0;}
-
     /* Global Header */
     .Global__header{
         position: fixed;
@@ -1865,11 +1877,6 @@ Smartphone
             padding-left: 10px;
         }
 
-    /* Small Header */
-    .small_header, .small_header p{
-        height: 0;
-        padding: 0;
-    }
     
     /* Cover */
     .cover{
@@ -1956,7 +1963,7 @@ Smartphone
     
     /* Poster */
     .poster{
-        height: 450px;
+        height: 100vh;
         /* transform: translateY(80%); */
     }
     .poster__content{
@@ -2008,10 +2015,7 @@ Smartphone
         font-size: 24px;
     }
 
-    .footer p{
-        font-size: 8px;
-    }
-    .footer__column{
+    /* .footer__column{
         position: relative;
         transition: 0.2s;
         transition-timing-function: ease-in;
@@ -2024,7 +2028,8 @@ Smartphone
         border-radius: 4px;
         width: 80vw;
         height: auto;
-    }
+    } */
+    
 
     .container{
         display: flex;
@@ -2086,33 +2091,17 @@ Smartphone
     .craft__hero{
         margin-top: 0;
     }
-    .crafting__card{
+    /* .crafting__card{
         width: 30%;
-    }
-    .grid{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .footer__column{
-        width: auto;
-    }
-    .footer__column h3{
-        font-size: 14px;
-    }
-    .footer__column p{
-        padding-top: 5px;
-    }
-
+    } */
+    
+    
     .carousel-cell{
         height: 200px;
         margin: 0 0px;
         margin-bottom: 30px;
     }
     
-    .carousel-cell__content__text p{
-        font-size: 10px;
-    }
 }
 
 
