@@ -331,9 +331,9 @@ main{z-index: 0;}
     .footer__column img{
         position: absolute;
         top: 3vh;
-        right: 2vh;
-        border-radius: 4px;
-        width: 7vw;
+        right: 4vh;
+        border-radius: 10px;
+        width: 5vw;
         height: auto;
     }
 
@@ -1200,19 +1200,19 @@ main{z-index: 0;}
 /*-------------------------------
 Tablet
 -------------------------------*/
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1366px) {
     /* footer{background-image: url("immagini/sfondo_bloccoditerra.jpg");border: 1px solid #00841f;width: 100%; text-align: center;} */
     /* .header_footer{background-image: url("immagini/sfondo_bloccoditerra.jpg"); background-size: 50% ;border: 2px solid #00841f;width: 100%;position: fixed;} */
     /* .header_footer{background: #019d26;border: 2px solid #00841f;width: 100%} */
     /* Colonna */
 
-    /* .small_header, .small_header p{
+    .small_header, .small_header p{
         height: 0;
         padding: 0;
-    } */
-    /* .Global__header{
+    }
+    .Global__header{
         position: fixed;
-    } */
+    }
     .big_text{
         font-size: 6vw;
     }
