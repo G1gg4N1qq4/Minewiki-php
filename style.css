@@ -303,6 +303,7 @@ main{z-index: 0;}
     /* .colonna a:hover */
     .footer__column{
         position: relative;
+        height: auto;
         transition: 0.2s;
         transition-timing-function: ease-in;
     }
@@ -323,19 +324,21 @@ main{z-index: 0;}
         margin-top: 10px;
         /* padding-bottom: 0; */
     }
+    .footer__column img{
+        position: absolute;
+        object-fit: cover;
+        top: 1vh;
+        right: 6vh;
+        border-radius: 4px;
+        width: 6vw !important;
+        height: auto;
+    }
     .colonnatitolo{
         margin:  0px 0px 0.90% 7.142857143%;
         /* border: 1px solid white; */
         
     }
-    .footer__column img{
-        position: absolute;
-        top: 6vh;
-        right: 6vh;
-        border-radius: 4px;
-        width: 7vw;
-        height: auto;
-    }
+    
 
 .immagine-descrizione{    
     width: 50%;
@@ -1320,6 +1323,16 @@ Tablet
         /* border: 1px solid black; */
     }
 
+    .footer__column img{
+        position: static;
+        padding-top: 10px;
+        top: 6vh;
+        right: 6vh;
+        border-radius: 4px;
+        width: 10vw !important;
+        height: auto;
+    }
+
 }
 
 /*-------------------------------
@@ -1616,7 +1629,7 @@ Smartphone
     }
 
     .footer p{
-        font-size: 8px;
+        font-size: 12px;
     }
     .footer__column{
         position: relative;
@@ -2022,7 +2035,7 @@ Smartphone
         top: 6vh;
         right: 6vh;
         border-radius: 4px;
-        width: 80vw;
+        width: 30vw;
         height: auto;
     }
 
