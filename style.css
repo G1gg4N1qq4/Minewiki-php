@@ -1257,7 +1257,7 @@ Tablet
     }
     .menubiomi--open .menubiomi{
         /* border-bottom: 1px solid rgb(209, 209, 209); */
-        max-height: 3000px;
+        max-height: 100vh;
         transition: 0.5s;
         background: #019d25;
         transition-timing-function: ease;
@@ -1268,7 +1268,7 @@ Tablet
     }
 
     .Global__header__menu{
-        padding-left: 1%;
+        padding-left: 0;
     }
     .Global__header__menu__item{
         width: 23%;
@@ -1345,6 +1345,9 @@ Tablet
         height: auto;
     }
 
+    .craft__hero{
+        margin-top: 101px;
+    }
 }
 
 /*-------------------------------
@@ -1762,6 +1765,9 @@ Smartphone
         font-size: 10px;
     }
 }
+/*-------------------------------
+Smartphone molto piccoli
+-------------------------------*/
 @media (max-width: 380px) {
     /* Global Header */
     .big_text{
@@ -1887,6 +1893,9 @@ Smartphone
     /* Cover */
     .cover{
         margin: 0;
+    }
+    .cover h3{
+        font-size: 12vw;
     }
     /* Cover 2 */
     .cover2{
