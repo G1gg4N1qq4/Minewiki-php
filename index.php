@@ -106,8 +106,8 @@
                         </h1>
                         <div class="cta">
                             <div class="small_text">
-                                <a href="" class="button">
-                                    Contatti
+                                <a href="pagine/login.php" class="button">
+                                    Login
                                 </a>
                             </div>
                         </div>
@@ -474,13 +474,14 @@
 
                 });
 
-                $('.cta').click(function(event) {
-                    // Preventing default action of the event
-                    event.preventDefault();
-                    // Getting the height of the document
-                    var n = $(document).height();
-                    $('html, body').animate({ scrollTop: n }, 1000);
-                });
+                // tasto "contatti scrolldown"
+                // $('.cta').click(function(event) {
+                //     // Preventing default action of the event
+                //     event.preventDefault();
+                //     // Getting the height of the document
+                //     var n = $(document).height();
+                //     $('html, body').animate({ scrollTop: n }, 1000);
+                // });
                 
                 if($(window).width() > 0){
                     ScrollReveal().reveal('.reveal', {distance: '50px', duration: '1500', origin: 'bottom', easing: 'cubic-bezier(0.215, .61, .355, 1)', interval: '50'});
