@@ -31,9 +31,11 @@ body{
     /* background-image: url("immagini/background.png"); */
     
 }
-body{ margin-top: -5%;}
+body{ margin-top: 0 !important;}
+
 main{
     background: #019d25;
+    width: 100%;
 }
 
 /* Container */
@@ -94,7 +96,7 @@ p{
 
 #Titolo1{
     /* padding-top: px; */
-    margin-top: 96px;
+    margin-top: 16px;
     position: relative;
     background: url(immagini/background_forest.png);
     /* object-fit: cover; */
@@ -168,7 +170,7 @@ main{z-index: 0;}
 /* Small Header */
 .small_header{
     background: #00841f;
-    padding: 40px 10px 60px 10px;
+    padding: 10px 10px 10px 10px;
     /* position: absolute;
     top: -1.95%; 
     right: 0;
@@ -253,6 +255,7 @@ main{z-index: 0;}
 .cover__content{
     /* background: #00841f; */
     position: absolute;
+    width: 100%;
     /*bottom:0;
     right:0; */
 }
@@ -415,7 +418,7 @@ main{z-index: 0;}
     display: flex; width: 100%; align-items: end;
     /* background:  linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3)); */
     background-size: cover;
-    margin-top: 188px;
+    margin-top: 108px;
     /* position: relative; */
     /* border: 5px solid red; */
 }
