@@ -1,4 +1,10 @@
+<?php 
 
+    session_start();
+
+    if(isset($_POST['user'])){$user = $_POST['user'];} else{$user = ""; }
+    if(isset($_POST['pass'])){$pass = $_POST['pass'];} else{$pass = ""; }
+?>
 
 <!DOCTYPE html>
 <html>
@@ -106,9 +112,20 @@
                         </h1>
                         <div class="cta">
                             <div class="small_text">
-                                <a href="pagine/login.php" class="button">
+                                <?php
+                                    echo "<p>ciaooooo".$user."</p>";
+                                    
+                                    if(isset($_POST["user"])){
+                                        echo "<a href='pagine/login.php' class='button'>Login</a>";
+
+                                    }
+                                    else{
+                                        echo "<a href='pagine/login.php' class='button'>Logout</a>";
+                                    }
+                                ?>
+                                <!-- <a href="pagine/login.php" class="button">
                                     Login
-                                </a>
+                                </a> -->
                             </div>
                         </div>
                     </div>    

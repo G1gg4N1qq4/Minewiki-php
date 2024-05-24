@@ -90,6 +90,14 @@ p{
     font-family: "MinecraftRegular";
     font-size: 22px;
 }
+.minecraft_text{
+    color: rgb(209, 209, 209);
+    margin: 0%;
+    height: auto;
+    width: 100%;
+    font-family: "MinecraftRegular";
+    font-size: 22px;
+}
 .Grande_Titolo{
     font-size: 40px;padding: 20px 0px 0px 0px;
 }
@@ -271,6 +279,23 @@ main{z-index: 0;}
     padding: 15px;
 }
 
+.login{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.login h1{
+    text-align: center;
+}
+table{
+    justify-content: center;
+    margin: auto;
+}
+#accedi{
+    display: grid;
+    justify-content: center;
+    margin: auto;
+}
 /* Grid */
 .grid{
     /* border: 1px solid black; */
