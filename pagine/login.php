@@ -34,15 +34,46 @@
                             </tr>
                             <tr>
                                 <td><label for="pass">Password:</label></td>
-                                <td><input type="password" name="pass" id="pass" value="<?php echo $pass?>" required></td>
-                                <td></td>
+                                <td><input type="password" name="pass" id="pass" required></td>
                             </tr>
                         </table>
 
                         <input type="submit" value="Accedi">
                     </form>
 
-                    
+                    <?php
+
+                        
+
+                        if (isset($_POST["user"]) and isset($_POST["pass"])){
+                            
+                            // require("../data/connessione_dp.php");
+                            $db_servername = "localhost";
+                            $db_nome = "biblioteca";
+                            $db_user = "root";
+                            $db_pass = "";
+
+                            $conn = new mysqli($db_servername, $db_user, $db_pass, $db_nome);
+                            if ($conn->connect_error){
+                                die("<p>Suca: ".$conn->connect_error."</p>");
+                            }
+
+                            $myquery = "SELECT username, password FROM utenti WHERE username='$user' AND password='$pass'";
+
+                            $ris = $conn->query($myquery) or die("<p> mammt è fallita! ".$conn->connect_error."</p>");
+
+                            if($ris->num_rows == 0){
+                                echo "<p>Utente o password non trovati :(</p>";
+                                $conn->close();
+                            } else{
+                                session_start();
+                                $_SESSION["user"] = $user;
+
+                                $conn->close();
+                                header("location: ../index.php");
+                            }
+                        };
+                    ?>
                 </main>
             </div>
         </div>
