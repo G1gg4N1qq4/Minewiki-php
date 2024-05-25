@@ -20,85 +20,11 @@
         <img src="../immagini/background_image5.jpg" alt="immagine non disponibile" class="img_res" id="back-ground">
         <div class="cover">
             <div class="cover__content">
-                <header class="group">
-                    
-                    <div class="small_header">
-                        <p>
-                            ㅤ
-                        </p>
-                    </div>
-                    <div class="Global__header">
-                        <ul class="Global__header__menu">
-                            <li class="Global__header__menu__item">
-                                <a href="../index.php"> Home </a> 
-                            </li>
-                            <li class="Global__header__menu__item Tendina">
-                                <a href="../pagine/biomi.html" class="main_page_link"> 
-                                    Biomi<img src="../immagini/freccia sborbus.png" alt="" class="freccia_tendina" style="--i:6;">
-                                </a>
-                                <div class="menubiomi">
-                                    <!-- <a href="../pagine/biomi.html#container" style="--i:1;"><span></span><img src="../immagini/foresta.webp" alt="" class="img_res img__lista" style="--i:6;">Foreste</a> -->
-                                    <a href="../pagine/biomi.html#Foreste" style="--i:1;"><span></span><img src="../immagini/foresta.webp" alt="" class="img_res img__lista" style="--i:6;">Foreste</a>
-                                    <a href="../pagine/biomi.html#Pianure" style="--i:2;"><span></span><img src="../immagini/pianura.png" alt="" class="img_res img__lista" style="--i:6;">Pianure</a>
-                                    <a href="../pagine/biomi.html#Montagne" style="--i:3;"><span></span><img src="../immagini/mountain.png" alt="" class="img_res img__lista" style="--i:6;">Montagne</a>
-                                    <a href="../pagine/biomi.html#Paludi" style="--i:4;"><span></span><img src="../immagini/palude.webp" alt="" class="img_res img__lista" style="--i:6;">Paludi</a>
-                                    <a href="../pagine/biomi.html#Deserti" style="--i:5;"><span></span><img src="../immagini/deserto.png" alt="" class="img_res img__lista" style="--i:6;">Deserti</a>
-                                    <a href="../pagine/biomi.html#Oceani" style="--i:6;"><span></span><img src="../immagini/oceani.jpg" alt="" class="img_res img__lista" style="--i:6;">Oceani/Fiumi</a>
-                                </div>
-                            </li>
-                            
-                            <li class="Global__header__menu__item Tendina">
-                                <a href="../pagine/craft.html" class="main_page_link"> Craft<img src="../immagini/freccia sborbus.png" alt="" class="freccia_tendina" style="--i:6;">
-                                </a>
-                                <div class="menubiomi">
-                                    <a href="../pagine/craft.html#Strumenti" style="--i:1;"><span></span>
-                                        <img src="../immagini/spada_diamante.png" alt="" class="img_res img__lista" style="--i:6;">
-                                        Strumenti</a>
-                                    <a href="../pagine/craft.html#Armature" style="--i:2;"><span></span>
-                                        <img src="../immagini/elmo_oro.png" alt="" class="img_res img__lista" style="--i:6;">
-                                        Armature</a>
-                                    <a href="../pagine/craft.html#BlocchiCostruzione" style="--i:3;"><span></span>
-                                        <img src="../immagini/gate.png" alt="" class="img_res img__lista" style="--i:6;">
-                                        Blocchi</a>
-                                    <a href="../pagine/craft.html#Lavoro" style="--i:4;"><span></span>
-                                        <img src="../immagini/chest.png" alt="" class="img_res img__lista" style="--i:6;">
-                                        Lavoro</a>
-                                </div>
-                            </li>
 
-                            <li class="Global__header__menu__item Tendina" >
-                                <a href="../pagine/mobs.html" class="main_page_link">Mobs<img src="../immagini/freccia sborbus.png" alt="" class="freccia_tendina" style="--i:6;">
-                                </a>
-                                <div class="menubiomi">
-                                    <a href="../pagine/mobs.html#Overworld" style="--i:1;"><span></span><img src="../immagini/sheep.png" alt="" class="img_res img__lista" style="--i:6;">Overworld</a>
-                                    <a href="../pagine/mobs.html#Nether" style="--i:2;"><span></span>
-                                        <img src="../immagini/pigman.jpg" alt="" class="img_res img__lista" style="--i:6;">
-                                        Nether
-                                    </a>                                  
-                                    <a href="../pagine/mobs.html#End" style="--i:4;"><span></span><img src="../immagini/enderman.png" alt="" class="img_res img__lista" style="--i:6;">End</a>
-                                    <a href="../pagine/mobs.html#Boss" style="--i:5;"><span></span><img src="../immagini/warden.png" alt="" class="img_res img__lista" style="--i:6;">Boss</a>
-                                </div>
-                            </li>
-                        </ul>
-
-                        <div class="Global__header__line-menu"></div>
-                        <h1 id="Global__header__logo">
-                            MINEWIKI
-                        </h1>
-                        <div class="cta">
-                            <div class="small_text">
-                                <a href="login.php" class="button">
-                                    Login
-                                </a>
-                            </div>
-                        </div>
-                    </div>    
-                    
-                    <div class="Global__header__icon-bar animate">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                <header> 
+                    <?php 
+                        require("nav.php")
+                    ?>
                 </header>
 
                 
