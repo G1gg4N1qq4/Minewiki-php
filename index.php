@@ -6,6 +6,8 @@
     if(isset($_POST['pass'])){$pass = $_POST['pass'];} else{$pass = ""; }
 ?>
 
+
+
 <!DOCTYPE html>
 <html>
     
@@ -143,11 +145,13 @@
 
                             }
                             else{
-                                echo '<div class="cta">
+                                echo 
+                                '<ul class="UserInterface">
+                                <div class="cta">
                                         <div class="small_text">
-                                            <a href="pagine/login.php" class="button">Login</a>
+                                            <a href="pagine/login.php" class="button" >Login</a>
                                         </div>
-                                    </div>';
+                                    </div></ul>';
                             }
                                     
                         ?>

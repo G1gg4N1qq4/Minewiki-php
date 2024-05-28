@@ -4,6 +4,8 @@
 
     if(isset($_POST['user'])){$user = $_POST['user'];} else{$user = ""; }
     if(isset($_POST['pass'])){$pass = $_POST['pass'];} else{$pass = ""; }
+    $nomepagina = __FILE__
+    $nomepagina = substr($nomepagina, -4,5)
 ?>
 
 <div class="group">
@@ -76,7 +78,9 @@
 
         <div class="Global__header__line-menu"></div>
         <h1 id="Global__header__logo">
-            MINEWIKI
+            <form action="" method="get">
+                <input type="search" name="Seaarch" id="" value='<?php echo "<p>Cerca su ".$nomepagina." </p>"?>'>
+            </form>
         </h1>
         <?php
                             
