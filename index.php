@@ -4,6 +4,7 @@
 
     if(isset($_POST['user'])){$user = $_POST['user'];} else{$user = ""; }
     if(isset($_POST['pass'])){$pass = $_POST['pass'];} else{$pass = ""; }
+
 ?>
 
 
@@ -173,7 +174,10 @@
                         <div class="hero__container">
                             <div class="hero__content reveal">
                                 <?php
-                                    echo "<p class='intro_text'>Eccoti qui ".$_SESSION["user"]."!</p>";
+                                    if(isset($_SESSION["user"])){
+                                        echo "<p class='intro_text'>Eccoti qui ".$_SESSION["user"]."!</p>";
+                                        
+                                    }else{echo "<p class='intro_text'>Benvenuto!</p>";}
                                 ?>
                                 
                                 <p class="big_text"> Tutte le informazioni</p>

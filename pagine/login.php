@@ -2,6 +2,7 @@
     session_start();
     if (isset($_POST["user"])) $user = $_POST["user"]; else $user = "";
     if (isset($_POST["pass"])) $pass = $_POST["pass"]; else $pass = "";
+    
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +69,12 @@
                                     header("location: ../index.php");
                                 }
                             };
+
+                            
                         ?>
+
+                        <p>Se non hai un account <a href="registrazione.php">registrati</a> </p>
+
                     </div>
 
 
