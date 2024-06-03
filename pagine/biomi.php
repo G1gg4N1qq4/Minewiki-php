@@ -1,3 +1,6 @@
+<?php
+	session_start();	
+?>
 
 
 <!DOCTYPE html>
@@ -34,16 +37,17 @@
                         <?php
                             require("../data/connessione_db.php");
                             
-                            $myquery = "SELECT categoria, background
+                            $myquery = "SELECT cod_bioma, categoria, background
                                         FROM biomi";
                             
                             $ris = $conn->query($myquery) or die("<p>Query fallita:".$conn->connect_error."</p>");
                             
                             echo "<div class='copertura'><h2 class='Grande_Titolo' id='Foreste'>Biomi</h2><div class='container__container' >";
                                 foreach($ris as $riga){
+                                    $cod_bioma = $riga["cod_bioma"];
                                     $categoria = $riga["categoria"];
                                     $background = $riga["background"];
-                                    echo '<a href="" class="biomi__card">
+                                    echo '<a href="bioma.php?cod_bioma='.$cod_bioma.'" class="biomi__card">
                                         <img src="../immagini/'.$background.'" alt=""  class="biomi__card__img">
                                         
                                         <h2>'.$categoria.'</h2>
