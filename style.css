@@ -155,6 +155,8 @@ p{
     height: 100%;
     background:#0000006a;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 #final-text{
     padding: 0px 0px 20px 0px;
@@ -859,7 +861,7 @@ table{
 .biomi__card{
     margin: 20px 10px;
     margin-bottom: 20px;
-    width: 33%;
+    width: 31%;
     height: auto;
     border: 1px white;
     box-shadow: 3px 3px 15px  #005508;

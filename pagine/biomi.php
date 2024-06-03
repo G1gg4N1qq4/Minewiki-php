@@ -29,43 +29,74 @@
 
                 
                 <main>
-                     <div class="container" id="biomi">      
-                        <div class="copertura">
+                    <div class="container" id="biomi">  
+                        
+                        <?php
+                            require("../data/connessione_db.php");
+                            
+                            $myquery = "SELECT categoria, background
+                                        FROM biomi";
+                            
+                            $ris = $conn->query($myquery) or die("<p>Query fallita:".$conn->connect_error."</p>");
+                            
+                            echo "<div class='copertura'><h2 class='Grande_Titolo' id='Foreste'>Biomi</h2><div class='container__container' >";
+                                foreach($ris as $riga){
+                                    $categoria = $riga["categoria"];
+                                    $background = $riga["background"];
+                                    echo '<a href="" class="biomi__card">
+                                        <img src="../immagini/'.$background.'" alt=""  class="biomi__card__img">
+                                        
+                                        <h2>'.$categoria.'</h2>
+                                    
+                                        </a>';
+                                }
+                            echo "</div></div>";
+                        ?>
+                        <!-- <div class="copertura">
                             <h2 class="Grande_Titolo" id="Foreste">Biomi</h2>
                             <div class="container__container" >
-                                <div class="biomi__card">
+                                <a href="" class="biomi__card">
                                     <img src="../immagini/background_forest.png" alt=""  class="biomi__card__img">
                                     
                                     <h2>Foreste</h2>
-                                </div>
-                                <div class="biomi__card">
+                                    
+                                </a>
+                                <a href="" class="biomi__card">
                                     <img src="../immagini/background_forest.png" alt=""  class="biomi__card__img">
                                     
                                     <h2>Foreste</h2>
-                                </div>
-                                <div class="biomi__card">
+                                    
+                                </a>
+                                <a href="" class="biomi__card">
                                     <img src="../immagini/background_forest.png" alt=""  class="biomi__card__img">
                                     
                                     <h2>Foreste</h2>
-                                </div>
-                                <div class="biomi__card">
+                                    
+                                </a>
+                                <a href="" class="biomi__card">
                                     <img src="../immagini/background_forest.png" alt=""  class="biomi__card__img">
                                     
                                     <h2>Foreste</h2>
-                                </div>
-                                <div class="biomi__card">
+                                    
+                                </a>
+                                <a href="" class="biomi__card">
                                     <img src="../immagini/background_forest.png" alt=""  class="biomi__card__img">
                                     
                                     <h2>Foreste</h2>
-                                </div>
-                                <div class="biomi__card">
+                                    
+                                </a>
+                                <a href="" class="biomi__card">
                                     <img src="../immagini/background_forest.png" alt=""  class="biomi__card__img">
                                     
                                     <h2>Foreste</h2>
-                                </div>
+                                    
+                                </a>
+                                
+                                
+                                
                             </div>
 
-                        </div>
+                        </div> -->
 
 
                     </div>
