@@ -4,7 +4,7 @@
 
     if(isset($_POST['user'])){$user = $_POST['user'];} else{$user = ""; }
     if(isset($_POST['pass'])){$pass = $_POST['pass'];} else{$pass = ""; }
-    $nomepagina = __FILE__
+    $nomepagina = __FILE__;
     $nomepagina = substr($nomepagina, -4,5)
 ?>
 
