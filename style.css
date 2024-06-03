@@ -39,7 +39,12 @@ main{
 }
 
 /* Container */
-.container{padding: 0px; padding-top: 100px;background: #000;position: relative;}
+.container{
+    padding: 0px; 
+    padding-top: 100px;
+    background: #000;
+    position: relative;
+}
 
 .animate{
     -webkit-transition: all 0.3s ease-out;
@@ -100,8 +105,13 @@ p{
 }
 .Grande_Titolo{
     font-size: 40px;padding: 20px 0px 0px 0px;
+    width: 100%;
 }
 
+#Titolo{
+    margin-top: 16px;
+    position: relative;
+}
 #Titolo1{
     /* padding-top: px; */
     margin-top: 16px;
@@ -144,6 +154,7 @@ p{
 .container__container{
     height: 100%;
     background:#0000006a;
+    display: flex;
 }
 #final-text{
     padding: 0px 0px 20px 0px;
@@ -355,6 +366,7 @@ main{z-index: 0;}
     padding: 20px;
     background: #019d25;
     height: auto;
+    border-radius: 10px;
 }
 .login__content table, tr,td, input{
     width: 100%;
@@ -841,6 +853,29 @@ table{
 }
 
 /* Biomi */
+#biomi{
+    background: url(immagini/background_biomi.jpg);
+}
+.biomi__card{
+    margin: 20px 10px;
+    margin-bottom: 20px;
+    width: 33%;
+    height: auto;
+    border: 1px white;
+    box-shadow: 3px 3px 15px  #005508;
+    background:#00841f;
+    border-radius: 4px;
+}
+.biomi__card__img{
+    width: 100%;
+    height: auto;
+    border-radius: inherit;
+}
+
+.copertura{
+    background-color: rgba(0, 0, 0, 0.616);
+}
+
 #oak_forest{
     background: rgba(86, 125, 34, 0.815);
 }

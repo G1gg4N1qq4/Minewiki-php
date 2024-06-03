@@ -1,6 +1,6 @@
 <?php 
     $db_servername = "localhost";
-    $db_nome = "biblioteca";
+    $db_nome = "minewiki";
     $db_user = "root";
     $db_pass = "";
 

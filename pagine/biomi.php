@@ -29,11 +29,49 @@
 
                 
                 <main>
-                    
-                    <div class="container" id="Titolo1">
-                        <!-- <img src="../immagini/background_forest.png" alt="immagine non disponibile" class="img_res" id="background-foreste"> -->
-                        
-                        <div class="container__container">
+                     <div class="container" id="biomi">      
+                        <div class="copertura">
+                            <h2 class="Grande_Titolo" id="Foreste">Biomi</h2>
+                            <div class="container__container" >
+                                <div class="biomi__card">
+                                    <img src="../immagini/background_forest.png" alt=""  class="biomi__card__img">
+                                    
+                                    <h2>Foreste</h2>
+                                </div>
+                                <div class="biomi__card">
+                                    <img src="../immagini/background_forest.png" alt=""  class="biomi__card__img">
+                                    
+                                    <h2>Foreste</h2>
+                                </div>
+                                <div class="biomi__card">
+                                    <img src="../immagini/background_forest.png" alt=""  class="biomi__card__img">
+                                    
+                                    <h2>Foreste</h2>
+                                </div>
+                                <div class="biomi__card">
+                                    <img src="../immagini/background_forest.png" alt=""  class="biomi__card__img">
+                                    
+                                    <h2>Foreste</h2>
+                                </div>
+                                <div class="biomi__card">
+                                    <img src="../immagini/background_forest.png" alt=""  class="biomi__card__img">
+                                    
+                                    <h2>Foreste</h2>
+                                </div>
+                                <div class="biomi__card">
+                                    <img src="../immagini/background_forest.png" alt=""  class="biomi__card__img">
+                                    
+                                    <h2>Foreste</h2>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <!-- <div class="container" id="Titolo1">      
+                        <div class="container__container" >
                             <h2 class="Grande_Titolo" id="Foreste">Foreste</h2>
                             <div class="cover2 reveal">
                                 <h2>Foresta di Querce</h2>
@@ -281,7 +319,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="boxsu">
                         <a href=#cover>
