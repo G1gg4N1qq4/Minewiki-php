@@ -1,7 +1,3 @@
-<?php
-	session_start();	
-?>
-
 
 <!DOCTYPE html>
 <html>
@@ -29,7 +25,6 @@
                         require("nav.php")
                     ?>
                 </header>
-
                 
                 <main>
                     <div class="container" id="biomi">  

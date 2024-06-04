@@ -29,196 +29,52 @@
                 <main>
                     <div class="container" id="biomi">  
                         
-                        <?php
-                            $cod_bioma = $_GET["cod_bioma"];
-                            require("../data/connessione_db.php");
-                            $sql = "SELECT cod_bioma, categoria, background, bioma_1, immagine_1, descrizione_1, 
-                                    bioma_2, immagine_2, descrizione_2,
-                                    bioma_3, immagine_3, descrizione_3,
-                                    bioma_4, immagine_4, descrizione_4,
-                                    bioma_5, immagine_5, descrizione_5,
-                                    bioma_6, immagine_6, descrizione_6,
-                                    bioma_7, immagine_7, descrizione_7,
-                                    bioma_8, immagine_8, descrizione_8  
-                                    FROM biomi
-                                    WHERE cod_bioma = $cod_bioma";
-                            
-                            $ris = $conn->query($sql) or die("<p>Query fallita!</p>");
-                            
-                            if ($ris->num_rows == 0) {
-                                // decidere che cosa fare
-                                die ("Biomi non trovati!");
-                            } else {
+                            <?php
+                                $cod_bioma = $_GET["cod_bioma"];
+                                require("../data/connessione_db.php");
+                                $sql = "SELECT biomi.cod_bioma, biomi.categoria, biomi.background, bioma.bioma, bioma.immagine, bioma.descrizione, bioma.style 
+                                        FROM biomi JOIN bioma ON biomi.cod_bioma = bioma.cod_categoria
+                                        WHERE cod_bioma = $cod_bioma";
+                                
+                                $ris = $conn->query($sql) or die("<p>Query fallita!</p>");
+                                
                                 foreach($ris as $riga){
                                     $categoria = $riga['categoria'];
-                                    $bioma_1 = $riga['bioma_1'];
-                                    $descrizione_1 = $riga['descrizione_1'];
-                                    $immagine_1 = $riga["immagine_1"];
-                                    $bioma_2 = $riga['bioma_2'];
-                                    $descrizione_2 = $riga['descrizione_2'];
-                                    $immagine_2 = $riga["immagine_2"];
-                                    $bioma_3 = $riga['bioma_3'];
-                                    $descrizione_3 = $riga['descrizione_3'];
-                                    $immagine_3 = $riga["immagine_3"];
-                                    $bioma_4 = $riga['bioma_4'];
-                                    $descrizione_4 = $riga['descrizione_4'];
-                                    $immagine_4 = $riga["immagine_4"];
-                                    $bioma_5 = $riga['bioma_5'];
-                                    $descrizione_5 = $riga['descrizione_5'];
-                                    $immagine_5 = $riga["immagine_5"];
-                                    $bioma_6 = $riga['bioma_6'];
-                                    $descrizione_6 = $riga['descrizione_6'];
-                                    $immagine_6 = $riga["immagine_6"];
-                                    $bioma_7 = $riga['bioma_7'];
-                                    $descrizione_7 = $riga['descrizione_7'];
-                                    $immagine_7 = $riga["immagine_7"];
-                                    $bioma_8 = $riga['bioma_8'];
-                                    $descrizione_8 = $riga['descrizione_8'];
-                                    $immagine_8 = $riga["immagine_8"];
-                                    $background = $riga["background"];
-                                    
-                                    echo <<<EOD
-                                        <div class="container" id="Titolo1">      
-                                            <div class="container__container" >
-                                                <h2 class="Grande_Titolo" id="$categoria">$categoria</h2>
-                                                <div class="cover2 reveal">
-                                                    <h2>$bioma_1</h2>
-                                                    <div class="card2" id="oak_forest">
-                                                        <div class="card2__img">
-                                                            <img src="../immagini/biomi/$immagine_1" alt="" class="img_res">
-                                                        </div>
-                                                        <div class="card2__copy">
-                                                            <p>$descrizione_1</p>
-                                                        </div>
-                                                    </div>  
-                                                </div>
-                                            </div>
-                                    EOD;
-                                    if($bioma_2 == ""){
+                                    $background = $riga['background'];
+                                }
 
-                                    } else{
+                                if ($ris->num_rows == 0) {
+                                    // decidere che cosa fare
+                                    die ("Biomi non trovati!");
+                                } else {
+                                    echo "<div class='container' id='Titolo1' style='background: url(../immagini/$background)'>";
+                                    echo "<div class='container__container'><h2 class='Grande_Titolo' id='$categoria'>$categoria</h2></div> ";
+                                    foreach($ris as $riga){
+                                        $bioma = $riga['bioma'];
+                                        $descrizione = $riga['descrizione'];
+                                        $immagine = $riga["immagine"];
+                                        $style = $riga["style"];
+            
                                         echo <<<EOD
-                                            <div class="cover2 reveal">
-                                                <h2>$bioma_2</h2>
-                                                <div class="card2" id="oak_forest">
-                                                    <div class="card2__img">
-                                                        <img src="../immagini/biomi/$immagine_2" alt="" class="img_res">
-                                                    </div>
-                                                    <div class="card2__copy">
-                                                        <p>$descrizione_2</p>
-                                                    </div>
-                                                </div>  
-                                            </div>
-                                        EOD;
-                                        if($bioma_3 == ""){
-
-                                        } else{
-                                            echo <<<EOD
+                                            <div class="container__container" >
                                                 <div class="cover2 reveal">
-                                                    <h2>$bioma_3</h2>
-                                                    <div class="card2" id="oak_forest">
+                                                    <h2>$bioma</h2>
+                                                    <div class="card2" id="$style">
                                                         <div class="card2__img">
-                                                            <img src="../immagini/biomi/$immagine_3" alt="" class="img_res">
+                                                            <img src="../immagini/biomi/$immagine" alt="" class="img_res">
                                                         </div>
                                                         <div class="card2__copy">
-                                                            <p>$descrizione_3</p>
+                                                            <p>$descrizione</p>
                                                         </div>
                                                     </div>  
                                                 </div>
-                                            EOD;
-                                            if($bioma_4 == ""){
-
-                                            } else{
-                                                echo <<<EOD
-                                                    <div class="cover2 reveal">
-                                                        <h2>$bioma_4</h2>
-                                                        <div class="card2" id="oak_forest">
-                                                            <div class="card2__img">
-                                                                <img src="../immagini/biomi/$immagine_4" alt="" class="img_res">
-                                                            </div>
-                                                            <div class="card2__copy">
-                                                                <p>$descrizione_4</p>
-                                                            </div>
-                                                        </div>  
-                                                    </div>
-                                                EOD;
-                                                if($bioma_5 == ""){
-
-                                                } else{
-                                                    echo <<<EOD
-                                                        <div class="cover2 reveal">
-                                                            <h2>$bioma_5</h2>
-                                                            <div class="card2" id="oak_forest">
-                                                                <div class="card2__img">
-                                                                    <img src="../immagini/biomi/$immagine_5" alt="" class="img_res">
-                                                                </div>
-                                                                <div class="card2__copy">
-                                                                    <p>$descrizione_5</p>
-                                                                </div>
-                                                            </div>  
-                                                        </div>
-                                                    EOD;
-                                                    if($bioma_6 == ""){
-
-                                                    } else{
-                                                        echo <<<EOD
-                                                            <div class="cover2 reveal">
-                                                                <h2>$bioma_6</h2>
-                                                                <div class="card2" id="oak_forest">
-                                                                    <div class="card2__img">
-                                                                        <img src="../immagini/biomi/$immagine_6" alt="" class="img_res">
-                                                                    </div>
-                                                                    <div class="card2__copy">
-                                                                        <p>$descrizione_6</p>
-                                                                    </div>
-                                                                </div>  
-                                                            </div>
-                                                        EOD;
-                                                        if($bioma_7 == ""){
-
-                                                        } else{
-                                                            echo <<<EOD
-                                                                <div class="cover2 reveal">
-                                                                    <h2>$bioma_7</h2>
-                                                                    <div class="card2" id="oak_forest">
-                                                                        <div class="card2__img">
-                                                                            <img src="../immagini/biomi/$immagine_7" alt="" class="img_res">
-                                                                        </div>
-                                                                        <div class="card2__copy">
-                                                                            <p>$descrizione_7</p>
-                                                                        </div>
-                                                                    </div>  
-                                                                </div>
-                                                            EOD;
-                                                            if($bioma_8 == ""){
-
-                                                            } else{
-                                                                echo <<<EOD
-                                                                    <div class="cover2 reveal">
-                                                                        <h2>$bioma_8</h2>
-                                                                        <div class="card2" id="oak_forest">
-                                                                            <div class="card2__img">
-                                                                                <img src="../immagini/biomi/$immagine_8" alt="" class="img_res">
-                                                                            </div>
-                                                                            <div class="card2__copy">
-                                                                                <p>$descrizione_8</p>
-                                                                            </div>
-                                                                        </div>  
-                                                                    </div>
-                                                                EOD;
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
+                                            </div>      
+                                        EOD;
+                                                                        
                                     }
-                                        
-                                            
                                     echo "</div>";
                                 }
-                            }
-                        ?>
+                            ?>
 
 
                     </div>

@@ -113,10 +113,10 @@ p{
     position: relative;
 }
 #Titolo1{
-    /* padding-top: px; */
+    padding-top: 0px;
     margin-top: 16px;
     position: relative;
-    background: url(immagini/background_forest.png);
+    /* background: url(immagini/background_forest.png); */
     /* object-fit: cover; */
 }
 #Titolo2{
@@ -149,6 +149,21 @@ p{
 #Titolo4_mobs{
     background: url(immagini/background_boss.png);
 }
+.mobs__card{
+    margin: 20px 10px;
+    margin-bottom: 20px;
+    width: 18%;
+    height: auto;
+    border: 1px white;
+    box-shadow: 3px 3px 15px  #005508;
+    background:#00841f;
+    border-radius: 4px;
+}
+.mobs__card__img{
+    width: 100%;
+    height: auto;
+    border-radius: inherit;
+}
 
 
 .container__container{
@@ -163,11 +178,11 @@ p{
 }
 #Foreste, #Pianure, #Montagne, #Paludi, #Deserti, #Oceani{
     /* transform: translateY(-80px); */
-    margin-bottom: 90px;
+    margin-bottom: 45px;
 }
 
 #Overworld, #Nether, #End, #Boss{
-    margin-bottom: 90px;
+    margin-bottom: 45px;
 }
 
 #Foreste{
