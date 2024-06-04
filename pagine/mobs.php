@@ -46,7 +46,6 @@
                                     $nome = $riga["nome"];                            
                                     $categoria = $riga["categoria"];
                                     $copertina = $riga["copertina"];
-                                    $background = $riga["background"];
                                     echo '<a href="mob.php?cod_mostro='.$cod_mostro.'" class="mobs__card">
                                         <div class="mobs__card__img">
                                             <img src="../immagini/mobs/icons/'.$copertina.'" alt="" class="img_res">

@@ -79,7 +79,7 @@
         <div class="Global__header__line-menu"></div>
         <h1 id="Global__header__logo">
             <form action="" method="get">
-                <input type="search" name="Seaarch" id="" value='<?php echo "<p>Cerca su ".$nomepagina." </p>"?>'>
+                <input type="search" name="Search" id="" value='<?php echo "Cerca su ".$nomepagina.""?>'>
             </form>
         </h1>
         <?php
@@ -95,17 +95,19 @@
                 </li>
                 <div class='cta'>
                     <div class='small_text'>
-                        <a href='logout.php' class='button'>Logout</a>
+                        <a href='pagine/logout.php' class='button'>Logout</a>
                     </div>
                 </div></ul>";
 
             }
             else{
-                echo '<div class="cta">
+                echo 
+                '<ul class="UserInterface">
+                <div class="cta">
                         <div class="small_text">
-                            <a href="login.php" class="button">Login</a>
+                            <a href="login.php" class="button" >Login</a>
                         </div>
-                    </div>';
+                    </div></ul>';
             }
                     
         ?>

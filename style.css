@@ -169,7 +169,6 @@ p{
     margin: auto;
 }
 
-
 .container__container{
     height: 100%;
     background:#0000006a;
@@ -600,7 +599,7 @@ table{
         background: url("immagini/crafting/crafting.png");
         /* background:  linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3)); */
         background-size: cover;
-        margin-top: 188px;
+        margin-top: 114px;
         /* position: relative; */
         /* border: 5px solid red; */
     }
@@ -830,6 +829,28 @@ table{
     transition-timing-function: ease-in-out;
 }
 
+#craft{
+    background: url(immagini/background_craft.png);
+}
+#crafting{
+    color: #019d25;
+}
+.craft__card{
+    margin: 20px 10px;
+    margin-bottom: 20px;
+    width: 33%;
+    height: auto;
+    border: 1px white;
+    box-shadow: 3px 3px 15px  #005508;
+    background:#00841f;
+    border-radius: 4px;
+}
+.craft__card__img{
+    width: 100%;
+    height: auto;
+    border-radius: inherit;
+    margin: auto;
+}
 .crafting__container{
     display: flex;
     flex-wrap: wrap;

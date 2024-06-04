@@ -26,25 +26,34 @@
                         require("nav.php")
                     ?>
                 </header>
-
-
                 
                 <main>
-                    <div class="craft__hero">
-                        <div class="hero__container">
-                            <div class="hero__content reveal">
-                                <!-- <p class="intro_text">Eccoti qui!</p> -->
-                                <p class="big_text"> Crafting</p>
-                                <!-- <p class="big_text"> su minecraft</p> -->
-                                <!-- <p class="normal_text" id="final-text"> Nei limiti delle nostre possibilità...</p> -->
-                                <!-- <div class="small_text"><a href="https://www.minecraft.net/it-it" class="button" id="discover_button">Discover More</a></div> -->
-                                
-                            </div>
-                        </div>
+                    <div class="container" id="craft">  
+                        <?php
+                            require("../data/connessione_db.php");
+                            
+                            $myquery = "SELECT cod_craft, categoria, background
+                                        FROM craft";
+                            
+                            $ris = $conn->query($myquery) or die("<p>Query fallita:".$conn->connect_error."</p>");
+                            
+                            echo "<div class='copertura'><h2 class='Grande_Titolo' id='Foreste'>Crafting</h2><div class='container__container' >";
+                                foreach($ris as $riga){
+                                    $cod_craft = $riga["cod_craft"];
+                                    $categoria = $riga["categoria"];
+                                    $background = $riga["background"];
+                                    echo '<a href="crafts.php?cod_craft='.$cod_craft.'" class="craft__card">
+                                        <img src="../immagini/'.$background.'" alt=""  class="craft__card__img">
+                                        
+                                        <h2>'.$categoria.'</h2>
+                                    
+                                        </a>';
+                                }
+                            echo "</div></div>";
+                        ?>
                     </div>
                     
-                    <div class="crafting__container">
-                        <!-- <img src="../immagini/background_forest.png" alt="immagine non disponibile" class="img_res" id="background-foreste"> -->
+                    <!-- <div class="crafting__container">
                         
                         <h1 class="reveal" id="Strumenti">Strumenti</h1>
                         <div class="crafting__card reveal">
@@ -94,7 +103,6 @@
                     </div>
                     
                     <div class="crafting__container">
-                        <!-- <img src="../immagini/background_forest.png" alt="immagine non disponibile" class="img_res" id="background-foreste"> -->
                         <h1 class="reveal" id="Armature">Armature</h1>
                         <div class="crafting__card reveal">
                             <img src="../immagini/crafting/crafting-elmo.gif" alt=""  class="crafting__card__img">
@@ -139,7 +147,6 @@
                     </div>
 
                     <div class="crafting__container">
-                        <!-- <img src="../immagini/background_forest.png" alt="immagine non disponibile" class="img_res" id="background-foreste"> -->
                         <h1 class="reveal" id="BlocchiCostruzione">Blocchi da costruzione</h1>
                         <div class="crafting__card reveal">
                             <img src="../immagini/crafting/crafting-door.gif" alt=""  class="crafting__card__img">
@@ -203,7 +210,6 @@
                     </div>
 
                     <div class="crafting__container">
-                        <!-- <img src="../immagini/background_forest.png" alt="immagine non disponibile" class="img_res" id="background-foreste"> -->
                         <h1 class="reveal" id="Lavoro">Lavoro</h1>
                         <div class="crafting__card reveal">
                             <img src="../immagini/crafting/crafting-crafting_table.png" alt=""  class="crafting__card__img">
@@ -251,7 +257,7 @@
                                 <p>Utilizzato per incantare strumenti, armi e armature.</p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </main>    
                 <footer class="footer">
