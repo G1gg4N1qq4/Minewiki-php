@@ -115,32 +115,34 @@ INSERT INTO `crafting` (`cod_crafting`, `craft`, `materiali`, `immagini`) VALUES
 
 -- Dump della struttura di tabella minewiki.mob
 CREATE TABLE IF NOT EXISTS `mob` (
+  `cod_mostro` int(11) NOT NULL AUTO_INCREMENT,
   `cod_mobs` int(11) DEFAULT NULL,
   `nome` char(50) DEFAULT NULL,
   `descrizione` longtext DEFAULT NULL,
   `immagine` char(50) DEFAULT NULL,
+  `copertina` char(50) DEFAULT NULL,
+  PRIMARY KEY (`cod_mostro`),
   KEY `cod_mobs` (`cod_mobs`),
   CONSTRAINT `FK_mobs` FOREIGN KEY (`cod_mobs`) REFERENCES `mobs` (`cod_mob`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Dump dei dati della tabella minewiki.mob: ~16 rows (circa)
-INSERT INTO `mob` (`cod_mobs`, `nome`, `descrizione`, `immagine`) VALUES
-	(1, 'Mucca', 'La mucca e\' un animale che può essere trovato in quasi tutti i biomi (quelli più comuni sono le foreste e le pianure). Le mucche forniscono risorse importanti per il giocatore, come carne e pelle, utilizzabile per creare libri e cornici. Dalla mucca si può ottenere il latte. Questo può essere utilizzato per craftare torte e per rimuovere tutti gli effetti al giocatore. Per far accoppiare le mucche bisogna utilizzare il grano.', 'mucca.avif'),
-	(1, 'Tartaruga', 'La tartaruga e\' un mob passivo in Minecraft. E\' l\'unica fonte per creare una pozione specifica. Le tartarughe vengono utilizzate principalmente per creare pozioni. Quando muoiono lasciano cadere i loro gusci che possono essere usati per creare la pozione del Signore delle Tartarughe .', 'tartaruga.webp'),
-	(1, 'Gatto', 'I gatti sono un mob utile da avere in giro, sono noti per tenere lontani i creeper. I gatti possono anche essere addomesticati e, come i lupi addomesticati, puoi comandare loro di seguirti o di restare fermi. Ma a differenza dei lupi, i gatti possono essere di vari colori.', 'gatto.avif'),
-	(1, 'Volpe', 'Le volpi sono un ottimo mob da avere se vuoi essere sorpreso dagli oggetti. La volpe lascerà cadere qualunque oggetto abbia in mano se ci sono tre o quattro cespugli di bacche entro un raggio di sedici isolati da essi. Le volpi sono una delle poche creature notturne e sono note per andare nei villaggi di notte e uccidere i polli. Puoi guadagnare la loro fiducia e, così facendo, attaccheranno alcuni mob che ti feriscono.', 'volpe.jpg'),
-	(1, 'Zombie', 'Lo zombie e\' un mostro ostile che si genera di notte o in aree non illuminate e brucia fino alla morte alla luce del sole. Gli zombie sono i mob più facili da affrontare poiche\' non hanno abilità speciali e si muovono abbastanza lentamente. Sembrano simili al modello di giocatore predefinito.', 'zombi.jpg'),
-	(2, 'Zombie Pigman', 'I pigman sono una variante non-morta dei piglin e dei piglin bruti che abitano nel Nether. Un pigman diventa ostile quando lui, o un altro pigman nelle vicinanze viene colpito. I pigman possono generarsi nel Nether, nei portali del Nether o dai maiali colpiti da un fulmine.', 'pigman_mobs.png'),
-	(2, 'Piglin', 'E\' noto che i piglin attaccano qualsiasi giocatore senza equipaggiamento dorato. Attaccheranno anche i giocatori che attaccano altri Piglin o Pigline Bruti. Se rompi qualsiasi tipo di minerale d\'oro attorno a loro, ciò li spingerà ad attaccarti.', 'piglin.png'),
-	(2, 'Blaze', 'I Blaze sono mob volanti che si trovano solo nel Nether. Sono essenziali perche\' sono l\'unica fonte di Blaze Rods che servono per trovare il portale dell\'end. Non appena un Blaze ti vedrà, inizierà ad attaccarti e lancerà tre palle di fuoco verso di te.', 'blaze.png'),
-	(2, 'Scheletro Wither', 'Lo scheletro wither attacca con la spada e può forse essere scambiato per uno scheletro più standard che scivola e cade in una pozza di inchiostro. Gli scheletri wither sono anche leggermente più alti di te o di uno scheletro normale. Se vieni colpito da uno di loro, perderai lentamente la tua salute a causa dell\'effetto "wither". Gli scheletri wither, quando muoiono, hanno una piccola probabilità di lasciar cadere la loro testa, utile per far generare il Wither.', 'witherskeleton.png'),
-	(2, 'Cubo di Magma', 'I Cubi di Magma sono essenziali perche\' sono gli unici mob che rilasciano Magma Cream nel gioco (la Magma Cream serve per fare le pozioni di resistenza al fuoco). E se un cubo di magma più piccolo viene mangiato da una rana, verrà trasformato in una Froglight . Quando i cubi di magma vengono inizialmente generati, hanno una forma grande, poi dopo alcuni attacchi, saranno di forma media e, se continui ad attaccare, si trasformeranno in una forma più piccola fino a morire definitivamente.', 'magmacube.png'),
-	(3, 'Enderman', 'Gli Enderman sono mob che possono sopravvivere al sole, sono noti per teletrasportarsi in giro. Puoi provocare un Enderman guardandolo direttamente negli occhi che verrà ad attaccarti. Gli Enderman fanno molto danno ma non possono toccare l\'acqua, altrimenti prendono danno.', 'enderman_mobs.png'),
-	(3, 'Endermite', 'L\'endermite e\' un piccolo mob ostile senza alcuno', 'endermite.png'),
-	(3, 'Shulker', 'Gli shulker sono un mob ostile che si genera in una scatola. Gli Shulker sono l\'unica fonte di Conchiglie Shulker, che possono essere utilizzate per creare Scatole Shulker. Gli shulker non infliggono troppi danni, ma i loro proiettili seguono i giocatori e, quando colpiti, subiscono la levitazione per 10 secondi. I giocatori possono distruggere i proiettili sparandogli con una freccia o bloccandoli con uno scudo. Gli Shulker si generano solamente nelle città dell\'End.', 'shulker.png'),
-	(4, 'Wither', 'Per generare il Wither, dovrai fare un viaggio nel Nether. Mentre sei lì, raccogli 4 Soul Sand per costruire il corpo del boss. Questi materiale dovrebbe essere abbondante in tutto il Nether e quindi non difficile da trovare. Il materiale più difficile da raccogliere sono le teste di Wither Skeleton, di cui te ne serviranno 3. Per ottenere i teschi, dovrai sconfiggere i Wither Skeletons, che si generano esclusivamente nelle Fortezze del Nether.', 'wither.jpg'),
-	(4, 'Warden', 'Il Warden e\' uno dei mob più recenti del gioco. Apparendo come una mucca eretta e dai colori strani, il Warden e\' in realtà un mob ostile che e\' cieco e cerca il giocatore rilevando rumori e vibrazioni dal giocatore che si muove o esegue azioni. Il Warden può essere trovato nelle Grotte Oscure Profonde, facili da individuare grazie all\'abbondanza del nuovo blocco, Sculk. Le Grotte Oscure e Profonde appaiono ai livelli più bassi della generazione del mondo, appena pochi livelli sopra Bedrock.', 'warden_mobs.jpg'),
-	(4, 'Drago dell\'End', 'Lo scontro con il Drago dell\'End e\' considerata la fase finale del gioco perche\' dopo aver ucciso il drago, verrai accolto con un testo speciale sullo schermo. Il drago dell\'End e\' un mob che può generarsi solo in un bioma di Minecraft. La dimensione dell\'End.', 'enderdragon.png');
+INSERT INTO `mob` (`cod_mostro`, `cod_mobs`, `nome`, `descrizione`, `immagine`, `copertina`) VALUES
+	(1, 1, 'Mucca', 'La mucca e\' un animale che può essere trovato in quasi tutti i biomi (quelli più comuni sono le foreste e le pianure). Le mucche forniscono risorse importanti per il giocatore, come carne e pelle, utilizzabile per creare libri e cornici. Dalla mucca si può ottenere il latte. Questo può essere utilizzato per craftare torte e per rimuovere tutti gli effetti al giocatore. Per far accoppiare le mucche bisogna utilizzare il grano.', 'mucca.avif', 'cow.png'),
+	(2, 1, 'Tartaruga', 'La tartaruga e\' un mob passivo in Minecraft. E\' l\'unica fonte per creare una pozione specifica. Le tartarughe vengono utilizzate principalmente per creare pozioni. Quando muoiono lasciano cadere i loro gusci che possono essere usati per creare la pozione del Signore delle Tartarughe .', 'tartaruga.webp', 'turtle.png'),
+	(3, 1, 'Gatto', 'I gatti sono un mob utile da avere in giro, sono noti per tenere lontani i creeper. I gatti possono anche essere addomesticati e, come i lupi addomesticati, puoi comandare loro di seguirti o di restare fermi. Ma a differenza dei lupi, i gatti possono essere di vari colori.', 'gatto.avif', 'cat.jpg'),
+	(4, 1, 'Volpe', 'Le volpi sono un ottimo mob da avere se vuoi essere sorpreso dagli oggetti. La volpe lascerà cadere qualunque oggetto abbia in mano se ci sono tre o quattro cespugli di bacche entro un raggio di sedici isolati da essi. Le volpi sono una delle poche creature notturne e sono note per andare nei villaggi di notte e uccidere i polli. Puoi guadagnare la loro fiducia e, così facendo, attaccheranno alcuni mob che ti feriscono.', 'volpe.jpg', 'fox.jpg'),
+	(5, 1, 'Zombie', 'Lo zombie e\' un mostro ostile che si genera di notte o in aree non illuminate e brucia fino alla morte alla luce del sole. Gli zombie sono i mob più facili da affrontare poiche\' non hanno abilità speciali e si muovono abbastanza lentamente. Sembrano simili al modello di giocatore predefinito.', 'zombi.jpg', 'zombie.png'),
+	(6, 2, 'Zombie Pigman', 'I pigman sono una variante non-morta dei piglin e dei piglin bruti che abitano nel Nether. Un pigman diventa ostile quando lui, o un altro pigman nelle vicinanze viene colpito. I pigman possono generarsi nel Nether, nei portali del Nether o dai maiali colpiti da un fulmine.', 'pigman_mobs.png', 'pigman.png'),
+	(8, 2, 'Blaze', 'I Blaze sono mob volanti che si trovano solo nel Nether. Sono essenziali perche\' sono l\'unica fonte di Blaze Rods che servono per trovare il portale dell\'end. Non appena un Blaze ti vedrà, inizierà ad attaccarti e lancerà tre palle di fuoco verso di te.', 'blaze.png', 'blaze.png'),
+	(9, 2, 'Scheletro Wither', 'Lo scheletro wither attacca con la spada e può forse essere scambiato per uno scheletro più standard che scivola e cade in una pozza di inchiostro. Gli scheletri wither sono anche leggermente più alti di te o di uno scheletro normale. Se vieni colpito da uno di loro, perderai lentamente la tua salute a causa dell\'effetto "wither". Gli scheletri wither, quando muoiono, hanno una piccola probabilità di lasciar cadere la loro testa, utile per far generare il Wither.', 'witherskeleton.png', 'wither-skeleton.png'),
+	(10, 2, 'Cubo di Magma', 'I Cubi di Magma sono essenziali perche\' sono gli unici mob che rilasciano Magma Cream nel gioco (la Magma Cream serve per fare le pozioni di resistenza al fuoco). E se un cubo di magma più piccolo viene mangiato da una rana, verrà trasformato in una Froglight . Quando i cubi di magma vengono inizialmente generati, hanno una forma grande, poi dopo alcuni attacchi, saranno di forma media e, se continui ad attaccare, si trasformeranno in una forma più piccola fino a morire definitivamente.', 'magmacube.png', 'magma-cube.png'),
+	(11, 3, 'Enderman', 'Gli Enderman sono mob che possono sopravvivere al sole, sono noti per teletrasportarsi in giro. Puoi provocare un Enderman guardandolo direttamente negli occhi che verrà ad attaccarti. Gli Enderman fanno molto danno ma non possono toccare l\'acqua, altrimenti prendono danno.', 'enderman_mobs.png', 'enderman.png'),
+	(12, 3, 'Endermite', 'L\'endermite e\' un piccolo mob ostile senza alcuno', 'endermite.png', 'endermite.png'),
+	(13, 3, 'Shulker', 'Gli shulker sono un mob ostile che si genera in una scatola. Gli Shulker sono l\'unica fonte di Conchiglie Shulker, che possono essere utilizzate per creare Scatole Shulker. Gli shulker non infliggono troppi danni, ma i loro proiettili seguono i giocatori e, quando colpiti, subiscono la levitazione per 10 secondi. I giocatori possono distruggere i proiettili sparandogli con una freccia o bloccandoli con uno scudo. Gli Shulker si generano solamente nelle città dell\'End.', 'shulker.png', 'shulker.png'),
+	(14, 4, 'Wither', 'Per generare il Wither, dovrai fare un viaggio nel Nether. Mentre sei lì, raccogli 4 Soul Sand per costruire il corpo del boss. Questi materiale dovrebbe essere abbondante in tutto il Nether e quindi non difficile da trovare. Il materiale più difficile da raccogliere sono le teste di Wither Skeleton, di cui te ne serviranno 3. Per ottenere i teschi, dovrai sconfiggere i Wither Skeletons, che si generano esclusivamente nelle Fortezze del Nether.', 'wither.jpg', 'wither.png'),
+	(15, 4, 'Warden', 'Il Warden e\' uno dei mob più recenti del gioco. Apparendo come una mucca eretta e dai colori strani, il Warden e\' in realtà un mob ostile che e\' cieco e cerca il giocatore rilevando rumori e vibrazioni dal giocatore che si muove o esegue azioni. Il Warden può essere trovato nelle Grotte Oscure Profonde, facili da individuare grazie all\'abbondanza del nuovo blocco, Sculk. Le Grotte Oscure e Profonde appaiono ai livelli più bassi della generazione del mondo, appena pochi livelli sopra Bedrock.', 'warden_mobs.jpg', 'enderdragon.png'),
+	(16, 4, 'Drago dell\'End', 'Lo scontro con il Drago dell\'End e\' considerata la fase finale del gioco perche\' dopo aver ucciso il drago, verrai accolto con un testo speciale sullo schermo. Il drago dell\'End e\' un mob che può generarsi solo in un bioma di Minecraft. La dimensione dell\'End.', 'enderdragon.png', 'warden.png');
 
 -- Dump della struttura di tabella minewiki.mobs
 CREATE TABLE IF NOT EXISTS `mobs` (
@@ -183,16 +185,14 @@ CREATE TABLE IF NOT EXISTS `utenti` (
   `cognome` char(20) DEFAULT NULL,
   `email` char(20) DEFAULT NULL,
   `telefono` char(20) DEFAULT NULL,
-  `comune` char(20) DEFAULT NULL,
-  `indirizzo` char(40) DEFAULT NULL,
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci COMMENT='tabella contenente gli username e le rispettive password';
 
 -- Dump dei dati della tabella minewiki.utenti: ~3 rows (circa)
-INSERT INTO `utenti` (`username`, `password`, `nome`, `cognome`, `email`, `telefono`, `comune`, `indirizzo`) VALUES
-	('Achi11e', '1234', 'Francesco', 'Tormene', '', '', 'Vimercate', ''),
-	('asd', 'asd', 'Mario', 'Rossi', 'mario.rossi@gmail.co', '123456789', 'Bergamo', 'Via Monza 2'),
-	('luigi', 'luigi', '', '', '', '', '', '');
+INSERT INTO `utenti` (`username`, `password`, `nome`, `cognome`, `email`, `telefono`) VALUES
+	('Achi11e', '1234', 'Francesco', 'Tormene', '', ''),
+	('asd', 'asd', 'Mario', 'Rossi', 'mario.rossi@gmail.co', '123456789'),
+	('luigi', 'luigi', '', '', '', '');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
