@@ -41,7 +41,7 @@ main{
 /* Container */
 .container{
     padding: 0px; 
-    padding-top: 100px;
+    padding-top: 99px;
     background: #000;
     position: relative;
 }
@@ -168,7 +168,7 @@ p{
 #Titolo4_mobs{
     background: url(immagini/background_boss.png);
 }
-.mobs__card{
+.mobs__card, .mods__card{
     margin: 20px 10px;
     margin-bottom: 20px;
     width: 15%;
@@ -178,8 +178,35 @@ p{
     background:#00841f;
     border-radius: 4px;
 }
-.mobs__card__img{
-    width: 50%;
+
+.loading{
+    filter: blur(8px);
+}
+.deactive{
+    filter: none;
+}
+.loading-image{
+    position: fixed;
+    top: 50%;
+    bottom: 50%;
+    left: 50%;
+    right: 50%;
+    z-index: 6;
+    
+}
+.loading-image--deactive{
+    display: none;
+}
+.mods__card h2, p{
+    padding: 5px;
+    
+}
+.mods__card{
+    width: 20%;
+    overflow: hidden;
+}
+.mobs__card__img, .mods__card__img{
+    width: 100%;
     height: auto;
     border-radius: inherit;
     margin: auto;
@@ -413,8 +440,12 @@ main{z-index: 0;}
     background: #019d25;
     height: auto;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 .login__content table, tr,td, input{
+    width: 100%;
+}
+input{
     width: 100%;
 }
 .mydata_table table, tr,td, input{
@@ -423,7 +454,7 @@ main{z-index: 0;}
 /* #registrati{
     width: 30%;
 } */
-.login__content input{
+input{
     height: 6.5vh;
     border-radius: 5px;
     font-size: 22px;
@@ -454,6 +485,7 @@ main{z-index: 0;}
 table{
     justify-content: center;
     margin: auto;
+    /* margin-bottom: 20px; */
 }
 #accedi{
     display: grid;
@@ -1521,7 +1553,9 @@ Tablet
     .menubiomi--open .freccia_tendina{
         transform: rotate(180deg);
     }
-
+    .container{
+        padding-top: 48px;
+    }
     .Global__header__menu{
         padding-left: 0;
     }
@@ -1923,7 +1957,7 @@ Smartphone
     .container{
         display: flex;
         flex-wrap: wrap;
-        padding-top: 10px;
+        padding-top: 0px;
     }
     /* Card */
     .card{

@@ -30,7 +30,8 @@ CREATE TABLE IF NOT EXISTS `bioma` (
   CONSTRAINT `FK_biomi` FOREIGN KEY (`cod_categoria`) REFERENCES `biomi` (`cod_bioma`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Dump dei dati della tabella minewiki.bioma: ~19 rows (circa)
+-- Dump dei dati della tabella minewiki.bioma: ~20 rows (circa)
+DELETE FROM `bioma`;
 INSERT INTO `bioma` (`cod_categoria`, `bioma`, `descrizione`, `immagine`, `style`) VALUES
 	(1, 'Foresta  di Querce', 'Il bioma della foresta può aiutarti a ottenere una spinta iniziale nel gioco, poiché puoi raccogliere molto legno e fiori. L\'unico aspetto negativo di questo bioma e\' che gli alberi rendono difficile individuare eventuali mob ostili.', 'oak_forest.jfif', 'oak_forest'),
 	(1, 'Foresta di Betulle', 'I biomi della foresta di betulle sono quasi esattamente gli stessi del bioma forestale normale. La differenza più ovvia e\' che gli alberi generati sono diversi. I biomi della foresta di betulle presentano betulle su tutto il paesaggio. Si generano densamente come gli alberi nel bioma forestale normale. E a differenza del bioma forestale normale, i lupi non generano qui.', 'birch-forest.jfif', 'birch_forest'),
@@ -61,6 +62,7 @@ CREATE TABLE IF NOT EXISTS `biomi` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Dump dei dati della tabella minewiki.biomi: ~6 rows (circa)
+DELETE FROM `biomi`;
 INSERT INTO `biomi` (`cod_bioma`, `categoria`, `background`) VALUES
 	(1, 'Foreste', 'background_forest.png'),
 	(2, 'Pianure', 'background_plains.png'),
@@ -77,6 +79,7 @@ CREATE TABLE IF NOT EXISTS `craft` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Dump dei dati della tabella minewiki.craft: ~4 rows (circa)
+DELETE FROM `craft`;
 INSERT INTO `craft` (`cod_craft`, `categoria`) VALUES
 	(1, 'Strumenti'),
 	(2, 'Armature'),
@@ -94,6 +97,7 @@ CREATE TABLE IF NOT EXISTS `crafting` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Dump dei dati della tabella minewiki.crafting: ~17 rows (circa)
+DELETE FROM `crafting`;
 INSERT INTO `crafting` (`cod_crafting`, `craft`, `materiali`, `immagini`) VALUES
 	(1, 'Spada', '1 Bastoncino di Legno e 2 Assi di legno/Pietrisco /Lingotti di ferro/Lingotti d\'oro/Diamanti', 'crafting_spada.jpg'),
 	(1, 'Piccone', '2 Bastoncini di Legno e 3 Assi di legno/Pietrisco /Lingotti di ferro/Lingotti d\'oro/Diamanti', 'crafting_piccone.jpeg'),
@@ -128,6 +132,7 @@ CREATE TABLE IF NOT EXISTS `mob` (
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Dump dei dati della tabella minewiki.mob: ~15 rows (circa)
+DELETE FROM `mob`;
 INSERT INTO `mob` (`cod_mostro`, `cod_mobs`, `nome`, `descrizione`, `immagine`, `copertina`, `style`) VALUES
 	(1, 1, 'Mucca', 'La mucca e\' un animale che può essere trovato in quasi tutti i biomi (quelli più comuni sono le foreste e le pianure). Le mucche forniscono risorse importanti per il giocatore, come carne e pelle, utilizzabile per creare libri e cornici. Dalla mucca si può ottenere il latte. Questo può essere utilizzato per craftare torte e per rimuovere tutti gli effetti al giocatore. Per far accoppiare le mucche bisogna utilizzare il grano.', 'mucca.avif', 'cow.png', 'cow'),
 	(2, 1, 'Tartaruga', 'La tartaruga e\' un mob passivo in Minecraft. E\' l\'unica fonte per creare una pozione specifica. Le tartarughe vengono utilizzate principalmente per creare pozioni. Quando muoiono lasciano cadere i loro gusci che possono essere usati per creare la pozione del Signore delle Tartarughe .', 'tartaruga.webp', 'turtle.png', 'turtle'),
@@ -154,6 +159,7 @@ CREATE TABLE IF NOT EXISTS `mobs` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Dump dei dati della tabella minewiki.mobs: ~4 rows (circa)
+DELETE FROM `mobs`;
 INSERT INTO `mobs` (`cod_mob`, `categoria`, `background`) VALUES
 	(1, 'Overworld', 'background_overworld.png'),
 	(2, 'Nether', 'background_nether.png'),
@@ -171,13 +177,18 @@ CREATE TABLE IF NOT EXISTS `mods` (
   PRIMARY KEY (`cod_mod`) USING BTREE,
   KEY `FK_libri_utenti` (`username_utente`),
   CONSTRAINT `FK_libri_utenti` FOREIGN KEY (`username_utente`) REFERENCES `utenti` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Dump dei dati della tabella minewiki.mods: ~3 rows (circa)
+-- Dump dei dati della tabella minewiki.mods: ~4 rows (circa)
+DELETE FROM `mods`;
 INSERT INTO `mods` (`cod_mod`, `nome`, `username_utente`, `descrizione_txt`, `immagine`, `link`) VALUES
 	(1, 'OptiFine', 'luigi', 'OptiFine è una mod di Minecraft che fornisce un notevole incremento agli FPS, supporta texture HD, aggiunge numerose opzioni di configurazione e consente ottimizzazioni avanzate. Non si tratta quindi di una mod che aggiunge oggetti, mob o biomi ma cambia l\'aspetto della versione vanilla.', 'optifine.jpg', 'https://optifine.net/adloadx?f=OptiFine_1.20.4_HD_'),
 	(2, 'Furniture Mod', 'asd', 'La Furniture Mod consiste nell\'aggiungere mobili e decorazioni funzionali e utili. Sarai in grado di trovare mobili per ogni parte della tua casa, compresa la cucina, la camera da letto, la sala da pranzo, gli esterni e altro ancora! Attualmente aggiungendo oltre ottanta blocchi unici, la mod è in continua crescita con nuovi aggiornamenti.', 'furniture-mod.jpg', 'https://www.9minecraft.net/mrcrayfishs-furniture-m'),
-	(3, 'DivineRPG', 'Achi11e', 'La Divine RPG è una mod che trasforma Minecraft nell\'esperienza RPG definitiva. Presenta 8 nuove dimensioni da esplorare, tonnellate di boss, mob, armi e armature. È estremamente difficile. Se stai cercando avventure e sfide, questa mod ti piacerà davvero! Non solo, ma è ottima anche a chi piace costruire, grazie alla grande varietà di blocchi decorativi coinvolti.', 'divinerpg.jpg', 'https://www.curseforge.com/minecraft/mc-mods/offic');
+	(3, 'DivineRPG', 'Achi11e', 'La Divine RPG è una mod che trasforma Minecraft nell\'esperienza RPG definitiva. Presenta 8 nuove dimensioni da esplorare, tonnellate di boss, mob, armi e armature. È estremamente difficile. Se stai cercando avventure e sfide, questa mod ti piacerà davvero! Non solo, ma è ottima anche a chi piace costruire, grazie alla grande varietà di blocchi decorativi coinvolti.', 'divinerpg.jpg', 'https://www.curseforge.com/minecraft/mc-mods/offic'),
+	(10, 'Cloth config', 'Jerrythehairynigga89', 'Cloth Config API (Fabric/Forge/NeoForge)', 'alternative_image.jpg', 'https://www.curseforge.com/minecraft/mc-mods/cloth'),
+	(11, 'ci', 'Jerrythehairynigga89', 'asdsfdgf', 'alternative_image.jpg', 'https://www.curseforge.com/minecraft/mc-mods/cloth'),
+	(12, 'Jerome', 'Jerrythehairynigga89', 'Cloth Config API (Fabric/Forge/NeoForge)', 'alternative_image.jpg', 'https://www.curseforge.com/minecraft/mc-mods/cloth'),
+	(13, 'Abry', 'Jerrythehairynigga89', 'asdsfdgf', 'alternative_image.jpg', 'https://www.curseforge.com/minecraft/mc-mods/cloth');
 
 -- Dump della struttura di tabella minewiki.utenti
 CREATE TABLE IF NOT EXISTS `utenti` (
@@ -190,10 +201,12 @@ CREATE TABLE IF NOT EXISTS `utenti` (
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci COMMENT='tabella contenente gli username e le rispettive password';
 
--- Dump dei dati della tabella minewiki.utenti: ~3 rows (circa)
+-- Dump dei dati della tabella minewiki.utenti: ~4 rows (circa)
+DELETE FROM `utenti`;
 INSERT INTO `utenti` (`username`, `password`, `nome`, `cognome`, `email`, `telefono`) VALUES
 	('Achi11e', '<br /><b>Warning</b>', '<br /><b>Warning</b>', '<br /><b>Warning</b>', '<br /><b>Warning</b>', '<br /><b>Warning</b>'),
 	('asd', 'asd', 'Abry', 'Rossi', 'mario.rossi@gmail.co', '123456789'),
+	('Jerrythehairynigga89', '1234', 'Jerome', 'La Rosa', 'jerome.larosa12@lstu', '3519070717'),
 	('luigi', 'luigi', '', '', '', '');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;

@@ -35,7 +35,8 @@
         </script> -->
     </head>
     
-    <body>
+    <!-- <img src="immagini/spinning-cube.gif" alt="" class="loading-image"> -->
+    <body class="loading">
         <?php
             switch(isset($_SESSION["user"])){
                 case 1:
@@ -119,7 +120,7 @@
                                     <a href='pagine/mymods.php'> MyMods </a> 
                                 </li>
                                 <li class='UserInterface__menu__item' id='home'>
-                                    <a href='mydata.php' class='profile_img'><img src='immagini/profile_user_account_icon_190938.png' alt=''></a>
+                                    <a href='pagine/mydata.php' class='profile_img'><img src='immagini/profile_user_account_icon_190938.png' alt=''></a>
                                 </li>
                                 <div class='cta'>
                                     <div class='small_text'>
@@ -451,6 +452,8 @@
         
         <script>
             $(document).ready(function(){
+                $(".loading-image").toggleClass("loading-image--deactive")
+                $(".loading").toggleClass("deactive")
                 $(".boxsu").hide(400);
 
                 $(".Global__header__line-menu").width = 100

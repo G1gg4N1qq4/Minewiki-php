@@ -12,15 +12,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
-            Mobs
+            MyMods
         </title>
 
-        <link rel="icon" type="image/icon" href="../immagini/zombie.jpg">
+        <link rel="icon" type="image/icon" href="../immagini/icona_mymods.png">
         <link rel="stylesheet" href="../style.css">
         <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     </head>
 
-    <body>
+    <body class="loading">
         <!-- <img src="../immagini/background_image5.jpg" alt="immagine non disponibile" class="img_res" id="back-ground"> -->
         <div class="cover">
             <div class="cover__content">
@@ -44,29 +44,119 @@
                                         WHERE username_utente = '$user'";
                             
                             $ris = $conn->query($myquery) or die("<p>Query fallita:".$conn->connect_error."</p>");
-                            
-                            echo "<div class='copertura'><h2 class='Grande_Titolo' id='Foreste' style='font-size:50px; margin-top:30px; border-bottom:0px'>MyMods</h2><div class='container__container' >";
-                            $riga = $ris->fetch_assoc();
-                            // echo "ciaooooooooooo";
-                            $cod_mod = $riga["cod_mod"];
-                            $nome = $riga["nome"];
-                            // $descrizione = $riga["descrizione_txt"];
-                            $immagine = $riga["immagine"];
-                            // $link = $riga["link"];
-                            echo "<div class='cover2 reveal'>
-                                    <h2 class='Titolo_mod' style='font-size: 30px; padding-bottom:0px   '>$nome</h2>
-                                    <div class='card' style='width:300px'>
+                            if($ris->num_rows >0){
 
-                                        <div class='card__img' style='width:100%'>
-                                            <img src='../immagini/mods/$immagine' alt='L'immagine non e' disponibile :/' class='img_res'>
+                                echo "<div class='copertura'><h2 class='Grande_Titolo' id='Foreste' style='font-size:50px; margin-top:30px; border-bottom:0px'>MyMods</h2><div class='container__container' >";
+                                $riga = $ris->fetch_assoc();
+                                // echo "ciaooooooooooo";
+                                $cod_mod = $riga["cod_mod"];
+                                $nome = $riga["nome"];
+                                // $descrizione = $riga["descrizione_txt"];
+                                $immagine = $riga["immagine"];
+                                // $link = $riga["link"];
+                                echo "<div class='cover2 reveal'>
+                                        <h2 class='Titolo_mod' style='font-size: 30px; padding-bottom:0px   '>$nome</h2>
+                                        <div class='card' style='width:300px'>
+    
+                                            <div class='card__img' style='width:100%'>
+                                                <img src='../immagini/mods/$immagine' alt='L'immagine non e' disponibile :/' class='img_res'>
+                                            </div>
+    
+                                            
                                         </div>
+                                    </div>";
+                            
+                                echo "</div></div>";
+                            }
+                            else{
+                                echo '<p style="padding: 300px 10px">Non hai caricato nessuna mod</p>';
+                            }
 
-                                        
-                                    </div>
-                                </div>";
-                        
-                            echo "</div></div>";
+                            echo "<div class='copertura'><h2 class='Grande_Titolo' id='Foreste' style='font-size:30px; margin-top:30px; border-bottom:0px'>Carica Mods</h2><div class='container__container' >";
+                            
                         ?>
+
+                        <div class="login__content">
+
+                            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa doloremque id pariatur praesentium, fugiat incidunt et minus quam obcaecati! Optio architecto officiis repudiandae aliquam id sint quae sit mollitia! Et.</p> -->
+                            <form action="" method="post">
+                            <table>
+                                <tr>
+                                    <td><label for="nome" class="minecraft_text">Nome mod:</label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" name="nome" id="nome" value="" required></td>
+                                </tr> 
+                                <tr>
+                                    <td><label for="descrizione" class="minecraft_text">Descrizione:</label></td>
+                                </tr> 
+                                <tr>   
+                                    <td><input type="text" name="descrizione" id="descrizione" value="" required></td>   
+                                </tr>
+                                <tr>
+                                    <td><label for="link" class="minecraft_text">Link:</label></td>
+                                </tr> 
+                                <tr>   
+                                    <td><input type="text" name="link" id="link" value="" required></td>   
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Non preoccuparti per l'immagine, la sceglieremo noi! :)</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br>
+                            <br>
+                            <table>
+                                    <tr>
+                                        <td>
+                                            <input type="submit" value="Carica" id="accedi" class="minecraft_text"> 
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                            <?php
+                                if (isset($_POST["nome"]) and isset($_POST["link"] )){
+                                    $myquery = "SELECT nome from mods
+                                                WHERE nome = '".$_POST["nome"]."'";
+                                    
+                                    $ris = $conn->query($myquery) or die("<p> mammt è fallita! ".$conn->connect_error."</p>");
+
+                                    if($ris->num_rows >0){
+                                        echo "<p>Nome mod già esistente</p>";
+                                        $conn->close();
+                                    }
+                                    else{
+
+                                        require("../data/connessione_db.php");
+    
+    
+                                        $myquery2 = "INSERT INTO mods (nome, username_utente, descrizione_txt, immagine, link)
+                                                    VALUES ('".$_POST["nome"]."', '$user','".$_POST["descrizione"]."', 'alternative_image.jpg', '".$_POST["link"]."')";
+    
+                                        $ris = $conn->query($myquery2) or die("<p> mammt è fallita! ".$conn->connect_error."</p>");
+                                        if($ris == True || $ris->num_rows > 0){
+                                                
+                                            echo "<p> Mod caricata con successo! <a href='mods.php'>Vedila qui!</a><p>";
+    
+                                            $conn->close();
+                                        }
+                                        else{
+                                            echo "<p>Impossibile caricare</p>";
+                                            $conn->close();
+
+                                        }
+                                    }
+                                        
+                                    
+                                    
+                                };
+
+                                
+                            ?>
+
+                            <!-- <p>Se non hai un account <a href="registrazione.php">registrati</a> </p> -->
+                        </div>
                         
                     </div>
                     
@@ -126,6 +216,8 @@
         
         <script>
             $(document).ready(function(){
+                $(".loading-image").toggleClass("loading-image--deactive")
+                $(".loading").toggleClass("deactive")
                 $(".boxsu").hide(400);
 
                 $(".Global__header__line-menu").width = 100

@@ -16,15 +16,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
-            Mobs
+            Mods
         </title>
 
-        <link rel="icon" type="image/icon" href="../immagini/zombie.jpg">
+        <link rel="icon" type="image/icon" href="../immagini/icona_martello.png">
         <link rel="stylesheet" href="../style.css">
         <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     </head>
 
-    <body>
+    <body class="loading">
         <!-- <img src="../immagini/background_image5.jpg" alt="immagine non disponibile" class="img_res" id="back-ground"> -->
         <div class="cover">
             <div class="cover__content">
@@ -66,8 +66,8 @@
                                         $user = $riga["username_utente"];
                                         $descrizione = $riga["descrizione_txt"];
                                         $immagine = $riga["immagine"];
-                                        echo '<a href="mod.php?cod_mod='.$cod_mod.'" class="mobs__card">
-                                            <div class="mobs__card__img">
+                                        echo '<a href="mod.php?cod_mod='.$cod_mod.'" class="mods__card">
+                                            <div class="mods__card__img">
                                                 <img src="../immagini/mods/'.$immagine.'" alt="" class="img_res">
                                             </div>
                                             
@@ -85,8 +85,8 @@
                                         $user = $riga["username_utente"];
                                         $descrizione = $riga["descrizione_txt"];
                                         $immagine = $riga["immagine"];
-                                        echo '<a href="mod.php?cod_mod='.$cod_mod.'" class="mobs__card">
-                                            <div class="mobs__card__img">
+                                        echo '<a href="mod.php?cod_mod='.$cod_mod.'" class="mods__card">
+                                            <div class="mods__card__img">
                                                 <img src="../immagini/mods/'.$immagine.'" alt="" class="img_res">
                                             </div>
                                             
@@ -513,6 +513,8 @@
         
         <script>
             $(document).ready(function(){
+                $(".loading-image").toggleClass("loading-image--deactive")
+                $(".loading").toggleClass("deactive")
                 $(".boxsu").hide(400);
 
                 $(".Global__header__line-menu").width = 100

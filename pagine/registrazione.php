@@ -16,16 +16,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
-            Login
+            Registrazione
         </title>
 
-        <link rel="icon" type="image/x-icon" href="../immagini/mappa-icona.png">
+        <link rel="icon" type="image/x-icon" href="../immagini/icona-registrazione.png">
         <link rel="stylesheet" href="../style.css">
         <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     </head>
 
 
-    <body>
+    <body >
         <div class="cover">
             <div class="cover__content">
 
@@ -61,37 +61,37 @@
                                     <td><label for="password" class="minecraft_text">Password:</label></td>
                                 </tr> 
                                 <tr>   
-                                    <td><input type="password" name="password" id="password" value=""></td>   
+                                    <td><input type="password" name="pass" id="password" value="<?php echo $pass?>" required></td>   
                                 </tr>
                                 <tr>
                                     <td><label for="pass_confirm" class="minecraft_text">Conferma password:</label></td>
                                 </tr> 
                                 <tr>   
-                                    <td><input type="password" name="pass_confirm" id="pass_confirm" value=""></td>   
+                                    <td><input type="password" name="pass_confirm" id="pass_confirm" value="<?php echo $conferma?>" required></td>   
                                 </tr>
                                 <tr>
                                     <td><label for="nome" class="minecraft_text">Nome:</label></td>
                                 </tr> 
                                 <tr>   
-                                    <td><input type="text" name="nome" id="nome" value=""></td>   
+                                    <td><input type="text" name="nome" id="nome" value="<?php echo $nome?>"></td>   
                                 </tr>
                                 <tr>
                                     <td><label for="cognome" class="minecraft_text">Cognome:</label></td>
                                 </tr> 
                                 <tr>   
-                                    <td><input type="text" name="cognome" id="cognome" value=""></td>   
+                                    <td><input type="text" name="cognome" id="cognome" value="<?php echo $cognome?>"></td>   
                                 </tr>
                                 <tr>
                                     <td><label for="email" class="minecraft_text">Email:</label></td>
                                 </tr> 
                                 <tr>   
-                                    <td><input type="text" name="email" id="email" value=""></td>   
+                                    <td><input type="text" name="email" id="email" value="<?php echo $email?>"></td>   
                                 </tr>
                                 <tr>
                                     <td><label for="telefono" class="minecraft_text">Telefono:</label></td>
                                 </tr> 
                                 <tr>   
-                                    <td><input type="text" name="telefono" id="telefono" value=""></td>   
+                                    <td><input type="text" name="telefono" id="telefono" value="<?php echo $telefono?>"></td>   
                                 </tr>                       
                             </table>
                             <br>
@@ -112,29 +112,45 @@
                                 </table>
                             </form>
                             <?php
-                                if (isset($_POST["user"]) and isset($_POST["pass"])){
+                                if (isset($_POST["user"]) and isset($_POST["pass"] )){
+                                    if($_POST["pass"]!= $_POST["pass_confirm"]){
+                                        echo "<p>Le due password non corrispondono</p>";
+                                    }
+                                    else{
+                                        
+                                        require("../data/connessione_db.php");
+        
+                                        if ($conn->connect_error){
+                                            die("<p>Suca: ".$conn->connect_error."</p>");
+                                        }
+        
+                                        $myquery = "SELECT username FROM utenti WHERE username='".$_POST['user']."'";
+        
+                                        $ris = $conn->query($myquery) or die("<p> mammt è fallita! ".$conn->connect_error."</p>");
+        
+                                        if($ris->num_rows > 0){
+                                            echo "<p>Username già esistente</p>";
+                                            $conn->close();
+                                        } else{
+                                            
+                                            $myquery2 = "INSERT INTO utenti (username, password, nome, cognome, email, telefono)
+                                                        VALUES ('".$_POST["user"]."','".$_POST["pass"]."', '".$_POST["nome"]."', '".$_POST["cognome"]."', '".$_POST["email"]."', '".$_POST["telefono"]."')";
+
+                                            $ris2 = $conn->query($myquery2) or die("<p> mammt è fallita! ".$conn->connect_error."</p>");
+                                            if($ris2->num_rows == 0){
+                                                echo "<p>Impossibile registrarsi</p>";
+                                                $conn->close();
+                                            }
+                                            else{
+
+                                                echo "<p> Registrazione effettuata con successo! <a href='../index.php'>Continua qui</a><p>";
+                                                $_SESSION["user"] = $user;
+            
+                                                $conn->close();
+                                            }
+                                        }
+                                    }
                                     
-                                    require("../data/connessione_db.php");
-    
-                                    $conn = new mysqli($db_servername, $db_user, $db_pass, $db_nome);
-                                    if ($conn->connect_error){
-                                        die("<p>Suca: ".$conn->connect_error."</p>");
-                                    }
-    
-                                    $myquery = "SELECT username, password FROM utenti WHERE username='$user' AND password='$pass'";
-    
-                                    $ris = $conn->query($myquery) or die("<p> mammt è fallita! ".$conn->connect_error."</p>");
-    
-                                    if($ris->num_rows == 0){
-                                        echo "<p>Utente o password non trovati :(</p>";
-                                        $conn->close();
-                                    } else{
-                                        session_start();
-                                        $_SESSION["user"] = $user;
-    
-                                        $conn->close();
-                                        header("location: ../index.php");
-                                    }
                                 };
     
                                 

@@ -15,13 +15,13 @@
             Login
         </title>
 
-        <link rel="icon" type="image/x-icon" href="../immagini/mappa-icona.png">
+        <link rel="icon" type="image/x-icon" href="../immagini/icona-login.png">
         <link rel="stylesheet" href="../style.css">
         <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     </head>
 
 
-    <body>
+    <body >
         <div class="cover">
             <div class="cover__content">
 
@@ -83,11 +83,6 @@
                                 if (isset($_POST["user"]) and isset($_POST["pass"])){
                                     
                                     require("../data/connessione_db.php");
-    
-                                    $conn = new mysqli($db_servername, $db_user, $db_pass, $db_nome);
-                                    if ($conn->connect_error){
-                                        die("<p>Suca: ".$conn->connect_error."</p>");
-                                    }
     
                                     $myquery = "SELECT username, password FROM utenti WHERE username='$user' AND password='$pass'";
     

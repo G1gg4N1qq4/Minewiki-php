@@ -1,4 +1,12 @@
+<?php 
 
+    session_start();
+
+    if(isset($_POST['user'])){$user = $_POST['user'];} else{$user = ""; }
+    if(isset($_POST['pass'])){$pass = $_POST['pass'];} else{$pass = ""; }
+    $nomepagina = __FILE__;
+    $nomepagina = substr($nomepagina, -4,5)
+?>
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +23,7 @@
         <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     </head>
 
-    <body>
+    <body class="loading">
         <img src="../immagini/background_image5.jpg" alt="immagine non disponibile" class="img_res" id="back-ground">
         <div class="cover">
             <div class="cover__content">
@@ -406,6 +414,8 @@
         
         <script>
             $(document).ready(function(){
+                $(".loading-image").toggleClass("loading-image--deactive")
+                $(".loading").toggleClass("deactive")
                 $(".boxsu").hide(400);
 
                 $(".Global__header__line-menu").width = 100

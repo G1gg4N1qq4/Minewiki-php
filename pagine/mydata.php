@@ -47,15 +47,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
-            Biomi
+            MyData
         </title>
 
-        <link rel="icon" type="image/x-icon" href="../immagini/mappa-icona.png">
+        <link rel="icon" type="image/x-icon" href="../immagini/icona_mydata.webp">
         <link rel="stylesheet" href="../style.css">
         <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     </head>
 
-    <body>
+    <body class="loading">
         <img src="../immagini/background_image5.jpg" alt="immagine non disponibile" class="img_res" id="back-ground">
         <div class="cover">
             <div class="cover__content">
@@ -200,6 +200,8 @@
         
         <script>
             $(document).ready(function(){
+                $(".loading-image").toggleClass("loading-image--deactive")
+                $(".loading").toggleClass("deactive")
                 $(".boxsu").hide(400);
 
                 $(".Global__header__line-menu").width = 100

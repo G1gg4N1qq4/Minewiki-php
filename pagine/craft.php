@@ -24,7 +24,7 @@
         <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     </head>
 
-    <body>
+    <body class="loading">
         <img src="../immagini/background_image5.jpg" alt="immagine non disponibile" class="img_res" id="back-ground">
         <div class="cover">
             <div class="cover__content">
@@ -316,6 +316,8 @@
         
         <script>
             $(document).ready(function(){
+                $(".loading-image").toggleClass("loading-image--deactive")
+                $(".loading").toggleClass("deactive")
                 $(".boxsu").hide(400);
 
                 $(".Global__header__line-menu").width = 100
