@@ -135,6 +135,9 @@ p{
     background: url(immagini/background_ocean.png);
 }
 
+#mobs{
+    background: url(immagini/background_mobs.webp);
+}
 #Titolo1_mobs{
     margin-top: 96px;
     position: relative;
@@ -152,7 +155,7 @@ p{
 .mobs__card{
     margin: 20px 10px;
     margin-bottom: 20px;
-    width: 18%;
+    width: 15%;
     height: auto;
     border: 1px white;
     box-shadow: 3px 3px 15px  #005508;
@@ -160,9 +163,10 @@ p{
     border-radius: 4px;
 }
 .mobs__card__img{
-    width: 100%;
+    width: 50%;
     height: auto;
     border-radius: inherit;
+    margin: auto;
 }
 
 
@@ -335,8 +339,8 @@ main{z-index: 0;}
 .login-background{
     background-image: url("immagini/background_image3.jpg");
     background-size: cover;
-    height: 100vh;
-    width: 100vw;
+    height: 145vh;
+    width: 100%;
     filter: blur(7px);
     /* align-items: center;
     display: flex; */

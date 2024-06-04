@@ -30,7 +30,7 @@
 
                 
                 <main>
-                    <div class="container" id="biomi">     
+                    <div class="container" id="mobs">     
                         <?php
                             require("../data/connessione_db.php");
                             
@@ -48,7 +48,9 @@
                                     $copertina = $riga["copertina"];
                                     $background = $riga["background"];
                                     echo '<a href="mob.php?cod_mostro='.$cod_mostro.'" class="mobs__card">
-                                        <img src="../immagini/mobs/icons/'.$copertina.'" alt=""  class="mobs__card__img">
+                                        <div class="mobs__card__img">
+                                            <img src="../immagini/mobs/icons/'.$copertina.'" alt="" class="img_res">
+                                        </div>
                                         
                                         <h2>'.$nome.'</h2>
                                     
@@ -56,71 +58,77 @@
                                 }
                             echo "</div></div>";
 
-                            // $myquery2 = "SELECT mobs.cod_mob, mobs.categoria, mobs.background, mob.cod_mobs, mob.cod_mostro, mob.nome, mob.copertina
-                            //             FROM mobs JOIN mob ON mobs.cod_mob = mob.cod_mobs
-                            //             WHERE mobs.cod_mob = 2";
+                            $myquery2 = "SELECT mobs.cod_mob, mobs.categoria, mobs.background, mob.cod_mobs, mob.cod_mostro, mob.nome, mob.copertina
+                                        FROM mobs JOIN mob ON mobs.cod_mob = mob.cod_mobs
+                                        WHERE mobs.cod_mob = 2";
                             
-                            // $ris = $conn->query($myquery) or die("<p>Query fallita:".$conn->connect_error."</p>");
+                            $ris = $conn->query($myquery2) or die("<p>Query fallita:".$conn->connect_error."</p>");
                             
-                            // echo "<div class='copertura'><h2 class='Grande_Titolo' id='Nether'>Nether</h2><div class='container__container' >";
-                            //     foreach($ris as $riga){
-                            //         $cod_mostro = $riga["cod_mostro"];
-                            //         $nome = $riga["nome"];                            
-                            //         $categoria = $riga["categoria"];
-                            //         $copertina = $riga["copertina"];
-                            //         $background = $riga["background"];
-                            //         echo '<a href="bioma.php?cod_mostro='.$cod_mostro.'" class="biomi__card">
-                            //             <img src="../immagini/'.$copertina.'" alt=""  class="biomi__card__img">
+                            echo "<div class='copertura'><h2 class='Grande_Titolo' id='Nether'>Nether</h2><div class='container__container' >";
+                                foreach($ris as $riga){
+                                    $cod_mostro = $riga["cod_mostro"];
+                                    $nome = $riga["nome"];                            
+                                    $categoria = $riga["categoria"];
+                                    $copertina = $riga["copertina"];
+                                    $background = $riga["background"];
+                                    echo '<a href="mob.php?cod_mostro='.$cod_mostro.'" class="mobs__card">
+                                        <div class="mobs__card__img">
+                                            <img src="../immagini/mobs/icons/'.$copertina.'" alt="" class="img_res">
+                                        </div>
                                         
-                            //             <h2>'.$nome.'</h2>
+                                        <h2>'.$nome.'</h2>
                                     
-                            //             </a>';
-                            //     }
-                            // echo "</div></div>";
+                                        </a>';
+                                }
+                            echo "</div></div>";
 
-                            // $myquery3 = "SELECT mobs.cod_mob, mobs.categoria, mobs.background, mob.cod_mobs, mob.cod_mostro, mob.nome, mob.copertina
-                            //             FROM mobs JOIN mob ON mobs.cod_mob = mob.cod_mobs
-                            //             WHERE mobs.cod_mob = 3";
+                            $myquery3 = "SELECT mobs.cod_mob, mobs.categoria, mobs.background, mob.cod_mobs, mob.cod_mostro, mob.nome, mob.copertina
+                                        FROM mobs JOIN mob ON mobs.cod_mob = mob.cod_mobs
+                                        WHERE mobs.cod_mob = 3";
                             
-                            // $ris = $conn->query($myquery) or die("<p>Query fallita:".$conn->connect_error."</p>");
+                            $ris = $conn->query($myquery3) or die("<p>Query fallita:".$conn->connect_error."</p>");
                             
-                            // echo "<div class='copertura'><h2 class='Grande_Titolo' id='End'>End</h2><div class='container__container' >";
-                            //     foreach($ris as $riga){
-                            //         $cod_mostro = $riga["cod_mostro"];
-                            //         $nome = $riga["nome"];                            
-                            //         $categoria = $riga["categoria"];
-                            //         $copertina = $riga["copertina"];
-                            //         $background = $riga["background"];
-                            //         echo '<a href="bioma.php?cod_mostro='.$cod_mostro.'" class="biomi__card">
-                            //             <img src="../immagini/'.$copertina.'" alt=""  class="biomi__card__img">
+                            echo "<div class='copertura'><h2 class='Grande_Titolo' id='End'>End</h2><div class='container__container' >";
+                                foreach($ris as $riga){
+                                    $cod_mostro = $riga["cod_mostro"];
+                                    $nome = $riga["nome"];                            
+                                    $categoria = $riga["categoria"];
+                                    $copertina = $riga["copertina"];
+                                    $background = $riga["background"];
+                                    echo '<a href="mob.php?cod_mostro='.$cod_mostro.'" class="mobs__card">
+                                        <div class="mobs__card__img">
+                                            <img src="../immagini/mobs/icons/'.$copertina.'" alt="" class="img_res">
+                                        </div>
                                         
-                            //             <h2>'.$nome.'</h2>
+                                        <h2>'.$nome.'</h2>
                                     
-                            //             </a>';
-                            //     }
-                            // echo "</div></div>";
+                                        </a>';
+                                }
+                            echo "</div></div>";
 
-                            // $myquery4 = "SELECT mobs.cod_mob, mobs.categoria, mobs.background, mob.cod_mobs, mob.cod_mostro, mob.nome, mob.copertina
-                            //             FROM mobs JOIN mob ON mobs.cod_mob = mob.cod_mobs
-                            //             WHERE mobs.cod_mob = 4";
+                            $myquery4 = "SELECT mobs.cod_mob, mobs.categoria, mobs.background, mob.cod_mobs, mob.cod_mostro, mob.nome, mob.copertina
+                                        FROM mobs JOIN mob ON mobs.cod_mob = mob.cod_mobs
+                                        WHERE mobs.cod_mob = 4";
                             
-                            // $ris = $conn->query($myquery) or die("<p>Query fallita:".$conn->connect_error."</p>");
+                            $ris = $conn->query($myquery4) or die("<p>Query fallita:".$conn->connect_error."</p>");
                             
-                            // echo "<div class='copertura'><h2 class='Grande_Titolo' id='Boss'>Boss</h2><div class='container__container' >";
-                            //     foreach($ris as $riga){
-                            //         $cod_mostro = $riga["cod_mostro"];
-                            //         $nome = $riga["nome"];                            
-                            //         $categoria = $riga["categoria"];
-                            //         $copertina = $riga["copertina"];
-                            //         $background = $riga["background"];
-                            //         echo '<a href="bioma.php?cod_mostro='.$cod_mostro.'" class="biomi__card">
-                            //             <img src="../immagini/'.$copertina.'" alt=""  class="biomi__card__img">
+                            echo "<div class='copertura'><h2 class='Grande_Titolo' id='Boss'>Boss</h2><div class='container__container' >";
+                                foreach($ris as $riga){
+                                    $cod_mostro = $riga["cod_mostro"];
+                                    $nome = $riga["nome"];                            
+                                    $categoria = $riga["categoria"];
+                                    $copertina = $riga["copertina"];
+                                    $background = $riga["background"];
+                                    echo '<a href="mob.php?cod_mostro='.$cod_mostro.'" class="mobs__card">
+                                        <div class="mobs__card__img">
+                                            <img src="../immagini/mobs/icons/'.$copertina.'" alt="" class="img_res">
+                                        </div>
                                         
-                            //             <h2>'.$nome.'</h2>
+                                        <h2>'.$nome.'</h2>
                                     
-                            //             </a>';
-                            //     }
-                            // echo "</div></div>";
+                                        </a>';
+                                }
+                            echo "</div></div>";
                         ?>
                 
                     <!-- <div class="container" id="Titolo1_mobs">

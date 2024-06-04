@@ -68,6 +68,8 @@
                                     <tr>
                                         <td id="registrati">
                                             <a href="registrazione.php" class="minecraft_text">Registrati</a>
+                                            <a href="" class="minecraft_text">ㅤ|ㅤ</a>
+                                            <a href="../index.php" class="minecraft_text">Home</a>
                                         </td>
                                         <td>
                                             <input type="submit" value="Accedi" id="accedi" class="minecraft_text">
