@@ -1,11 +1,7 @@
-<?php 
-
+<?php
     session_start();
+    if(isset($_SESSION["user"])){$user=$_SESSION["user"];}else{header("location: login.php");}
 
-    if(isset($_POST['user'])){$user = $_POST['user'];} else{$user = ""; }
-    if(isset($_POST['pass'])){$pass = $_POST['pass'];} else{$pass = ""; }
-    $nomepagina = __FILE__;
-    $nomepagina = substr($nomepagina, -4,5)
 ?>
 
 <!DOCTYPE html>
@@ -16,71 +12,64 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
-            Biomi
+            Mobs
         </title>
 
-        <link rel="icon" type="image/x-icon" href="../immagini/mappa-icona.png">
+        <link rel="icon" type="image/icon" href="../immagini/zombie.jpg">
         <link rel="stylesheet" href="../style.css">
         <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     </head>
 
     <body>
-        <img src="../immagini/background_image5.jpg" alt="immagine non disponibile" class="img_res" id="back-ground">
+        <!-- <img src="../immagini/background_image5.jpg" alt="immagine non disponibile" class="img_res" id="back-ground"> -->
         <div class="cover">
             <div class="cover__content">
-
+                
                 <header> 
                     <?php 
                         require("nav.php")
                     ?>
                 </header>
 
+
+                
                 
                 <main>
-                    <div class="container" id="biomi">  
-                        
-                            <?php
-                                $cod_mostro = $_GET["cod_mostro"];
-                                require("../data/connessione_db.php");
-                                $myquery = "SELECT mobs.cod_mob, mobs.categoria, mobs.background, mob.cod_mobs, mob.cod_mostro, mob.nome, mob.immagine, mob.descrizione, mob.copertina, mob.style
-                                        FROM mobs JOIN mob ON mobs.cod_mob = mob.cod_mobs
-                                        WHERE mob.cod_mostro = $cod_mostro";
+                    <div class="container" id="mods">     
+                        <?php
+                            require("../data/connessione_db.php");
+                            echo $user;
+                            $myquery = "SELECT cod_mod, nome, immagine
+                                        FROM mods
+                                        WHERE username_utente = '$user'";
                             
                             $ris = $conn->query($myquery) or die("<p>Query fallita:".$conn->connect_error."</p>");
                             
-                            foreach($ris as $riga){
-                                $cod_mostro = $riga["cod_mostro"];
-                                $nome = $riga["nome"];                            
-                                $categoria = $riga["categoria"];
-                                $style = $riga["style"];
-                                $immagine = $riga["immagine"];
-                                $background = $riga["background"];
-                                $descrizione = $riga["descrizione"];
+                            echo "<div class='copertura'><h2 class='Grande_Titolo' id='Foreste' style='font-size:50px; margin-top:30px; border-bottom:0px'>MyMods</h2><div class='container__container' >";
+                            $riga = $ris->fetch_assoc();
+                            // echo "ciaooooooooooo";
+                            $cod_mod = $riga["cod_mod"];
+                            $nome = $riga["nome"];
+                            // $descrizione = $riga["descrizione_txt"];
+                            $immagine = $riga["immagine"];
+                            // $link = $riga["link"];
+                            echo "<div class='cover2 reveal'>
+                                    <h2 class='Titolo_mod' style='font-size: 30px; padding-bottom:0px   '>$nome</h2>
+                                    <div class='card' style='width:300px'>
 
-                            }
-
-                            echo "<div class='copertura'><h2 class='Grande_Titolo' id='$categoria'>$categoria</h2><div class='container__container' >";
-                                foreach($ris as $riga){
-                                    echo <<<EOD
-                                        <div class="cover2 reveal">
-                                            <h2>$nome</h2>
-                                            <div class="card2" id="$style">
-                                                <div class="card2__copy">
-                                                    <p>$descrizione</p>
-                                                </div>
-                                                <div class="card2__img">
-                                                    <img src="../immagini/mobs/$immagine" alt="" class="img_res">
-                                                </div>
-                                            </div>  
+                                        <div class='card__img' style='width:100%'>
+                                            <img src='../immagini/mods/$immagine' alt='L'immagine non e' disponibile :/' class='img_res'>
                                         </div>
-                                    EOD;
-                                }
-                            echo "</div>";
 
-                            ?>
-
-
+                                        
+                                    </div>
+                                </div>";
+                        
+                            echo "</div></div>";
+                        ?>
+                        
                     </div>
+                    
 
                     <div class="boxsu">
                         <a href=#cover>
@@ -100,7 +89,7 @@
                                 Questo è un sito che è stato creato per un progetto, il percorso di costruzione è stato molto divertente.
                             </p>
                         </div>
-                        <div class="footer__column">
+                        <div class="footer__column ">
                             <h3 >Email 1</h3>
                             <p >riccardo.germano@liceobanfi.eu</p>
                             <p >

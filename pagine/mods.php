@@ -1,4 +1,12 @@
+<?php 
 
+    session_start();
+
+    if(isset($_POST['user'])){$user = $_POST['user'];} else{$user = ""; }
+    if(isset($_POST['pass'])){$pass = $_POST['pass'];} else{$pass = ""; }
+    $nomepagina = __FILE__;
+    $nomepagina = substr($nomepagina, -4,5)
+?>
 
 <!DOCTYPE html>
 <html>
@@ -17,7 +25,7 @@
     </head>
 
     <body>
-        <img src="../immagini/background_image5.jpg" alt="immagine non disponibile" class="img_res" id="back-ground">
+        <!-- <img src="../immagini/background_image5.jpg" alt="immagine non disponibile" class="img_res" id="back-ground"> -->
         <div class="cover">
             <div class="cover__content">
                 
@@ -29,130 +37,103 @@
 
 
                 
+                
                 <main>
-                    <div class="container" id="mobs">     
+                    <div class="container" id="mods">     
                         <?php
                             require("../data/connessione_db.php");
                             if(isset($ricerca) && $ricerca != ""){
 
-                                $myquery = "SELECT mobs.cod_mob, mobs.categoria, mobs.background, mob.cod_mobs, mob.cod_mostro, mob.nome, mob.copertina
-                                        FROM mobs JOIN mob ON mobs.cod_mob = mob.cod_mobs
-                                        WHERE mob.nome LIKE '%$ricerca%'";
+                                $myquery1 = "SELECT cod_mod, nome, username_utente, descrizione_txt, immagine
+                                            FROM mods
+                                            WHERE nome LIKE '%$ricerca%'";
                                 
-                                $ris = $conn->query($myquery) or die("<p>Query fallita:".$conn->connect_error."</p>");
-                                if($ris->num_rows>0){
+                                $ris1 = $conn->query($myquery1) or die("<p>Query fallita:".$conn->connect_error."</p>");
+                                
+                                $myquery2 = "SELECT cod_mod, nome, username_utente, descrizione_txt, immagine
+                                            FROM mods
+                                            WHERE username_utente LIKE '%$ricerca%'";
+                                
+                                $ris2 = $conn->query($myquery2) or die("<p>Query fallita:".$conn->connect_error."</p>");
 
-                                    echo "<div class='copertura' id='search_results'><h2 class='Grande_Titolo' id='search_title' style='font-size: 22px'>Risultati della tua ricerca</h2><div class='container__container' >";
-                                        foreach($ris as $riga){
-                                            $cod_mostro = $riga["cod_mostro"];
-                                            $nome = $riga["nome"];                            
-                                            $categoria = $riga["categoria"];
-                                            $copertina = $riga["copertina"];
-                                            echo '<a href="mob.php?cod_mostro='.$cod_mostro.'" class="mobs__card">
-                                                <div class="mobs__card__img">
-                                                    <img src="../immagini/mobs/icons/'.$copertina.'" alt="" class="img_res">
-                                                </div>
-                                                
-                                                <h2>'.$nome.'</h2>
+                                
+                                if($ris1->num_rows>0 || $ris2->num_rows>0){
+
+                                    echo "<div class='copertura' id='search_results'><h2 class='Grande_Titolo' id='search_title' style='font-size: 22px'>Risultati della tua ricerca per nome delle mods: <b class='medium_text' style='font-size: 22px'>$ricerca</b></h2><div class='container__container' >";
+                                    foreach($ris1 as $riga){
+                                        $cod_mod = $riga["cod_mod"];
+                                        $nome = $riga["nome"];                            
+                                        $user = $riga["username_utente"];
+                                        $descrizione = $riga["descrizione_txt"];
+                                        $immagine = $riga["immagine"];
+                                        echo '<a href="mod.php?cod_mod='.$cod_mod.'" class="mobs__card">
+                                            <div class="mobs__card__img">
+                                                <img src="../immagini/mods/'.$immagine.'" alt="" class="img_res">
+                                            </div>
                                             
-                                                </a>';
-                                        }
+                                            <h2>'.$nome.'</h2>
+                                            <p>Da: '.$user.'</p>
+
+                                            </a>';
+                                    }
                                     echo "</div></div>";
+                                    echo "<br>";
+                                    echo "<div class='copertura' id='search_results'><h2 class='Grande_Titolo' id='search_title' style='font-size: 22px'>Risultati della tua ricerca per utenti come: <b class='medium_text' style='font-size: 22px'>$ricerca</b></h2><div class='container__container' >";
+                                    foreach($ris2 as $riga){
+                                        $cod_mod = $riga["cod_mod"];
+                                        $nome = $riga["nome"];                            
+                                        $user = $riga["username_utente"];
+                                        $descrizione = $riga["descrizione_txt"];
+                                        $immagine = $riga["immagine"];
+                                        echo '<a href="mod.php?cod_mod='.$cod_mod.'" class="mobs__card">
+                                            <div class="mobs__card__img">
+                                                <img src="../immagini/mods/'.$immagine.'" alt="" class="img_res">
+                                            </div>
+                                            
+                                            <h2>'.$nome.'</h2>
+                                            <p>Da: '.$user.'</p>
+
+                                            </a>';
+                                    }
+                                    echo "</div></div>";
+                                }
+                                else{
+                                    echo "<div class='copertura' id='search_results'><h2 class='Grande_Titolo' id='search_title' style='font-size: 22px'>Nessun risultato per la tua ricerca</h2><div class='container__container' >";
+
                                 }
                             }
 
-                            $myquery = "SELECT mobs.cod_mob, mobs.categoria, mobs.background, mob.cod_mobs, mob.cod_mostro, mob.nome, mob.copertina
-                                        FROM mobs JOIN mob ON mobs.cod_mob = mob.cod_mobs
-                                        WHERE mobs.cod_mob = 1";
+                            $myquery = "SELECT cod_mod, nome, username_utente, descrizione_txt, immagine, link
+                                        FROM mods";
                             
                             $ris = $conn->query($myquery) or die("<p>Query fallita:".$conn->connect_error."</p>");
                             
-                            echo "<div class='copertura'><h2 class='Grande_Titolo' id='Foreste'>Overworld</h2><div class='container__container' >";
+                            echo "<div class='copertura'><h2 class='Grande_Titolo' id='Foreste' style='font-size:50px; margin-top:30px; border-bottom:0px'>Mods</h2><div class='container__container' >";
                                 foreach($ris as $riga){
-                                    $cod_mostro = $riga["cod_mostro"];
+                                    $cod_mod = $riga["cod_mod"];
                                     $nome = $riga["nome"];                            
-                                    $categoria = $riga["categoria"];
-                                    $copertina = $riga["copertina"];
-                                    echo '<a href="mob.php?cod_mostro='.$cod_mostro.'" class="mobs__card">
-                                        <div class="mobs__card__img">
-                                            <img src="../immagini/mobs/icons/'.$copertina.'" alt="" class="img_res">
-                                        </div>
-                                        
-                                        <h2>'.$nome.'</h2>
-                                    
-                                        </a>';
-                                }
-                            echo "</div></div>";
+                                    $user = $riga["username_utente"];
+                                    $descrizione = $riga["descrizione_txt"];
+                                    $immagine = $riga["immagine"];
+                                    $link = $riga["link"];
+                                    echo "<div class='cover2 reveal'>
+                                            <h2 class='Titolo_mod' style='font-size: 35px'>$nome</h2>
+                                            <p style='font-size: 27px; margin-top:10px'>Da: $user</p>
+                                            <div class='card'>
 
-                            $myquery2 = "SELECT mobs.cod_mob, mobs.categoria, mobs.background, mob.cod_mobs, mob.cod_mostro, mob.nome, mob.copertina
-                                        FROM mobs JOIN mob ON mobs.cod_mob = mob.cod_mobs
-                                        WHERE mobs.cod_mob = 2";
-                            
-                            $ris = $conn->query($myquery2) or die("<p>Query fallita:".$conn->connect_error."</p>");
-                            
-                            echo "<div class='copertura'><h2 class='Grande_Titolo' id='Nether'>Nether</h2><div class='container__container' >";
-                                foreach($ris as $riga){
-                                    $cod_mostro = $riga["cod_mostro"];
-                                    $nome = $riga["nome"];                            
-                                    $categoria = $riga["categoria"];
-                                    $copertina = $riga["copertina"];
-                                    $background = $riga["background"];
-                                    echo '<a href="mob.php?cod_mostro='.$cod_mostro.'" class="mobs__card">
-                                        <div class="mobs__card__img">
-                                            <img src="../immagini/mobs/icons/'.$copertina.'" alt="" class="img_res">
-                                        </div>
-                                        
-                                        <h2>'.$nome.'</h2>
-                                    
-                                        </a>';
-                                }
-                            echo "</div></div>";
-
-                            $myquery3 = "SELECT mobs.cod_mob, mobs.categoria, mobs.background, mob.cod_mobs, mob.cod_mostro, mob.nome, mob.copertina
-                                        FROM mobs JOIN mob ON mobs.cod_mob = mob.cod_mobs
-                                        WHERE mobs.cod_mob = 3";
-                            
-                            $ris = $conn->query($myquery3) or die("<p>Query fallita:".$conn->connect_error."</p>");
-                            
-                            echo "<div class='copertura'><h2 class='Grande_Titolo' id='End'>End</h2><div class='container__container' >";
-                                foreach($ris as $riga){
-                                    $cod_mostro = $riga["cod_mostro"];
-                                    $nome = $riga["nome"];                            
-                                    $categoria = $riga["categoria"];
-                                    $copertina = $riga["copertina"];
-                                    $background = $riga["background"];
-                                    echo '<a href="mob.php?cod_mostro='.$cod_mostro.'" class="mobs__card">
-                                        <div class="mobs__card__img">
-                                            <img src="../immagini/mobs/icons/'.$copertina.'" alt="" class="img_res">
-                                        </div>
-                                        
-                                        <h2>'.$nome.'</h2>
-                                    
-                                        </a>';
-                                }
-                            echo "</div></div>";
-
-                            $myquery4 = "SELECT mobs.cod_mob, mobs.categoria, mobs.background, mob.cod_mobs, mob.cod_mostro, mob.nome, mob.copertina
-                                        FROM mobs JOIN mob ON mobs.cod_mob = mob.cod_mobs
-                                        WHERE mobs.cod_mob = 4";
-                            
-                            $ris = $conn->query($myquery4) or die("<p>Query fallita:".$conn->connect_error."</p>");
-                            
-                            echo "<div class='copertura'><h2 class='Grande_Titolo' id='Boss'>Boss</h2><div class='container__container' >";
-                                foreach($ris as $riga){
-                                    $cod_mostro = $riga["cod_mostro"];
-                                    $nome = $riga["nome"];                            
-                                    $categoria = $riga["categoria"];
-                                    $copertina = $riga["copertina"];
-                                    $background = $riga["background"];
-                                    echo '<a href="mob.php?cod_mostro='.$cod_mostro.'" class="mobs__card">
-                                        <div class="mobs__card__img">
-                                            <img src="../immagini/mobs/icons/'.$copertina.'" alt="" class="img_res">
-                                        </div>
-                                        
-                                        <h2>'.$nome.'</h2>
-                                    
-                                        </a>';
+                                                <div class='card__img'>
+                                                    <img src='../immagini/mods/$immagine' alt='L'immagine non e' disponibile :/' class='img_res'>
+                                                </div>
+                                                <div class='card__copy'>  
+                                                    <p>
+                                                        $descrizione
+                
+                                                    </p>
+                                                </div> 
+                                                
+                                            </div>
+                                            <div class='small_text'><a href='$link' class='button' id='discover_button'>Download mod</a></div>
+                                        </div>";
                                 }
                             echo "</div></div>";
                         ?>

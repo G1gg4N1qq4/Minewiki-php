@@ -107,6 +107,13 @@ p{
     font-size: 40px;padding: 20px 0px 0px 0px;
     width: 100%;
 }
+.Titolo_mod{
+    font-family: "MinecraftRegular";
+    border-top: 2px solid white;
+    border-bottom: 0px;
+    text-align: left;
+    padding-top: 20px;
+}
 
 #Titolo{
     margin-top: 16px;
@@ -137,6 +144,15 @@ p{
 
 #mobs{
     background: url(immagini/background_mobs.webp);
+}
+#mods{
+    background-color: #000;
+}
+#mod{
+    background-color:#005508;
+}
+#mydata{
+    background-color:#000;
 }
 #Titolo1_mobs{
     margin-top: 96px;
@@ -326,6 +342,16 @@ main{z-index: 0;}
     padding: 15px;
 }
 
+
+.profile_img{
+    display: flex;
+    height: 60px;
+    padding: 10px;
+}
+.profile_img img{
+    height: 100%;
+    width: auto;
+}
 #login-main{
     /* background-image: url("immagini/background_image3.jpg"); */
     /* filter: blur(8px); */
@@ -382,13 +408,16 @@ main{z-index: 0;}
     /* line-height: 100%; */
     padding-top: 7px;
 }
-.login__content{
+.login__content, .mydata_table{
     padding: 20px;
     background: #019d25;
     height: auto;
     border-radius: 10px;
 }
 .login__content table, tr,td, input{
+    width: 100%;
+}
+.mydata_table table, tr,td, input{
     width: 100%;
 }
 /* #registrati{
@@ -399,6 +428,22 @@ main{z-index: 0;}
     border-radius: 5px;
     font-size: 22px;
 }
+.mydata_table input{
+    height: 6.5vh;
+    border-radius: 5px;
+    font-size: 22px;
+}
+.mydata_table{
+    width: 100%;
+    align-items: center;
+}
+.mydata_content{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+}
+
 #accedi{
     /* width: auto; */
     height: 5vh;
@@ -835,6 +880,11 @@ table{
 #crafting{
     color: #019d25;
 }
+#craft_page{
+    display: flex;
+    height: 20vh;
+    align-items: center;
+}
 .craft__card{
     margin: 20px 10px;
     margin-bottom: 20px;
@@ -917,7 +967,16 @@ table{
 .copertura{
     background-color: rgba(0, 0, 0, 0.616);
 }
-
+#search_results{
+    background:#005508;
+    padding-bottom: 80px;
+    padding-top: 20px;
+}
+#search_title{
+    text-align: left;
+    padding-left: 10px;
+    
+}
 #oak_forest{
     background: rgba(86, 125, 34, 0.815);
 }

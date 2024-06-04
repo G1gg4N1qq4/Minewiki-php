@@ -32,7 +32,7 @@
                             <?php
                                 $cod_craft = $_GET["cod_craft"];
                                 require("../data/connessione_db.php");
-                                $sql = "SELECT craft.cod_craft, craft.categoria, crafting.immagini, crafting.nome, crafting.materiali
+                                $sql = "SELECT craft.cod_craft, craft.categoria, crafting.immagini, crafting.craft, crafting.materiali
                                         FROM craft JOIN crafting ON craft.cod_craft = crafting.cod_crafting
                                         WHERE crafting.cod_crafting = $cod_craft";
                                 
@@ -48,7 +48,7 @@
                                 } else {
                                     echo "<div class='copertura'><h2 class='Grande_Titolo' id='$categoria'>$categoria</h2><div class='container__container' >";
                                     foreach($ris as $riga){
-                                        $nome = $riga["nome"];
+                                        $nome = $riga["craft"];
                                         $materiali = $riga["materiali"];
                                         $immagine = $riga["immagini"];
             

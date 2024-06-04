@@ -1,4 +1,12 @@
+<?php 
 
+    session_start();
+
+    if(isset($_POST['user'])){$user = $_POST['user'];} else{$user = ""; }
+    if(isset($_POST['pass'])){$pass = $_POST['pass'];} else{$pass = ""; }
+    $nomepagina = __FILE__;
+    $nomepagina = substr($nomepagina, -4,5)
+?>
 
 <!DOCTYPE html>
 <html>
@@ -32,7 +40,7 @@
                         <?php
                             require("../data/connessione_db.php");
                             
-                            $myquery = "SELECT cod_craft, categoria, background
+                            $myquery = "SELECT cod_craft, categoria
                                         FROM craft";
                             
                             $ris = $conn->query($myquery) or die("<p>Query fallita:".$conn->connect_error."</p>");
@@ -41,9 +49,8 @@
                                 foreach($ris as $riga){
                                     $cod_craft = $riga["cod_craft"];
                                     $categoria = $riga["categoria"];
-                                    $background = $riga["background"];
-                                    echo '<a href="crafts.php?cod_craft='.$cod_craft.'" class="craft__card">
-                                        <img src="../immagini/'.$background.'" alt=""  class="craft__card__img">
+                                    // $background = $riga["background"];
+                                    echo '<a href="crafts.php?cod_craft='.$cod_craft.'" class="craft__card" id="craft_page">
                                         
                                         <h2>'.$categoria.'</h2>
                                     

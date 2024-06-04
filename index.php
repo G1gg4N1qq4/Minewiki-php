@@ -94,30 +94,13 @@
                             </li>
 
                             <li class="Global__header__menu__item Tendina" >
-                                <a href="pagine/mobs.php" class="main_page_link">Mobs<img src="immagini/freccia sborbus.png" alt="" class="freccia_tendina" style="--i:6;">
-                                </a>
-                                <div class="menubiomi">
-                                    <a href="pagine/mobs.php#Overworld" style="--i:1;"><span></span>
-                                        <img src="immagini/sheep.png" alt="" class="img_res img__lista" style="--i:6;">
-                                        Overworld</a>
-                                    <a href="pagine/mobs.php#Nether" style="--i:2;"><span></span>
-                                        <img src="immagini/pigman.jpg" alt="" class="img_res img__lista" style="--i:6;">
-                                        Nether
-                                    </a>
-                                    <a href="pagine/mobs.php#End" style="--i:4;"><span></span>
-                                        <img src="immagini/enderman.png" alt="" class="img_res img__lista" style="--i:6;">
-                                        End</a>
-                                    <a href="pagine/mobs.php#Boss" style="--i:5;"><span></span>
-                                        <img src="immagini/warden.png" alt="" class="img_res img__lista" style="--i:6;">
-                                        Boss</a>
-                                    <!-- <a href="#" style="--i:6;"><span></span><img src="immagini/creeper.png" alt="" class="img_res img__lista" style="--i:6;">Creeper</a> -->
-                                </div>
+                                <a href="pagine/mobs.php" class="main_page_link">Mobs</a>
                             </li>
 
                             <?php
                                 if(isset($_SESSION["user"])){
                                         echo '<li class="Global__header__menu__item">
-                                        <a href="index.php"> Mods </a> 
+                                        <a href="pagine/mods.php"> Mods </a> 
                                     </li>';
                                 }
                             ?>
@@ -133,10 +116,10 @@
                             if(isset($_SESSION["user"])){
                                 echo "<ul class='UserInterface'>
                                 <li class='UserInterface__menu__item' id='home'>
-                                    <a href='index.php'> MyMods </a> 
+                                    <a href='pagine/mymods.php'> MyMods </a> 
                                 </li>
                                 <li class='UserInterface__menu__item' id='home'>
-                                    <a href='index.php'> MyData </a> 
+                                    <a href='mydata.php' class='profile_img'><img src='immagini/profile_user_account_icon_190938.png' alt=''></a>
                                 </li>
                                 <div class='cta'>
                                     <div class='small_text'>

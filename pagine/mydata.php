@@ -1,11 +1,42 @@
-<?php 
+<?php
+	session_start();
+	//echo session_id();
 
-    session_start();
+	require('../data/connessione_db.php');
 
-    if(isset($_POST['user'])){$user = $_POST['user'];} else{$user = ""; }
-    if(isset($_POST['pass'])){$pass = $_POST['pass'];} else{$pass = ""; }
-    $nomepagina = __FILE__;
-    $nomepagina = substr($nomepagina, -4,5)
+	if(!isset($_SESSION['user'])){
+		header('location: ../index.php');
+	}
+
+	$user = $_SESSION["user"];
+	//echo $username;
+
+	$strmodifica = "Modifica";
+	$strconferma = "Conferma";
+
+	$modifica = false;
+	if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["pulsante_modifica"])) {
+		if($_POST["pulsante_modifica"] == $strmodifica){
+			$modifica = true;
+		} else {
+			$modifica = false;
+		}
+
+		if ($modifica == false){
+			$sql = "UPDATE utenti
+					SET password = '".$_POST["password"]."', 
+						nome = '".$_POST["nome"]."', 
+						cognome = '".$_POST["cognome"]."', 
+						email = '".$_POST["email"]."', 
+						telefono = '".$_POST["telefono"]."' 
+                        WHERE username = '".$user."'";
+			if($conn->query($sql) === true) {
+				//echo "Record updated successfully";
+			} else {
+				echo "Error updating record: " . $conn->error;
+			}
+		}
+	}
 ?>
 
 <!DOCTYPE html>
@@ -37,48 +68,80 @@
 
                 
                 <main>
-                    <div class="container" id="biomi">  
+                    <div class="container" id="mydata">  
                         
-                            <?php
-                                $cod_mostro = $_GET["cod_mostro"];
-                                require("../data/connessione_db.php");
-                                $myquery = "SELECT mobs.cod_mob, mobs.categoria, mobs.background, mob.cod_mobs, mob.cod_mostro, mob.nome, mob.immagine, mob.descrizione, mob.copertina, mob.style
-                                        FROM mobs JOIN mob ON mobs.cod_mob = mob.cod_mobs
-                                        WHERE mob.cod_mostro = $cod_mostro";
-                            
-                            $ris = $conn->query($myquery) or die("<p>Query fallita:".$conn->connect_error."</p>");
-                            
+                        <h2 style="text-align:center; padding-top:20px">Dati Personali</h2>
+                        <?php
+                            $mysql = "SELECT username, password, nome, cognome, email, telefono
+                                FROM utenti 
+                                WHERE username='$user'";
+                            //echo $sql;
+                            $ris = $conn->query($mysql) or die("<p>Query fallita!</p>");
+                            // $riga = $ris->fetch_array(MYSQLI_ASSOC);
                             foreach($ris as $riga){
-                                $cod_mostro = $riga["cod_mostro"];
-                                $nome = $riga["nome"];                            
-                                $categoria = $riga["categoria"];
-                                $style = $riga["style"];
-                                $immagine = $riga["immagine"];
-                                $background = $riga["background"];
-                                $descrizione = $riga["descrizione"];
-
+                                
                             }
+                            // $riga = $ris->fetch_assoc();
+                            echo $riga["password"];
+                        ?>
+                        <div class="mydata_content">
 
-                            echo "<div class='copertura'><h2 class='Grande_Titolo' id='$categoria'>$categoria</h2><div class='container__container' >";
-                                foreach($ris as $riga){
-                                    echo <<<EOD
-                                        <div class="cover2 reveal">
-                                            <h2>$nome</h2>
-                                            <div class="card2" id="$style">
-                                                <div class="card2__copy">
-                                                    <p>$descrizione</p>
-                                                </div>
-                                                <div class="card2__img">
-                                                    <img src="../immagini/mobs/$immagine" alt="" class="img_res">
-                                                </div>
-                                            </div>  
-                                        </div>
-                                    EOD;
-                                }
-                            echo "</div>";
+                            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+                                <div class="mydata_table">
+    
+                                    <table>
+                                        <tr>
+                                        <td><label for="user" class="minecraft_text">Username:</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" name="user" value="<?php echo $riga["username"]; ?>" disabled="disabled"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="password" class="minecraft_text">Password:</label></td> 
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" name="password" value="<?php echo $riga["password"]; ?>" <?php if(!$modifica) echo "disabled='disabled'"?>></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="nome" class="minecraft_text">Nome:</label></td> 
+                                        </tr>
+                                        <tr>
+                                        <td><input type="text" name="nome" value="<?php echo $riga["nome"]; ?>" <?php if(!$modifica) echo "disabled='disabled'"?>></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="cognome" class="minecraft_text">Cognome:</label></td> 
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" name="cognome" value="<?php echo $riga["cognome"]; ?>" <?php if(!$modifica) echo "disabled='disabled'"?>></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="email" class="minecraft_text">Email:</label></td> 
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" name="email" value="<?php echo $riga["email"]; ?>" <?php if(!$modifica) echo "disabled='disabled'"?>></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="telefono" class="minecraft_text">Telefono:</label></td> 
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" name="telefono" value="<?php echo $riga["telefono"]; ?>" <?php if(!$modifica) echo "disabled='disabled'"?>></td>
+                                        </tr>
+                                        <!-- <p style="text-align: center; width: 20%;text-align:center">
+                                            </p> -->
+                                    </table>
+                                    <br>
+                                    <br>
+                                    <table>
+                                        <tr>
+                                            <input type="submit" name="pulsante_modifica" value="<?php if($modifica==false) echo $strmodifica; else echo $strconferma; ?>">
 
-                            ?>
+                                        </tr>
 
+                                    </table>
+                                </div>
+                            </form>	
+                        </div>
+                        
 
                     </div>
 

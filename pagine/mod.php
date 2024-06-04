@@ -8,6 +8,7 @@
     $nomepagina = substr($nomepagina, -4,5)
 ?>
 
+
 <!DOCTYPE html>
 <html>
 
@@ -37,45 +38,45 @@
 
                 
                 <main>
-                    <div class="container" id="biomi">  
+                    <div class="container" id="mod">  
                         
                             <?php
-                                $cod_mostro = $_GET["cod_mostro"];
+                                $cod_mod = $_GET["cod_mod"];
                                 require("../data/connessione_db.php");
-                                $myquery = "SELECT mobs.cod_mob, mobs.categoria, mobs.background, mob.cod_mobs, mob.cod_mostro, mob.nome, mob.immagine, mob.descrizione, mob.copertina, mob.style
-                                        FROM mobs JOIN mob ON mobs.cod_mob = mob.cod_mobs
-                                        WHERE mob.cod_mostro = $cod_mostro";
+                                $myquery = "SELECT cod_mod, nome, username_utente, descrizione_txt, immagine
+                                            FROM mods
+                                            WHERE cod_mod = '$cod_mod'";
                             
                             $ris = $conn->query($myquery) or die("<p>Query fallita:".$conn->connect_error."</p>");
                             
-                            foreach($ris as $riga){
-                                $cod_mostro = $riga["cod_mostro"];
-                                $nome = $riga["nome"];                            
-                                $categoria = $riga["categoria"];
-                                $style = $riga["style"];
-                                $immagine = $riga["immagine"];
-                                $background = $riga["background"];
-                                $descrizione = $riga["descrizione"];
+                            echo "<div class='copertura'><h2 class='Grande_Titolo' id='Foreste' style='font-size:50px; margin-top:30px; border-bottom:0px'></h2><div class='container__container' >";
+                            $riga = $ris->fetch_assoc();
+                            $cod_mod = $riga["cod_mod"];
+                            $nome = $riga["nome"];                            
+                            $user = $riga["username_utente"];
+                            $descrizione = $riga["descrizione_txt"];
+                            $immagine = $riga["immagine"];
+                            echo "<div class='cover2 reveal'>
+                                    <h2 class='Titolo_mod' style='font-size: 35px'>$nome</h2>
+                                    <p style='font-size: 27px; margin-top:10px'>Da: $user</p>
+                                    <div class='card'>
 
-                            }
-
-                            echo "<div class='copertura'><h2 class='Grande_Titolo' id='$categoria'>$categoria</h2><div class='container__container' >";
-                                foreach($ris as $riga){
-                                    echo <<<EOD
-                                        <div class="cover2 reveal">
-                                            <h2>$nome</h2>
-                                            <div class="card2" id="$style">
-                                                <div class="card2__copy">
-                                                    <p>$descrizione</p>
-                                                </div>
-                                                <div class="card2__img">
-                                                    <img src="../immagini/mobs/$immagine" alt="" class="img_res">
-                                                </div>
-                                            </div>  
+                                        <div class='card__img'>
+                                            <img src='../immagini/mods/$immagine' alt='L'immagine non e' disponibile :/' class='img_res'>
                                         </div>
-                                    EOD;
-                                }
-                            echo "</div>";
+                                        <div class='card__copy'>  
+                                            <p>
+                                                $descrizione
+        
+                                            </p>
+                                            <p>
+                                                Bene! questo sito e' fatto sicuramente per te. Da come avrai capito e' una pagina web informativa su tutto il mondo di minecraft.
+                                            </p>
+                                        </div> 
+                                    </div>
+                                </div>";
+                                
+                            echo "</div></div>";
 
                             ?>
 
