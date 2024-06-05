@@ -47,25 +47,28 @@
                             if($ris->num_rows >0){
 
                                 echo "<div class='copertura'><h2 class='Grande_Titolo' id='Foreste' style='font-size:50px; margin-top:30px; border-bottom:0px'>MyMods</h2><div class='container__container' >";
-                                $riga = $ris->fetch_assoc();
-                                // echo "ciaooooooooooo";
-                                $cod_mod = $riga["cod_mod"];
-                                $nome = $riga["nome"];
-                                // $descrizione = $riga["descrizione_txt"];
-                                $immagine = $riga["immagine"];
-                                // $link = $riga["link"];
-                                echo "<div class='cover2 reveal'>
-                                        <h2 class='Titolo_mod' style='font-size: 30px; padding-bottom:0px   '>$nome</h2>
-                                        <div class='card' style='width:300px'>
-    
-                                            <div class='card__img' style='width:100%'>
-                                                <img src='../immagini/mods/$immagine' alt='L'immagine non e' disponibile :/' class='img_res'>
+                                // $riga = $ris->fetch_assoc();
+                                foreach($ris as $riga){
+
+                                    // echo "ciaooooooooooo";
+                                    $cod_mod = $riga["cod_mod"];
+                                    $nome = $riga["nome"];
+                                    // $descrizione = $riga["descrizione_txt"];
+                                    $immagine = $riga["immagine"];
+                                    // $link = $riga["link"];
+                                    echo "<div class='cover2 reveal'>
+                                            <h2 class='Titolo_mod' style='font-size: 30px; padding-bottom:0px   '>$nome</h2>
+                                            <div class='card' style='width:300px'>
+        
+                                                <div class='card__img' style='width:100%'>
+                                                    <img src='../immagini/mods/$immagine' alt='L'immagine non e' disponibile :/' class='img_res'>
+                                                </div>
+        
+                                                
                                             </div>
-    
-                                            
-                                        </div>
-                                    </div>";
-                            
+                                        </div>";
+                                
+                                }
                                 echo "</div></div>";
                             }
                             else{
