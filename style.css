@@ -379,6 +379,38 @@ main{z-index: 0;}
     height: 100%;
     width: auto;
 }
+.profile-img{
+    width: 20%;
+    margin: 10px;
+    position: relative;
+    
+}
+.profile-img img{
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 100%;
+    z-index: 0;
+}
+.profile-img input[type="radio"]{
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    z-index: 0;
+    width: 30%;
+    height: 30%;
+    /* background-color: CanvasText; */
+    accent-color: #004e12;
+    
+    /* background-image: url(immagini/freccia\ sborbus.png); */
+}
+/* input[type="radio"]:checked::before {
+    color: #004e12;
+} */
+.profile-img_chooser td{
+    display: flex;
+    /* flex-wrap: wrap; */
+}
 #login-main{
     /* background-image: url("immagini/background_image3.jpg"); */
     /* filter: blur(8px); */
@@ -396,7 +428,7 @@ main{z-index: 0;}
     filter: blur(7px);
     /* align-items: center;
     display: flex; */
-    position: absolute;
+    position: fixed;
 
 }
 .login{
@@ -404,10 +436,10 @@ main{z-index: 0;}
     justify-content: center;
     align-items: center;
     width: 33.33333333333333333333333333333%;
-    height: 60%;
+    height: 60vh;
     margin: auto;
-    
-    
+    margin-top: -30vh;
+    margin-bottom: 20px;
 }
 .login h1{
     text-align: center;
@@ -473,6 +505,7 @@ input{
     justify-content: center;
     margin: auto;
     padding: 20px;
+    width: 33.33333333333333333333%;
 }
 
 #accedi{

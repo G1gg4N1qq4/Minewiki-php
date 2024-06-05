@@ -1,7 +1,7 @@
 <?php
     session_start();
-    if (isset($_POST["user"])) $user = $_POST["user"]; else $user = "";
-    if (isset($_POST["pass"])) $pass = $_POST["pass"]; else $pass = "";
+    if(isset($_SESSION['user'])){$user = $_SESSION['user'];} else{$user = ""; }
+    // if(isset($_SESSION['pass'])){$pass = $_SESSION['pass'];} else{$pass = ""; }
     
 ?>
 
@@ -83,8 +83,10 @@
                                 if (isset($_POST["user"]) and isset($_POST["pass"])){
                                     
                                     require("../data/connessione_db.php");
-    
-                                    $myquery = "SELECT username, password FROM utenti WHERE username='$user' AND password='$pass'";
+                                    $user=$_POST["user"];
+                                    $pass = $_POST["pass"];
+                                    $myquery = "SELECT username, password 
+                                                FROM utenti WHERE username='$user' AND password='$pass'";
     
                                     $ris = $conn->query($myquery) or die("<p> mammt è fallita! ".$conn->connect_error."</p>");
     

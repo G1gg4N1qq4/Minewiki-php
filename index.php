@@ -2,8 +2,8 @@
 
     session_start();
 
-    if(isset($_POST['user'])){$user = $_POST['user'];} else{$user = ""; }
-    if(isset($_POST['pass'])){$pass = $_POST['pass'];} else{$pass = ""; }
+    if(isset($_SESSION['user'])){$user = $_SESSION['user'];} else{$user = ""; }
+    // if(isset($_SESSION['pass'])){$pass = $_SESSION['pass'];} else{$pass = ""; }
 
 ?>
 
@@ -112,15 +112,26 @@
                             MINEWIKI
                         </h1>
                         <?php
-                            
-                            // echo "<p>ciaooooo".$_SESSION["user"]."</p>";
+                            require("data/connessione_db.php");
+                            $myquery = "SELECT foto_profilo FROM utenti WHERE username='$user'";
+                            $ris= $conn->query($myquery) or die("<p> mammt è fallita! ".$conn->connect_error."</p>");
+                            if($ris->num_rows > 0){
+                                $riga = $ris->fetch_assoc();
+
+                                $profile_img = $riga['foto_profilo'];
+                                
+                                // echo "<p>ciaooooo".$profile_img."</p>";
+                            }
+                            else{
+                                $profile_img = "profile_user_account_icon_190938.png";
+                            }
                             if(isset($_SESSION["user"])){
                                 echo "<ul class='UserInterface'>
                                 <li class='UserInterface__menu__item' id='home'>
                                     <a href='pagine/mymods.php'> MyMods </a> 
                                 </li>
                                 <li class='UserInterface__menu__item' id='home'>
-                                    <a href='pagine/mydata.php' class='profile_img'><img src='immagini/profile_user_account_icon_190938.png' alt=''></a>
+                                    <a href='pagine/mydata.php' class='profile_img'><img src='immagini/mobs/icons/$profile_img' alt='' style='border-radius:100%'></a>
                                 </li>
                                 <div class='cta'>
                                     <div class='small_text'>

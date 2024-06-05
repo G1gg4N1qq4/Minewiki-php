@@ -28,7 +28,8 @@
 						nome = '".$_POST["nome"]."', 
 						cognome = '".$_POST["cognome"]."', 
 						email = '".$_POST["email"]."', 
-						telefono = '".$_POST["telefono"]."' 
+						telefono = '".$_POST["telefono"]."',
+                        foto_profilo = '".$_POST["profile_img"]."' 
                         WHERE username = '".$user."'";
 			if($conn->query($sql) === true) {
 				//echo "Record updated successfully";
@@ -128,6 +129,74 @@
                                         </tr>
                                         <!-- <p style="text-align: center; width: 20%;text-align:center">
                                             </p> -->
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                        
+                                        <?php
+                                            if($modifica){
+                                                echo "
+                                                <tr>
+                                                    <td>
+
+                                                        <p>Scegli un'immagine profilo</p>
+                                                    </td>
+                                                </tr>
+                                                <tr class='profile-img_chooser'>
+                                                <td colspan='2' style='text-align: center' >
+                                                    <div class='profile-img'>
+                                                    <input type='radio' name='profile_img' value='cat.jpg' >
+                                                        <img src='../immagini/mobs/icons/cat.jpg' alt='' class='img_res'>
+            
+                                                    </div>
+                                                    <div class='profile-img'>
+                                                    <input type='radio' name='profile_img' value='zombie.png'>
+                                                        <img src='../immagini/mobs/icons/zombie.png' alt='' class='img_res'>
+            
+                                                    </div>
+                                                    <div class='profile-img'>
+                                                    <input type='radio' name='profile_img' value='blaze.png'>
+                                                        <img src='../immagini/mobs/icons/blaze.png' alt='' class='img_res'>
+            
+                                                    </div>
+                                                    <div class='profile-img'>
+                                                    <input type='radio' name='profile_img' value='fox.jpg'>
+                                                        <img src='../immagini/mobs/icons/fox.jpg' alt='' class='img_res'>
+            
+                                                    </div>
+                                                </td>
+                                                <td colspan='2' style='text-align: center' >
+                                                    <div class='profile-img'>
+                                                    <input type='radio' name='profile_img' value='enderdragon.png'>
+                                                        <img src='../immagini/mobs/icons/enderdragon.png' alt='' class='img_res'>
+            
+                                                    </div>
+                                                    <div class='profile-img'>
+                                                    <input type='radio' name='profile_img' value='magma-cube.png'>
+                                                        <img src='../immagini/mobs/icons/magma-cube.png' alt='' class='img_res'>
+            
+                                                    </div>
+                                                    <div class='profile-img'>
+                                                    <input type='radio' name='profile_img' value='pigman.png'>
+                                                        <img src='../immagini/mobs/icons/pigman.png' alt='' class='img_res'>
+            
+                                                    </div>
+                                                    <div class='profile-img'>
+                                                    <input type='radio' name='profile_img' value='turtle.png'>
+                                                        <img src='../immagini/mobs/icons/turtle.png' alt='' class='img_res'>
+            
+                                                    </div>
+                                                </td>
+                                                <td colspan='2' style='text-align: center' >
+                                                    <div class='profile-img'>
+                                                    <input type='radio' name='profile_img' value='hairynigga.jpg'>
+                                                        <img src='../immagini/mobs/icons/hairynigga.jpg' alt='' class='img_res'>
+
+                                                    </div>
+                                                </td>
+                                            </tr>   ";
+                                            }
+                                        ?>
                                     </table>
                                     <br>
                                     <br>
