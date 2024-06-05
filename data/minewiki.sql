@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `bioma` (
   CONSTRAINT `FK_biomi` FOREIGN KEY (`cod_categoria`) REFERENCES `biomi` (`cod_bioma`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Dump dei dati della tabella minewiki.bioma: ~20 rows (circa)
+-- Dump dei dati della tabella minewiki.bioma: ~19 rows (circa)
 DELETE FROM `bioma`;
 INSERT INTO `bioma` (`cod_categoria`, `bioma`, `descrizione`, `immagine`, `style`) VALUES
 	(1, 'Foresta  di Querce', 'Il bioma della foresta può aiutarti a ottenere una spinta iniziale nel gioco, poiché puoi raccogliere molto legno e fiori. L\'unico aspetto negativo di questo bioma e\' che gli alberi rendono difficile individuare eventuali mob ostili.', 'oak_forest.jfif', 'oak_forest'),
@@ -177,9 +177,9 @@ CREATE TABLE IF NOT EXISTS `mods` (
   PRIMARY KEY (`cod_mod`) USING BTREE,
   KEY `FK_libri_utenti` (`username_utente`),
   CONSTRAINT `FK_libri_utenti` FOREIGN KEY (`username_utente`) REFERENCES `utenti` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Dump dei dati della tabella minewiki.mods: ~4 rows (circa)
+-- Dump dei dati della tabella minewiki.mods: ~7 rows (circa)
 DELETE FROM `mods`;
 INSERT INTO `mods` (`cod_mod`, `nome`, `username_utente`, `descrizione_txt`, `immagine`, `link`) VALUES
 	(1, 'OptiFine', 'luigi', 'OptiFine è una mod di Minecraft che fornisce un notevole incremento agli FPS, supporta texture HD, aggiunge numerose opzioni di configurazione e consente ottimizzazioni avanzate. Non si tratta quindi di una mod che aggiunge oggetti, mob o biomi ma cambia l\'aspetto della versione vanilla.', 'optifine.jpg', 'https://optifine.net/adloadx?f=OptiFine_1.20.4_HD_'),
@@ -198,16 +198,19 @@ CREATE TABLE IF NOT EXISTS `utenti` (
   `cognome` char(20) DEFAULT NULL,
   `email` char(20) DEFAULT NULL,
   `telefono` char(20) DEFAULT NULL,
+  `foto_profilo` char(50) DEFAULT NULL,
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci COMMENT='tabella contenente gli username e le rispettive password';
 
--- Dump dei dati della tabella minewiki.utenti: ~4 rows (circa)
+-- Dump dei dati della tabella minewiki.utenti: ~6 rows (circa)
 DELETE FROM `utenti`;
-INSERT INTO `utenti` (`username`, `password`, `nome`, `cognome`, `email`, `telefono`) VALUES
-	('Achi11e', '<br /><b>Warning</b>', '<br /><b>Warning</b>', '<br /><b>Warning</b>', '<br /><b>Warning</b>', '<br /><b>Warning</b>'),
-	('asd', 'asd', 'Abry', 'Rossi', 'mario.rossi@gmail.co', '123456789'),
-	('Jerrythehairynigga89', '1234', 'Jerome', 'La Rosa', 'jerome.larosa12@lstu', '3519070717'),
-	('luigi', 'luigi', '', '', '', '');
+INSERT INTO `utenti` (`username`, `password`, `nome`, `cognome`, `email`, `telefono`, `foto_profilo`) VALUES
+	('Achi11e', '1234', '<br /><b>Warning</b>', '<br /><b>Warning</b>', '<br /><b>Warning</b>', '', 'profile_user_account_icon_190938.png'),
+	('asd', 'asd', 'Abry', 'Rossi', 'mario.rossi@gmail.co', '123456789', 'fox.jpg'),
+	('Cioa', '1234', '', '', '', '', 'zombie.png'),
+	('dario', '1234', '', '', '', '', 'zombie.png'),
+	('Jerrythehairynigga89', '1234', 'Jerome', 'La Rosa', 'jerome.larosa12@lstu', '3519070717', 'hairynigga.jpg'),
+	('luigi', 'luigi', '', '', '', '', 'pigman.png');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
